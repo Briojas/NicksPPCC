@@ -10,5 +10,5 @@ export interface MessageInfo {
 export interface ConversationInfo {
   user1Id: number;
   user2Id: number;
-  lastMessage: MessageInfo
+  lastMessage: MessageInfo;
 }
