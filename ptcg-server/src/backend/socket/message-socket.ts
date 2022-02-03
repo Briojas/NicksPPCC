@@ -29,8 +29,7 @@ export class MessageSocket {
     this.socket.emit('message:read', { user: CoreSocket.buildUserInfo(user) });
   }
 
-  private async sendMessage(params: { userId: number, text: string },
-    response: Response<{ message: MessageInfo, user: UserInfo }>): Promise<void> {
+  private async sendMessage(params: { userId: number, text: string }, response: Response<{ message: MessageInfo, user: UserInfo }>): Promise<void> {
     let messageInfo: MessageInfo;
     let userInfo: UserInfo;
 
@@ -63,8 +62,7 @@ export class MessageSocket {
     response('ok', { message: messageInfo, user: userInfo });
   }
 
-  private async readMessages(params: { userId: number },
-    response: Response<void>): Promise<void> {
+  private async readMessages(params: { userId: number }, response: Response<void>): Promise<void> {
 
     try {
       const user = await User.findOne(params.userId);

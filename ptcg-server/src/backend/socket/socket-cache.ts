@@ -1,6 +1,6 @@
-import { GameInfo } from "../interfaces";
+import { GameInfo } from '../interfaces';
 
 export class SocketCache {
-  gameInfoCache: {[id: number]: GameInfo} = {};
-  lastLogIdCache: {[id: number]: number} = {};
+  public gameInfoCache: {[id: number]: GameInfo} = {};
+  public lastLogIdCache: {[id: number]: number} = {};
 }

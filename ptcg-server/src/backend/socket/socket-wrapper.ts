@@ -6,8 +6,8 @@ export type Response<R = void> = (message: string, data?: R | ApiErrorEnum) => v
 export type Handler<T, R> = (data: T, response: Response<R>) => void;
 
 interface Listener<T, R> {
-  message: string,
-  handler: Handler<T, R>
+  message: string;
+  handler: Handler<T, R>;
 }
 
 export class SocketWrapper {
@@ -30,14 +30,14 @@ export class SocketWrapper {
           (message: string, data?: R | ApiErrorEnum) => fn && fn({message, data});
         try {
           await listener.handler(data, response);
-        } catch(error) {
+        } catch (error) {
           response('error', error.message);
         }
       });
     }
   }
 
-  public addListener<T, R>(message: string, handler: Handler<T, R>) {
+  public addListener<T, R>(message: string, handler: Handler<T, R>): void {
     const listener = {message, handler};
     this.listeners.push(listener);
   }
