@@ -1,16 +1,16 @@
-import { ChooseEnergyPrompt } from "../prompts/choose-energy-prompt";
-import { GameError } from "../../game-error";
-import { GameMessage, GameLog } from "../../game-message";
-import { Effect } from "../effects/effect";
-import { State } from "../state/state";
-import { StoreLike } from "../store-like";
-import { RetreatEffect } from "../effects/game-effects";
-import { StateUtils } from "../state-utils";
-import { CheckRetreatCostEffect, CheckProvidedEnergyEffect } from "../effects/check-effects";
-import { SpecialCondition } from "../card/card-types";
+import { ChooseEnergyPrompt } from '../prompts/choose-energy-prompt';
+import { GameError } from '../../game-error';
+import { GameMessage, GameLog } from '../../game-message';
+import { Effect } from '../effects/effect';
+import { State } from '../state/state';
+import { StoreLike } from '../store-like';
+import { RetreatEffect } from '../effects/game-effects';
+import { StateUtils } from '../state-utils';
+import { CheckRetreatCostEffect, CheckProvidedEnergyEffect } from '../effects/check-effects';
+import { SpecialCondition } from '../card/card-types';
 
 
-function retreatPokemon(store: StoreLike, state: State, effect: RetreatEffect) {
+function retreatPokemon(store: StoreLike, state: State, effect: RetreatEffect): void {
   const player = effect.player;
   const activePokemon = player.active.getPokemonCard();
   const benchedPokemon = player.bench[effect.benchIndex].getPokemonCard();

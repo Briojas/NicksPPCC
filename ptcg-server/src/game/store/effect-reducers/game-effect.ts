@@ -1,18 +1,18 @@
-import { GameError } from "../../game-error";
-import { GameMessage, GameLog } from "../../game-message";
-import { EndTurnEffect } from "../effects/game-phase-effects";
-import { Effect } from "../effects/effect";
-import { State, GamePhase } from "../state/state";
-import { StoreLike } from "../store-like";
-import { StateUtils } from "../state-utils";
+import { GameError } from '../../game-error';
+import { GameMessage, GameLog } from '../../game-message';
+import { EndTurnEffect } from '../effects/game-phase-effects';
+import { Effect } from '../effects/effect';
+import { State, GamePhase } from '../state/state';
+import { StoreLike } from '../store-like';
+import { StateUtils } from '../state-utils';
 import { CheckPokemonTypeEffect, CheckPokemonStatsEffect,
-  CheckProvidedEnergyEffect, CheckAttackCostEffect } from "../effects/check-effects";
-import { Weakness, Resistance } from "../card/pokemon-types";
-import { CardType, SpecialCondition, CardTag } from "../card/card-types";
+  CheckProvidedEnergyEffect, CheckAttackCostEffect } from '../effects/check-effects';
+import { Weakness, Resistance } from '../card/pokemon-types';
+import { CardType, SpecialCondition, CardTag } from '../card/card-types';
 import { AttackEffect, UseAttackEffect, HealEffect, KnockOutEffect,
-  UsePowerEffect, PowerEffect, UseStadiumEffect, EvolveEffect } from "../effects/game-effects";
-import { CoinFlipPrompt } from "../prompts/coin-flip-prompt";
-import { DealDamageEffect, ApplyWeaknessEffect } from "../effects/attack-effects";
+  UsePowerEffect, PowerEffect, UseStadiumEffect, EvolveEffect } from '../effects/game-effects';
+import { CoinFlipPrompt } from '../prompts/coin-flip-prompt';
+import { DealDamageEffect, ApplyWeaknessEffect } from '../effects/attack-effects';
 
 function applyWeaknessAndResistance(
   damage: number,

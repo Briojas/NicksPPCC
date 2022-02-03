@@ -1,16 +1,16 @@
-import { State, GamePhase, GameWinner } from "../state/state";
-import { StoreLike } from "../store-like";
-import { CheckHpEffect, CheckProvidedEnergyEffect, CheckTableStateEffect } from "../effects/check-effects";
-import { PokemonCardList } from "../state/pokemon-card-list";
-import { ChoosePokemonPrompt } from "../prompts/choose-pokemon-prompt";
-import { GameError } from "../../game-error";
-import { GameMessage, GameLog } from "../../game-message";
-import { ChoosePrizePrompt } from "../prompts/choose-prize-prompt";
-import { CardList } from "../state/card-list";
-import { PlayerType, SlotType } from "../actions/play-card-action";
-import { KnockOutEffect } from "../effects/game-effects";
-import { Effect } from "../effects/effect";
-import { EnergyCard } from "../card/energy-card";
+import { State, GamePhase, GameWinner } from '../state/state';
+import { StoreLike } from '../store-like';
+import { CheckHpEffect, CheckProvidedEnergyEffect, CheckTableStateEffect } from '../effects/check-effects';
+import { PokemonCardList } from '../state/pokemon-card-list';
+import { ChoosePokemonPrompt } from '../prompts/choose-pokemon-prompt';
+import { GameError } from '../../game-error';
+import { GameMessage, GameLog } from '../../game-message';
+import { ChoosePrizePrompt } from '../prompts/choose-prize-prompt';
+import { CardList } from '../state/card-list';
+import { PlayerType, SlotType } from '../actions/play-card-action';
+import { KnockOutEffect } from '../effects/game-effects';
+import { Effect } from '../effects/effect';
+import { EnergyCard } from '../card/energy-card';
 
 interface PokemonItem {
   playerNum: number;
@@ -39,7 +39,7 @@ function handleBenchSizeChange(store: StoreLike, state: State, benchSize: number
   state.players.forEach(player => {
     // Add empty slots if bench is smaller
     while (player.bench.length < benchSize) {
-      const bench = new PokemonCardList()
+      const bench = new PokemonCardList();
       bench.isPublic = true;
       player.bench.push(bench);
     }
@@ -151,9 +151,6 @@ export function endGame(store: StoreLike, state: State, winner: GameWinner): Sta
   }
 
   switch (winner) {
-    case GameWinner.NONE:
-      store.log(state, GameLog.LOG_GAME_FINISHED);
-      break;
     case GameWinner.DRAW:
       store.log(state, GameLog.LOG_GAME_FINISHED_DRAW);
       break;
@@ -163,6 +160,9 @@ export function endGame(store: StoreLike, state: State, winner: GameWinner): Sta
         ? state.players[0].name
         : state.players[1].name;
       store.log(state, GameLog.LOG_GAME_FINISHED_WINNER, { name: winnerName });
+      break;
+    default: //No winner or loser or draw
+      store.log(state, GameLog.LOG_GAME_FINISHED);
       break;
   }
 
@@ -251,8 +251,7 @@ function handlePrompts(
   });
 }
 
-function* executeCheckState(next: Function, store: StoreLike, state: State,
-  onComplete?: () => void): IterableIterator<State> {
+function* executeCheckState(next: Function, store: StoreLike, state: State, onComplete?: () => void): IterableIterator<State> {
 
   const prizesToTake: [number, number] = [0, 0];
 
@@ -277,7 +276,7 @@ function* executeCheckState(next: Function, store: StoreLike, state: State,
     }
 
     if (knockOutEffect.preventDefault === false) {
-      const opponentNum = item.playerNum === 0 ? 1 : 0
+      const opponentNum = item.playerNum === 0 ? 1 : 0;
       prizesToTake[opponentNum] += knockOutEffect.prizeCount;
     }
   }
