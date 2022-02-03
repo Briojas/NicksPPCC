@@ -13,7 +13,7 @@ export class Messages extends Controller {
 
   @Get('/list')
   @AuthToken()
-  public async onList(req: Request, res: Response) {
+  public async onList(req: Request, res: Response): Promise<void> {
     const userId: number = req.body.userId;
 
     const [conversationRows, total] = await this.db.manager.connection
@@ -55,7 +55,7 @@ export class Messages extends Controller {
 
   @Get('/get/:id')
   @AuthToken()
-  public async onGet(req: Request, res: Response) {
+  public async onGet(req: Request, res: Response): Promise<void> {
     const userId: number = req.body.userId;
     const defaultPageSize = config.backend.defaultPageSize;
     const page: number = parseInt(req.params.page, 10) || 0;
@@ -113,7 +113,7 @@ export class Messages extends Controller {
   @Validate({
     id: check().isNumber()
   })
-  public async onDeleteMessages(req: Request, res: Response) {
+  public async onDeleteMessages(req: Request, res: Response): Promise<void> {
     const userId: number = req.body.userId;
 
     const user1 = await User.findOne(userId);

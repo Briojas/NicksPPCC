@@ -14,7 +14,7 @@ export class Replays extends Controller {
 
   @Get('/list/:page?/:pageSize?')
   @AuthToken()
-  public async onList(req: Request, res: Response) {
+  public async onList(req: Request, res: Response): Promise<void> {
     const userId: number = req.body.userId;
     const defaultPageSize = config.backend.defaultPageSize;
     const page: number = parseInt(req.params.page, 10) || 0;
@@ -23,7 +23,7 @@ export class Replays extends Controller {
       where: [
         { user: { id: userId } }
       ],
-      order: { created: "DESC", name: "ASC" },
+      order: { created: 'DESC', name: 'ASC' },
       skip: page * pageSize,
       take: pageSize
     });
@@ -41,7 +41,7 @@ export class Replays extends Controller {
   @Validate({
     query: check().isString().required()
   })
-  public async onFind(req: Request, res: Response) {
+  public async onFind(req: Request, res: Response): Promise<void> {
     const body: { query: string } = req.body;
     const userId: number = req.body.userId;
     const defaultPageSize = config.backend.defaultPageSize;
@@ -57,7 +57,7 @@ export class Replays extends Controller {
 
     const [replayRows, total] = await Replay.findAndCount({
       where: { name: Like(`%${escapedQuery}%`), user: { id: userId } },
-      order: { created: "DESC", name: "ASC" },
+      order: { created: 'DESC', name: 'ASC' },
       skip: page * pageSize,
       take: pageSize
     });
@@ -72,7 +72,7 @@ export class Replays extends Controller {
 
   @Get('/match/:id')
   @AuthToken()
-  public async onMatchGet(req: Request, res: Response) {
+  public async onMatchGet(req: Request, res: Response): Promise<void> {
     const matchId: number = parseInt(req.params.id, 10);
     const entity = await Match.findOne(matchId);
 
@@ -88,7 +88,7 @@ export class Replays extends Controller {
 
   @Get('/get/:id')
   @AuthToken()
-  public async onGet(req: Request, res: Response) {
+  public async onGet(req: Request, res: Response): Promise<void> {
     const userId: number = req.body.userId;
     const replayId: number = parseInt(req.params.id, 10);
     const entity = await Replay.findOne(replayId, { relations: ['user'] });
@@ -109,7 +109,7 @@ export class Replays extends Controller {
     name: check().minLength(3).maxLength(32),
     id: check().isNumber()
   })
-  public async onSave(req: Request, res: Response) {
+  public async onSave(req: Request, res: Response): Promise<void> {
     const body: { id: number, name: string } = req.body;
 
     const userId: number = req.body.userId;
@@ -165,7 +165,7 @@ export class Replays extends Controller {
   @Validate({
     id: check().isNumber()
   })
-  public async onDelete(req: Request, res: Response) {
+  public async onDelete(req: Request, res: Response): Promise<void> {
     const body: { id: number } = req.body;
 
     const userId: number = req.body.userId;
@@ -194,9 +194,9 @@ export class Replays extends Controller {
   @AuthToken()
   @Validate({
     id: check().isNumber(),
-    name: check().minLength(3).maxLength(32),
+    name: check().minLength(3).maxLength(32)
   })
-  public async onRename(req: Request, res: Response) {
+  public async onRename(req: Request, res: Response): Promise<void> {
     const body: { id: number, name: string } = req.body;
 
     const userId: number = req.body.userId;
@@ -235,9 +235,9 @@ export class Replays extends Controller {
   @AuthToken()
   @Validate({
     name: check().minLength(3).maxLength(32),
-    replayData: check().isString().required(),
+    replayData: check().isString().required()
   })
-  public async onImport(req: Request, res: Response) {
+  public async onImport(req: Request, res: Response): Promise<void> {
     const body: ReplayImport = req.body;
 
     const userId: number = req.body.userId;

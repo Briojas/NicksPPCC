@@ -21,7 +21,7 @@ export abstract class Controller {
     protected core: Core
   ) { }
 
-  public init(): void {};
+  public init(): void {}
 
   protected buildUserInfo(user: User): UserInfo {
     const connected = this.core.clients
@@ -41,27 +41,27 @@ export abstract class Controller {
     };
   }
 
-  protected escapeLikeString(raw: string, escapeChar = '\\'): string {
+  protected escapeLikeString(raw: string, escapeChar: string = '\\'): string {
     return raw.replace(/[\\%_]/g, match => escapeChar + match);
   }
 }
 
-export function Get(path: string) {
-  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+export function Get(path: string): Function {
+  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor): void {
     const init = target.init;
-    target.init = function() {
+    target.init = function(): void {
       init.call(this);
       this.app.get(`${this.path}${path}`, descriptor.value.bind(this));
-    }
-  }
+    };
+  };
 }
 
-export function Post(path: string) {
-  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+export function Post(path: string): Function {
+  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor): void {
     const init = target.init;
-    target.init = function() {
+    target.init = function():void {
       init.call(this);
       this.app.post(`${this.path}${path}`, descriptor.value.bind(this));
-    }
-  }
+    };
+  };
 }

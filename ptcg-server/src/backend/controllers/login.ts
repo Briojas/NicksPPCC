@@ -11,7 +11,7 @@ import { config } from '../../config';
 
 export class Login extends Controller {
 
-  private rateLimit = RateLimit.getInstance();
+  private rateLimit: RateLimit = RateLimit.getInstance();
 
   @Post('/register')
   @Validate({
@@ -19,7 +19,7 @@ export class Login extends Controller {
     email: check().isEmail(),
     password: check().isPassword()
   })
-  public async onRegister(req: Request, res: Response, next: NextFunction) {
+  public async onRegister(req: Request, res: Response, next: NextFunction): Promise<void> {
     const body: RegisterRequest = req.body;
 
     if (config.backend.registrationEnabled === false) {
@@ -73,7 +73,7 @@ export class Login extends Controller {
     name: check().isName(),
     password: check().isString()
   })
-  public async onLogin(req: Request, res: Response) {
+  public async onLogin(req: Request, res: Response): Promise<void> {
     const body: LoginRequest = req.body;
     const user = await User.findOne({name: body.name});
 
@@ -96,7 +96,7 @@ export class Login extends Controller {
 
   @Get('/refreshToken')
   @AuthToken()
-  public async onRefreshToken(req: Request, res: Response) {
+  public async onRefreshToken(req: Request, res: Response): Promise<void> {
     const userId: number = req.body.userId;
     const token = generateToken(userId);
     res.send({ok: true, token, config: this.getServerConfig()});
@@ -104,12 +104,12 @@ export class Login extends Controller {
 
   @Get('/logout')
   @AuthToken()
-  public onLogout(req: Request, res: Response) {
+  public onLogout(req: Request, res: Response): void {
     res.send({ok: true});
   }
 
   @Get('/info')
-  public onInfo(req: Request, res: Response) {
+  public onInfo(req: Request, res: Response): void {
     res.send({ok: true, config: this.getServerConfig()});
   }
 

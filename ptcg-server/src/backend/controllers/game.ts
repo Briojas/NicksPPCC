@@ -8,7 +8,7 @@ export class Game extends Controller {
 
   @Get('/:id/logs')
   @AuthToken()
-  public async onLogs(req: Request, res: Response) {
+  public async onLogs(req: Request, res: Response): Promise<void> {
     const gameId: number = parseInt(req.params.id, 10);
     const game = this.core.games.find(g => g.id === gameId);
     if (game === undefined) {
@@ -21,7 +21,7 @@ export class Game extends Controller {
 
   @Get('/:id/playerStats')
   @AuthToken()
-  public async onPlayerStats(req: Request, res: Response) {
+  public async onPlayerStats(req: Request, res: Response): Promise<void> {
     const gameId: number = parseInt(req.params.id, 10);
     const game = this.core.games.find(g => g.id === gameId);
     if (game === undefined) {

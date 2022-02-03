@@ -11,13 +11,13 @@ export class Ranking extends Controller {
 
   @Get('/list/:page?/:pageSize?')
   @AuthToken()
-  public async onList(req: Request, res: Response) {
+  public async onList(req: Request, res: Response): Promise<void> {
     const defaultPageSize = config.backend.defaultPageSize;
     const page: number = parseInt(req.params.page, 10) || 0;
     const pageSize: number = parseInt(req.params.pageSize, 10) || defaultPageSize;
 
     const [users, total] = await User.findAndCount({
-      order: { ranking: "DESC", lastRankingChange: "DESC", registered: "ASC" },
+      order: { ranking: 'DESC', lastRankingChange: 'DESC', registered: 'ASC' },
       skip: page * pageSize,
       take: pageSize
     });
@@ -28,7 +28,7 @@ export class Ranking extends Controller {
       return {
         position,
         user: this.buildUserInfo(user)
-      }
+      };
     });
 
     res.send({ok: true, ranking, total});
@@ -39,7 +39,7 @@ export class Ranking extends Controller {
   @Validate({
     query: check().isString().required()
   })
-  public async onFind(req: Request, res: Response) {
+  public async onFind(req: Request, res: Response): Promise<void> {
     const body: { query: string } = req.body;
     const defaultPageSize = config.backend.defaultPageSize;
     const page: number = parseInt(req.params.page, 10) || 0;
@@ -54,7 +54,7 @@ export class Ranking extends Controller {
 
     const [users, total] = await User.findAndCount({
       where: { name: Like(`%${escapedQuery}%`) },
-      order: { ranking: "DESC", lastRankingChange: "DESC", registered: "ASC" },
+      order: { ranking: 'DESC', lastRankingChange: 'DESC', registered: 'ASC' },
       skip: page * pageSize,
       take: pageSize
     });
@@ -65,7 +65,7 @@ export class Ranking extends Controller {
       return {
         position,
         user: this.buildUserInfo(user)
-      }
+      };
     });
 
     res.send({ok: true, ranking, total});

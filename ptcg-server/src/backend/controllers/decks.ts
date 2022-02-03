@@ -11,7 +11,7 @@ export class Decks extends Controller {
 
   @Get('/list')
   @AuthToken()
-  public async onList(req: Request, res: Response) {
+  public async onList(req: Request, res: Response): Promise<void> {
     const userId: number = req.body.userId;
     const user = await User.findOne(userId, { relations: ['decks'] });
 
@@ -32,7 +32,7 @@ export class Decks extends Controller {
 
   @Get('/get/:id')
   @AuthToken()
-  public async onGet(req: Request, res: Response) {
+  public async onGet(req: Request, res: Response): Promise<void> {
     const userId: number = req.body.userId;
     const deckId: number = parseInt(req.params.id, 10);
     const entity = await Deck.findOne(deckId, { relations: ['user'] });
@@ -59,7 +59,7 @@ export class Decks extends Controller {
     name: check().minLength(3).maxLength(32),
     cards: check().required()
   })
-  public async onSave(req: Request, res: Response) {
+  public async onSave(req: Request, res: Response): Promise<void> {
     const body: DeckSaveRequest = req.body;
 
     // optional id parameter, without ID new deck will be created
@@ -121,7 +121,7 @@ export class Decks extends Controller {
   @Validate({
     id: check().isNumber()
   })
-  public async onDelete(req: Request, res: Response) {
+  public async onDelete(req: Request, res: Response): Promise<void> {
     const body: { id: number } = req.body;
 
     const userId: number = req.body.userId;
@@ -150,9 +150,9 @@ export class Decks extends Controller {
   @AuthToken()
   @Validate({
     id: check().isNumber(),
-    name: check().minLength(3).maxLength(32),
+    name: check().minLength(3).maxLength(32)
   })
-  public async onRename(req: Request, res: Response) {
+  public async onRename(req: Request, res: Response): Promise<void> {
     const body: { id: number, name: string } = req.body;
 
     const userId: number = req.body.userId;
@@ -191,9 +191,9 @@ export class Decks extends Controller {
   @AuthToken()
   @Validate({
     id: check().isNumber(),
-    name: check().minLength(3).maxLength(32),
+    name: check().minLength(3).maxLength(32)
   })
-  public async onDuplicate(req: Request, res: Response) {
+  public async onDuplicate(req: Request, res: Response): Promise<void> {
     const body: any = req.body;
 
     const userId: number = req.body.userId;
@@ -218,7 +218,7 @@ export class Decks extends Controller {
     return this.onSave(req, res);
   }
 
-  private validateCards(deck: string[]) {
+  private validateCards(deck: string[]): boolean {
     if (!(deck instanceof Array)) {
       return false;
     }

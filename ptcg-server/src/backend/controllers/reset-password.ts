@@ -16,15 +16,15 @@ interface OneTimeToken {
 
 export class ResetPassword extends Controller {
 
-  private rateLimit = RateLimit.getInstance();
-  private mailer = new Mailer();
+  private rateLimit: RateLimit = RateLimit.getInstance();
+  private mailer: Mailer = new Mailer();
   private tokens: OneTimeToken[] = [];
 
   @Post('/sendMail')
   @Validate({
-    email: check().isEmail(),
+    email: check().isEmail()
   })
-  public async onSendMail(req: Request, res: Response) {
+  public async onSendMail(req: Request, res: Response): Promise<void> {
     const body: { email: string, language?: string } = req.body;
 
     if (this.rateLimit.isLimitExceeded(req.ip)) {
@@ -46,7 +46,8 @@ export class ResetPassword extends Controller {
 
     const token = this.generateToken(user.id);
     const language = body.language ? String(body.language) : 'en';
-    const template = resetPasswordTemplates[language] || resetPasswordTemplates['en'];
+    const defaultLanguage = 'en';
+    const template = resetPasswordTemplates[language] || resetPasswordTemplates[defaultLanguage];
     const params = {
       appName: config.email.appName,
       publicAddress: config.email.publicAddress,
@@ -69,7 +70,7 @@ export class ResetPassword extends Controller {
     token: check().isString().required(),
     newPassword: check().minLength(3).maxLength(32)
   })
-  public async onChangePassword(req: Request, res: Response) {
+  public async onChangePassword(req: Request, res: Response): Promise<void> {
     const body: { token: string, newPassword: string } = req.body;
 
     const token = this.validateToken(body.token);

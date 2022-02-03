@@ -15,7 +15,7 @@ export class Profile extends Controller {
 
   @Get('/me')
   @AuthToken()
-  public async onMe(req: Request, res: Response) {
+  public async onMe(req: Request, res: Response): Promise<void> {
     const userId: number = req.body.userId;
     const user = await User.findOne(userId);
     if (user === undefined) {
@@ -28,7 +28,7 @@ export class Profile extends Controller {
 
   @Get('/get/:id')
   @AuthToken()
-  public async onGet(req: Request, res: Response) {
+  public async onGet(req: Request, res: Response): Promise<void> {
     const userId: number = parseInt(req.params.id, 10);
     const user = await User.findOne(userId);
     if (user === undefined) {
@@ -41,7 +41,7 @@ export class Profile extends Controller {
 
   @Get('/matchHistory/:userId/:page?/:pageSize?')
   @AuthToken()
-  public async onMatchHistory(req: Request, res: Response) {
+  public async onMatchHistory(req: Request, res: Response): Promise<void> {
     const defaultPageSize = config.backend.defaultPageSize;
     const userId: number = parseInt(req.params.userId, 10) || 0;
     const page: number = parseInt(req.params.page, 10) || 0;
@@ -53,7 +53,7 @@ export class Profile extends Controller {
     const [matchRows, total] = await Match.findAndCount({
       relations: ['player1', 'player2'],
       where,
-      order: { created: "DESC" },
+      order: { created: 'DESC' },
       skip: page * pageSize,
       take: pageSize
     });
@@ -89,7 +89,7 @@ export class Profile extends Controller {
     currentPassword: check().isPassword(),
     newPassword: check().isPassword()
   })
-  public async onChangePassword(req: Request, res: Response) {
+  public async onChangePassword(req: Request, res: Response): Promise<void> {
     const userId: number = req.body.userId;
     const body: { currentPassword: string, newPassword: string } = req.body;
     const user = await User.findOne(userId);
@@ -115,9 +115,9 @@ export class Profile extends Controller {
   @Post('/changeEmail')
   @AuthToken()
   @Validate({
-    email: check().isEmail(),
+    email: check().isEmail()
   })
-  public async onChangeEmail(req: Request, res: Response) {
+  public async onChangeEmail(req: Request, res: Response): Promise<void> {
     const userId: number = req.body.userId;
     const body: { email: string } = req.body;
     const user = await User.findOne(userId);

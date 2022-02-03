@@ -16,7 +16,7 @@ export class Avatars extends Controller {
 
   @Get('/list/:id?')
   @AuthToken()
-  public async onList(req: Request, res: Response) {
+  public async onList(req: Request, res: Response): Promise<void> {
     const userId: number = parseInt(req.params.id, 10) || req.body.userId;
     const user = await User.findOne(userId, { relations: ['avatars'] });
 
@@ -36,7 +36,7 @@ export class Avatars extends Controller {
 
   @Get('/get/:id')
   @AuthToken()
-  public async onGet(req: Request, res: Response) {
+  public async onGet(req: Request, res: Response): Promise<void> {
     const avatarId: number = parseInt(req.params.id, 10);
     const avatar = await Avatar.findOne(avatarId);
     if (avatar === undefined) {
@@ -57,7 +57,7 @@ export class Avatars extends Controller {
     id: check().isNumber(),
     name: check().minLength(3).maxLength(32)
   })
-  public async onFind(req: Request, res: Response) {
+  public async onFind(req: Request, res: Response): Promise<void> {
     const body: { id: number, name: string } = req.body;
 
     const avatars = await Avatar.find({
@@ -84,7 +84,7 @@ export class Avatars extends Controller {
     imageBase64: check().required()
   })
   @Transaction()
-  public async onAdd(req: Request, res: Response, @TransactionManager() manager: EntityManager) {
+  public async onAdd(req: Request, res: Response, @TransactionManager() manager: EntityManager): Promise<void> {
     const body: AvatarAddRequest = req.body;
 
     const userId: number = req.body.userId;
@@ -139,7 +139,7 @@ export class Avatars extends Controller {
     id: check().isNumber()
   })
   @Transaction()
-  public async onDelete(req: Request, res: Response, @TransactionManager() manager: EntityManager) {
+  public async onDelete(req: Request, res: Response, @TransactionManager() manager: EntityManager): Promise<void> {
     const body: { id: number } = req.body;
 
     const userId: number = req.body.userId;
@@ -178,9 +178,9 @@ export class Avatars extends Controller {
   @AuthToken()
   @Validate({
     id: check().isNumber(),
-    name: check().minLength(3).maxLength(32),
+    name: check().minLength(3).maxLength(32)
   })
-  public async onRename(req: Request, res: Response) {
+  public async onRename(req: Request, res: Response): Promise<void> {
     const body: { id: number, name: string } = req.body;
 
     const userId: number = req.body.userId;
@@ -221,7 +221,7 @@ export class Avatars extends Controller {
   @Validate({
     id: check().isNumber()
   })
-  public async onMarkAsDefault(req: Request, res: Response) {
+  public async onMarkAsDefault(req: Request, res: Response): Promise<void> {
     const body: { id: number, name: string } = req.body;
 
     const userId: number = req.body.userId;
