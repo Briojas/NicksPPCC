@@ -11,25 +11,25 @@ export enum SuperType {
   NONE,
   POKEMON,
   TRAINER,
-  ENERGY,
+  ENERGY
 }
 
 export enum EnergyType {
   BASIC,
-  SPECIAL,
+  SPECIAL
 }
 
 export enum TrainerType {
   ITEM,
   SUPPORTER,
   STADIUM,
-  TOOL,
+  TOOL
 }
 
 export enum PokemonType {
   NORMAL,
   EX,
-  LEGEND,
+  LEGEND
 }
 
 export enum Stage {
@@ -37,7 +37,7 @@ export enum Stage {
   RESTORED,
   BASIC,
   STAGE_1,
-  STAGE_2,
+  STAGE_2
 }
 
 export enum CardType {
@@ -53,7 +53,7 @@ export enum CardType {
   DARK,
   FIRE,
   DRAGON,
-  FAIRY,
+  FAIRY
 }
 
 export enum SpecialCondition {
