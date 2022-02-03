@@ -3,7 +3,7 @@ import { CardTarget } from './play-card-action';
 
 export class AttackAction implements Action {
 
-  readonly type: string = 'ATTACK_ACTION';
+  public readonly type: string = 'ATTACK_ACTION';
 
   constructor(
     public clientId: number,
