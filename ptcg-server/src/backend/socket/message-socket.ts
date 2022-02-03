@@ -29,9 +29,12 @@ export class MessageSocket {
     this.socket.emit('message:read', { user: CoreSocket.buildUserInfo(user) });
   }
 
-  private async sendMessage(params: { userId: number, text: string }, response: Response<{ message: MessageInfo, user: UserInfo }>): Promise<void> {
-    let messageInfo: MessageInfo;
-    let userInfo: UserInfo;
+  private async sendMessage(
+    params: { userId: number, text: string }, 
+    response: Response<{ message: MessageInfo, user: UserInfo }>
+  ): Promise<void> {
+      let messageInfo: MessageInfo;
+      let userInfo: UserInfo;
 
     const text = (params.text || '').trim();
     if (text.length === 0 || text.length > 2048) {
