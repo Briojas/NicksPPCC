@@ -1,9 +1,9 @@
-import { Attack, Power } from "../card/pokemon-types";
-import { Effect } from "./effect";
-import { Player } from "../state/player";
-import { PokemonCard } from "../card/pokemon-card";
-import { PokemonCardList } from "../state/pokemon-card-list";
-import { Card } from "../card/card";
+import { Attack, Power } from '../card/pokemon-types';
+import { Effect } from './effect';
+import { Player } from '../state/player';
+import { PokemonCard } from '../card/pokemon-card';
+import { PokemonCardList } from '../state/pokemon-card-list';
+import { Card } from '../card/card';
 
 export enum GameEffects {
   RETREAT_EFFECT = 'RETREAT_EFFECT',
@@ -18,8 +18,8 @@ export enum GameEffects {
 }
 
 export class RetreatEffect implements Effect {
-  readonly type: string = GameEffects.RETREAT_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = GameEffects.RETREAT_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public benchIndex: number;
 
@@ -30,8 +30,8 @@ export class RetreatEffect implements Effect {
 }
 
 export class UsePowerEffect implements Effect {
-  readonly type: string = GameEffects.USE_POWER_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = GameEffects.USE_POWER_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public power: Power;
   public card: PokemonCard;
@@ -44,8 +44,8 @@ export class UsePowerEffect implements Effect {
 }
 
 export class PowerEffect implements Effect {
-  readonly type: string = GameEffects.POWER_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = GameEffects.POWER_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public power: Power;
   public card: PokemonCard;
@@ -58,8 +58,8 @@ export class PowerEffect implements Effect {
 }
 
 export class UseAttackEffect implements Effect {
-  readonly type: string = GameEffects.USE_ATTACK_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = GameEffects.USE_ATTACK_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public attack: Attack;
 
@@ -70,8 +70,8 @@ export class UseAttackEffect implements Effect {
 }
 
 export class UseStadiumEffect implements Effect {
-  readonly type: string = GameEffects.USE_STADIUM_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = GameEffects.USE_STADIUM_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public stadium: Card;
 
@@ -82,8 +82,8 @@ export class UseStadiumEffect implements Effect {
 }
 
 export class AttackEffect implements Effect {
-  readonly type: string = GameEffects.ATTACK_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = GameEffects.ATTACK_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public opponent: Player;
   public attack: Attack;
@@ -101,8 +101,8 @@ export class AttackEffect implements Effect {
 
 // how many prizes when target Pokemon is KO
 export class KnockOutEffect implements Effect {
-  readonly type: string = GameEffects.KNOCK_OUT_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = GameEffects.KNOCK_OUT_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public target: PokemonCardList;
   public prizeCount: number;
@@ -115,8 +115,8 @@ export class KnockOutEffect implements Effect {
 }
 
 export class HealEffect implements Effect {
-  readonly type: string = GameEffects.HEAL_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = GameEffects.HEAL_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public target: PokemonCardList;
   public damage: number;
@@ -129,8 +129,8 @@ export class HealEffect implements Effect {
 }
 
 export class EvolveEffect implements Effect {
-  readonly type: string = GameEffects.EVOLVE_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = GameEffects.EVOLVE_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public target: PokemonCardList;
   public pokemonCard: PokemonCard;

@@ -1,10 +1,10 @@
-import { Attack } from "../card/pokemon-types";
-import { AttackEffect } from "./game-effects";
-import { Card } from "../card/card";
-import { Effect } from "./effect";
-import { Player } from "../state/player";
-import { PokemonCardList } from "../state/pokemon-card-list";
-import { SpecialCondition } from "../card/card-types";
+import { Attack } from '../card/pokemon-types';
+import { AttackEffect } from './game-effects';
+import { Card } from '../card/card';
+import { Effect } from './effect';
+import { Player } from '../state/player';
+import { PokemonCardList } from '../state/pokemon-card-list';
+import { SpecialCondition } from '../card/card-types';
 
 export enum AttackEffects {
   APPLY_WEAKNESS_EFFECT = 'APPLY_WEAKNESS_EFFECT',
@@ -36,11 +36,11 @@ export abstract class AbstractAttackEffect {
 }
 
 export class ApplyWeaknessEffect extends AbstractAttackEffect implements Effect {
-  readonly type: string = AttackEffects.APPLY_WEAKNESS_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = AttackEffects.APPLY_WEAKNESS_EFFECT;
+  public preventDefault: boolean = false;
   public damage: number;
-  public ignoreResistance = false;
-  public ignoreWeakness = false;
+  public ignoreResistance: boolean = false;
+  public ignoreWeakness: boolean = false;
 
   constructor(base: AttackEffect, damage: number) {
     super(base);
@@ -49,8 +49,8 @@ export class ApplyWeaknessEffect extends AbstractAttackEffect implements Effect 
 }
 
 export class DealDamageEffect extends AbstractAttackEffect implements Effect {
-  readonly type: string = AttackEffects.DEAL_DAMAGE_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = AttackEffects.DEAL_DAMAGE_EFFECT;
+  public preventDefault: boolean = false;
   public damage: number;
 
   constructor(base: AttackEffect, damage: number) {
@@ -60,8 +60,8 @@ export class DealDamageEffect extends AbstractAttackEffect implements Effect {
 }
 
 export class PutDamageEffect extends AbstractAttackEffect implements Effect {
-  readonly type: string = AttackEffects.PUT_DAMAGE_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = AttackEffects.PUT_DAMAGE_EFFECT;
+  public preventDefault: boolean = false;
   public damage: number;
 
   constructor(base: AttackEffect, damage: number) {
@@ -71,8 +71,8 @@ export class PutDamageEffect extends AbstractAttackEffect implements Effect {
 }
 
 export class AfterDamageEffect extends AbstractAttackEffect implements Effect {
-  readonly type: string = AttackEffects.AFTER_DAMAGE_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = AttackEffects.AFTER_DAMAGE_EFFECT;
+  public preventDefault: boolean = false;
   public damage: number;
 
   constructor(base: AttackEffect, damage: number) {
@@ -82,8 +82,8 @@ export class AfterDamageEffect extends AbstractAttackEffect implements Effect {
 }
 
 export class PutCountersEffect extends AbstractAttackEffect implements Effect {
-  readonly type: string = AttackEffects.PUT_COUNTERS_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = AttackEffects.PUT_COUNTERS_EFFECT;
+  public preventDefault: boolean = false;
   public damage: number;
 
   constructor(base: AttackEffect, damage: number) {
@@ -93,8 +93,8 @@ export class PutCountersEffect extends AbstractAttackEffect implements Effect {
 }
 
 export class DiscardCardsEffect extends AbstractAttackEffect implements Effect {
-  readonly type: string = AttackEffects.DISCARD_CARD_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = AttackEffects.DISCARD_CARD_EFFECT;
+  public preventDefault: boolean = false;
   public cards: Card[];
 
   constructor(base: AttackEffect, energyCards: Card[]) {
@@ -104,8 +104,8 @@ export class DiscardCardsEffect extends AbstractAttackEffect implements Effect {
 }
 
 export class AddMarkerEffect extends AbstractAttackEffect implements Effect {
-  readonly type: string = AttackEffects.ADD_MARKER_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = AttackEffects.ADD_MARKER_EFFECT;
+  public preventDefault: boolean = false;
   public markerName: string;
   public markerSource: Card;
 
@@ -117,8 +117,8 @@ export class AddMarkerEffect extends AbstractAttackEffect implements Effect {
 }
 
 export class AddSpecialConditionsEffect extends AbstractAttackEffect implements Effect {
-  readonly type: string = AttackEffects.ADD_SPECIAL_CONDITIONS_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = AttackEffects.ADD_SPECIAL_CONDITIONS_EFFECT;
+  public preventDefault: boolean = false;
   public poisonDamage?: number;
   public specialConditions: SpecialCondition[];
 
@@ -129,8 +129,8 @@ export class AddSpecialConditionsEffect extends AbstractAttackEffect implements 
 }
 
 export class RemoveSpecialConditionsEffect extends AbstractAttackEffect implements Effect {
-  readonly type: string = AttackEffects.ADD_SPECIAL_CONDITIONS_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = AttackEffects.ADD_SPECIAL_CONDITIONS_EFFECT;
+  public preventDefault: boolean = false;
   public specialConditions: SpecialCondition[];
 
   constructor(base: AttackEffect, specialConditions: SpecialCondition[] | undefined) {
@@ -149,8 +149,8 @@ export class RemoveSpecialConditionsEffect extends AbstractAttackEffect implemen
 }
 
 export class HealTargetEffect extends AbstractAttackEffect implements Effect {
-  readonly type: string = AttackEffects.ADD_MARKER_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = AttackEffects.ADD_MARKER_EFFECT;
+  public preventDefault: boolean = false;
   public damage: number;
 
   constructor(base: AttackEffect, damage: number) {

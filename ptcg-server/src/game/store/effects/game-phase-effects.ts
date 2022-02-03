@@ -1,5 +1,5 @@
-import { Effect } from "./effect";
-import { Player } from "../state/player";
+import { Effect } from './effect';
+import { Player } from '../state/player';
 
 export enum GamePhaseEffects {
   END_TURN_EFFECT = 'END_TURN_EFFECT',
@@ -8,8 +8,8 @@ export enum GamePhaseEffects {
 }
 
 export class EndTurnEffect implements Effect {
-  readonly type: string = GamePhaseEffects.END_TURN_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = GamePhaseEffects.END_TURN_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
 
   constructor(player: Player) {
@@ -18,16 +18,16 @@ export class EndTurnEffect implements Effect {
 }
 
 export class WhoBeginsEffect implements Effect {
-  readonly type: string = GamePhaseEffects.END_TURN_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = GamePhaseEffects.END_TURN_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player | undefined;
 
   constructor() { }
 }
 
 export class BetweenTurnsEffect implements Effect {
-  readonly type: string = GamePhaseEffects.BETWEEN_TURNS_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = GamePhaseEffects.BETWEEN_TURNS_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public poisonDamage: number;
   public burnDamage: number;

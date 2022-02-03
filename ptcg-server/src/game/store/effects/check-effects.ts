@@ -1,9 +1,9 @@
-import { CardType } from "../card/card-types";
-import { Effect } from "./effect";
-import { Player } from "../state/player";
-import { PokemonCardList } from "../state/pokemon-card-list";
-import { Resistance, Weakness, Attack } from "../card/pokemon-types";
-import { EnergyMap } from "../prompts/choose-energy-prompt";
+import { CardType } from '../card/card-types';
+import { Effect } from './effect';
+import { Player } from '../state/player';
+import { PokemonCardList } from '../state/pokemon-card-list';
+import { Resistance, Weakness, Attack } from '../card/pokemon-types';
+import { EnergyMap } from '../prompts/choose-energy-prompt';
 
 export enum CheckEffects {
   CHECK_HP_EFFECT = 'CHECK_HP_EFFECT',
@@ -18,8 +18,8 @@ export enum CheckEffects {
 }
 
 export class CheckHpEffect implements Effect {
-  readonly type: string = CheckEffects.CHECK_HP_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = CheckEffects.CHECK_HP_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public target: PokemonCardList;
   public hp: number;
@@ -33,8 +33,8 @@ export class CheckHpEffect implements Effect {
 }
 
 export class CheckPokemonPlayedTurnEffect implements Effect {
-  readonly type: string = CheckEffects.CHECK_POKEMON_PLAYED_TURN_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = CheckEffects.CHECK_POKEMON_PLAYED_TURN_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public target: PokemonCardList;
   public pokemonPlayedTurn: number;
@@ -47,8 +47,8 @@ export class CheckPokemonPlayedTurnEffect implements Effect {
 }
 
 export class CheckPokemonStatsEffect implements Effect {
-  readonly type: string = CheckEffects.CHECK_POKEMON_STATS_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = CheckEffects.CHECK_POKEMON_STATS_EFFECT;
+  public preventDefault: boolean = false;
   public target: PokemonCardList;
   public weakness: Weakness[];
   public resistance: Resistance[];
@@ -62,8 +62,8 @@ export class CheckPokemonStatsEffect implements Effect {
 }
 
 export class CheckPokemonTypeEffect implements Effect {
-  readonly type: string = CheckEffects.CHECK_POKEMON_TYPE_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = CheckEffects.CHECK_POKEMON_TYPE_EFFECT;
+  public preventDefault: boolean = false;
   public target: PokemonCardList;
   public cardTypes: CardType[];
 
@@ -75,8 +75,8 @@ export class CheckPokemonTypeEffect implements Effect {
 }
 
 export class CheckRetreatCostEffect implements Effect {
-  readonly type: string = CheckEffects.CHECK_RETREAT_COST_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = CheckEffects.CHECK_RETREAT_COST_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public cost: CardType[];
 
@@ -88,8 +88,8 @@ export class CheckRetreatCostEffect implements Effect {
 }
 
 export class CheckAttackCostEffect implements Effect {
-  readonly type: string = CheckEffects.CHECK_ATTACK_COST_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = CheckEffects.CHECK_ATTACK_COST_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public attack: Attack;
   public cost: CardType[];
@@ -102,8 +102,8 @@ export class CheckAttackCostEffect implements Effect {
 }
 
 export class CheckProvidedEnergyEffect implements Effect {
-  readonly type: string = CheckEffects.CHECK_ENOUGH_ENERGY_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = CheckEffects.CHECK_ENOUGH_ENERGY_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public source: PokemonCardList;
   public energyMap: EnergyMap[] = [];
@@ -115,8 +115,8 @@ export class CheckProvidedEnergyEffect implements Effect {
 }
 
 export class CheckTableStateEffect implements Effect {
-  readonly type: string = CheckEffects.CHECK_TABLE_STATE_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = CheckEffects.CHECK_TABLE_STATE_EFFECT;
+  public preventDefault: boolean = false;
   public benchSize: number;
 
   constructor() {

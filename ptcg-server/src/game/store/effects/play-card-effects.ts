@@ -1,10 +1,10 @@
-import { Effect } from "./effect";
-import { EnergyCard } from "../card/energy-card";
-import { Player } from "../state/player";
-import { PokemonCard } from "../card/pokemon-card";
-import { PokemonCardList } from "../state/pokemon-card-list";
-import { TrainerCard } from "../card/trainer-card";
-import {CardList} from "../state/card-list";
+import { Effect } from './effect';
+import { EnergyCard } from '../card/energy-card';
+import { Player } from '../state/player';
+import { PokemonCard } from '../card/pokemon-card';
+import { PokemonCardList } from '../state/pokemon-card-list';
+import { TrainerCard } from '../card/trainer-card';
+import {CardList} from '../state/card-list';
 
 export enum PlayCardEffects {
   ATTACH_ENERGY_EFFECT = 'ATTACH_ENERGY_EFFECT',
@@ -17,8 +17,8 @@ export enum PlayCardEffects {
 }
 
 export class AttachEnergyEffect implements Effect {
-  readonly type: string = PlayCardEffects.ATTACH_ENERGY_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = PlayCardEffects.ATTACH_ENERGY_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public energyCard: EnergyCard;
   public target: PokemonCardList;
@@ -31,8 +31,8 @@ export class AttachEnergyEffect implements Effect {
 }
 
 export class PlayPokemonEffect implements Effect {
-  readonly type: string = PlayCardEffects.PLAY_POKEMON_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = PlayCardEffects.PLAY_POKEMON_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public pokemonCard: PokemonCard;
   public target: PokemonCardList;
@@ -45,8 +45,8 @@ export class PlayPokemonEffect implements Effect {
 }
 
 export class PlaySupporterEffect implements Effect {
-  readonly type: string = PlayCardEffects.PLAY_SUPPORTER_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = PlayCardEffects.PLAY_SUPPORTER_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public trainerCard: TrainerCard;
   public target: CardList | undefined;
@@ -59,8 +59,8 @@ export class PlaySupporterEffect implements Effect {
 }
 
 export class PlayStadiumEffect implements Effect {
-  readonly type: string = PlayCardEffects.PLAY_STADIUM_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = PlayCardEffects.PLAY_STADIUM_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public trainerCard: TrainerCard;
 
@@ -71,8 +71,8 @@ export class PlayStadiumEffect implements Effect {
 }
 
 export class AttachPokemonToolEffect implements Effect {
-  readonly type: string = PlayCardEffects.PLAY_POKEMON_TOOL_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = PlayCardEffects.PLAY_POKEMON_TOOL_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public trainerCard: TrainerCard;
   public target: PokemonCardList;
@@ -85,8 +85,8 @@ export class AttachPokemonToolEffect implements Effect {
 }
 
 export class PlayItemEffect implements Effect {
-  readonly type: string = PlayCardEffects.PLAY_ITEM_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = PlayCardEffects.PLAY_ITEM_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public trainerCard: TrainerCard;
   public target: CardList | undefined;
@@ -99,8 +99,8 @@ export class PlayItemEffect implements Effect {
 }
 
 export class TrainerEffect implements Effect {
-  readonly type: string = PlayCardEffects.TRAINER_EFFECT;
-  public preventDefault = false;
+  public readonly type: string = PlayCardEffects.TRAINER_EFFECT;
+  public preventDefault: boolean = false;
   public player: Player;
   public trainerCard: TrainerCard;
   public target: CardList | undefined;
