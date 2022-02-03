@@ -1,4 +1,4 @@
-import { Action } from "./action";
+import { Action } from './action';
 
 export enum PlayerType {
   ANY,
@@ -22,7 +22,7 @@ export interface CardTarget {
 
 export class PlayCardAction implements Action {
 
-  readonly type: string = 'PLAY_CARD_ACTION';
+  public readonly type: string = 'PLAY_CARD_ACTION';
 
   constructor(
     public id: number,

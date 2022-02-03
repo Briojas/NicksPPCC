@@ -1,5 +1,5 @@
-import { Action } from "./action";
-import { CardTarget } from "./play-card-action";
+import { Action } from './action';
+import { CardTarget } from './play-card-action';
 
 export class AttackAction implements Action {
 
@@ -14,7 +14,7 @@ export class AttackAction implements Action {
 
 export class UseAbilityAction implements Action {
 
-  readonly type: string = 'USE_ABILITY_ACTION';
+  public readonly type: string = 'USE_ABILITY_ACTION';
 
   constructor(
     public clientId: number,
@@ -26,7 +26,7 @@ export class UseAbilityAction implements Action {
 
 export class UseStadiumAction implements Action {
 
-  readonly type: string = 'USE_STADIUM_ACTION';
+  public readonly type: string = 'USE_STADIUM_ACTION';
 
   constructor(
     public clientId: number
@@ -36,7 +36,7 @@ export class UseStadiumAction implements Action {
 
 export class RetreatAction implements Action {
 
-  readonly type: string = 'RETREAT_ACTION';
+  public readonly type: string = 'RETREAT_ACTION';
 
   constructor(
     public clientId: number,
@@ -47,7 +47,7 @@ export class RetreatAction implements Action {
 
 export class PassTurnAction implements Action {
 
-  readonly type: string = 'PASS_TURN';
+  public readonly type: string = 'PASS_TURN';
 
   constructor(public clientId: number) {}
 

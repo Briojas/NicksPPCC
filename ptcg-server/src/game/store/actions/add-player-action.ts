@@ -1,8 +1,8 @@
-import { Action } from "./action";
+import { Action } from './action';
 
 export class AddPlayerAction implements Action {
 
-  readonly type: string = 'ADD_PLAYER';
+  public readonly type: string = 'ADD_PLAYER';
 
   constructor(
     public clientId: number,
