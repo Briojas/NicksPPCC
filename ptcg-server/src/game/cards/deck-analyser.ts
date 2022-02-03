@@ -1,8 +1,8 @@
-import { Card } from "../store/card/card";
-import { CardManager } from "./card-manager";
-import { EnergyCard } from "../store/card/energy-card";
-import { EnergyType, Stage, CardType, CardTag } from "../store/card/card-types";
-import { PokemonCard } from "../store/card/pokemon-card";
+import { Card } from '../store/card/card';
+import { CardManager } from './card-manager';
+import { EnergyCard } from '../store/card/energy-card';
+import { EnergyType, Stage, CardType, CardTag } from '../store/card/card-types';
+import { PokemonCard } from '../store/card/pokemon-card';
 
 export class DeckAnalyser {
 
