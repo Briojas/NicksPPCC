@@ -1,11 +1,11 @@
-import { GameError } from "../../game-error";
-import { GameMessage } from "../../game-message";
-import { Prompt } from "./prompt";
-import { State } from "../state/state";
-import { PokemonCard } from "../card/pokemon-card";
-import { Attack } from "../card/pokemon-types";
+import { GameError } from '../../game-error';
+import { GameMessage } from '../../game-message';
+import { Prompt } from './prompt';
+import { State } from '../state/state';
+import { PokemonCard } from '../card/pokemon-card';
+import { Attack } from '../card/pokemon-types';
 
-export const ChooseAttackPromptType = 'Choose attack';
+export const chooseAttackPromptType = 'Choose attack';
 
 export interface ChooseAttackOptions {
   allowCancel: boolean;
@@ -17,7 +17,7 @@ export type ChooseAttackResultType = {index: number, attack: string};
 
 export class ChooseAttackPrompt extends Prompt<Attack> {
 
-  readonly type: string = ChooseAttackPromptType;
+  public readonly type: string = chooseAttackPromptType;
 
   public options: ChooseAttackOptions;
 

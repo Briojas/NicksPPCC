@@ -1,5 +1,5 @@
-import { GameMessage } from "../../game-message";
-import { Prompt } from "./prompt";
+import { GameMessage } from '../../game-message';
+import { Prompt } from './prompt';
 
 export interface SelectOptions {
   allowCancel: boolean;
@@ -8,7 +8,7 @@ export interface SelectOptions {
 
 export class SelectPrompt extends Prompt<number> {
 
-  readonly type: string = 'Select';
+  public readonly type: string = 'Select';
 
   public options: SelectOptions;
 
@@ -23,7 +23,7 @@ export class SelectPrompt extends Prompt<number> {
     // Default options
     this.options = Object.assign({}, {
       allowCancel: true,
-      defaultValue: 0,
+      defaultValue: 0
     }, options);
   }
 

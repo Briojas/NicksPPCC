@@ -1,13 +1,13 @@
-import { Card } from "../card/card";
-import { CardList } from "../state/card-list";
-import { EnergyCard } from "../card/energy-card";
-import { GameMessage } from "../../game-message";
-import { Prompt } from "./prompt";
-import { PokemonCard } from "../card/pokemon-card";
-import { TrainerCard } from "../card/trainer-card";
-import { CardType, SuperType } from "../card/card-types";
+import { Card } from '../card/card';
+import { CardList } from '../state/card-list';
+import { EnergyCard } from '../card/energy-card';
+import { GameMessage } from '../../game-message';
+import { Prompt } from './prompt';
+import { PokemonCard } from '../card/pokemon-card';
+import { TrainerCard } from '../card/trainer-card';
+import { CardType, SuperType } from '../card/card-types';
 
-export const ChooseCardsPromptType = 'Choose cards';
+export const chooseCardsPromptType = 'Choose cards';
 
 export interface ChooseCardsOptions {
   min: number;
@@ -25,7 +25,7 @@ export type FilterType = Partial<PokemonCard | TrainerCard | EnergyCard>;
 
 export class ChooseCardsPrompt extends Prompt<Card[]> {
 
-  readonly type: string = ChooseCardsPromptType;
+  public readonly type: string = chooseCardsPromptType;
   
   public options: ChooseCardsOptions;
 

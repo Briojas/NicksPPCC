@@ -1,11 +1,11 @@
-import { GameMessage } from "../../game-message";
-import { Prompt } from "./prompt";
-import { PlayerType, SlotType, CardTarget } from "../actions/play-card-action";
-import { State } from "../state/state";
-import { StateUtils } from "../state-utils";
-import { DamageMap } from "./move-damage-prompt";
+import { GameMessage } from '../../game-message';
+import { Prompt } from './prompt';
+import { PlayerType, SlotType, CardTarget } from '../actions/play-card-action';
+import { State } from '../state/state';
+import { StateUtils } from '../state-utils';
+import { DamageMap } from './move-damage-prompt';
 
-export const PutDamagePromptType = 'Put damage';
+export const putDamagePromptType = 'Put damage';
 
 export interface PutDamageOptions {
   allowCancel: boolean;
@@ -14,7 +14,7 @@ export interface PutDamageOptions {
 
 export class PutDamagePrompt extends Prompt<DamageMap[]> {
 
-  readonly type: string = PutDamagePromptType;
+  public readonly type: string = putDamagePromptType;
 
   public options: PutDamageOptions;
 

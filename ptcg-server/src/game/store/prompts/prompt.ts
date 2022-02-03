@@ -1,8 +1,8 @@
-import { State } from "../state/state";
+import { State } from '../state/state';
 
 export abstract class Prompt<T> {
 
-  readonly abstract type: string;
+  public readonly abstract type: string;
   public id: number;
   public result: T | undefined;
 

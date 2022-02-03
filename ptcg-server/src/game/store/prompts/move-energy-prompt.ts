@@ -1,13 +1,13 @@
-import { Card } from "../card/card";
-import { GameError } from "../../game-error";
-import { GameMessage } from "../../game-message";
-import { Prompt } from "./prompt";
-import { PlayerType, SlotType, CardTarget } from "../actions/play-card-action";
-import { State } from "../state/state";
-import { StateUtils } from "../state-utils";
-import { FilterType } from "./choose-cards-prompt";
+import { Card } from '../card/card';
+import { GameError } from '../../game-error';
+import { GameMessage } from '../../game-message';
+import { Prompt } from './prompt';
+import { PlayerType, SlotType, CardTarget } from '../actions/play-card-action';
+import { State } from '../state/state';
+import { StateUtils } from '../state-utils';
+import { FilterType } from './choose-cards-prompt';
 
-export const MoveEnergyPromptType = 'Move energy';
+export const moveEnergyPromptType = 'Move energy';
 
 export type MoveEnergyResultType = {from: CardTarget, to: CardTarget, index: number}[];
 
@@ -28,7 +28,7 @@ export interface MoveEnergyOptions {
 
 export class MoveEnergyPrompt extends Prompt<CardTransfer[]> {
 
-  readonly type: string = MoveEnergyPromptType;
+  public readonly type: string = moveEnergyPromptType;
 
   public options: MoveEnergyOptions;
 
@@ -49,7 +49,7 @@ export class MoveEnergyPrompt extends Prompt<CardTransfer[]> {
       max: undefined,
       blockedFrom: [],
       blockedTo: [],
-      blockedMap: [],
+      blockedMap: []
     }, options);
   }
 

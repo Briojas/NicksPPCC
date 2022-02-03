@@ -1,10 +1,10 @@
-import { CardList } from "../state/card-list";
-import { Prompt } from "./prompt";
-import { State } from "../state/state";
-import { GameError } from "../../game-error";
-import { GameMessage } from "../../game-message";
+import { CardList } from '../state/card-list';
+import { Prompt } from './prompt';
+import { State } from '../state/state';
+import { GameError } from '../../game-error';
+import { GameMessage } from '../../game-message';
 
-export const ChoosePrizePromptType = 'Choose prize';
+export const choosePrizePromptType = 'Choose prize';
 
 export interface ChoosePrizeOptions {
   count: number;
@@ -13,7 +13,7 @@ export interface ChoosePrizeOptions {
 
 export class ChoosePrizePrompt extends Prompt<CardList[]> {
 
-  readonly type: string = ChoosePrizePromptType;
+  public readonly type: string = choosePrizePromptType;
 
   public options: ChoosePrizeOptions;
 

@@ -1,20 +1,20 @@
-import { Card } from "../card/card";
-import { CardType } from "../card/card-types";
-import { GameMessage } from "../../game-message";
-import { Prompt } from "./prompt";
-import { StateUtils } from "../state-utils";
+import { Card } from '../card/card';
+import { CardType } from '../card/card-types';
+import { GameMessage } from '../../game-message';
+import { Prompt } from './prompt';
+import { StateUtils } from '../state-utils';
 
-export const ChooseEnergyPromptType = 'Choose energy';
+export const chooseEnergyPromptType = 'Choose energy';
 
 export interface ChooseEnergyOptions {
   allowCancel: boolean;
 }
 
-export type EnergyMap = { card: Card, provides: CardType[] }
+export type EnergyMap = { card: Card, provides: CardType[] };
 
 export class ChooseEnergyPrompt extends Prompt<EnergyMap[]> {
 
-  readonly type: string = ChooseEnergyPromptType;
+  public readonly type: string = chooseEnergyPromptType;
 
   public options: ChooseEnergyOptions;
 

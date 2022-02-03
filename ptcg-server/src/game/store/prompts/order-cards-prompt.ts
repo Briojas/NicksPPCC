@@ -1,8 +1,8 @@
-import { CardList } from "../state/card-list";
-import { GameMessage } from "../../game-message";
-import { Prompt } from "./prompt";
+import { CardList } from '../state/card-list';
+import { GameMessage } from '../../game-message';
+import { Prompt } from './prompt';
 
-export const OrderCardsPromptType = 'Order cards';
+export const orderCardsPromptType = 'Order cards';
 
 export interface OrderCardsOptions {
   allowCancel: boolean;
@@ -10,7 +10,7 @@ export interface OrderCardsOptions {
 
 export class OrderCardsPrompt extends Prompt<number[]> {
 
-  readonly type: string = OrderCardsPromptType;
+  public readonly type: string = orderCardsPromptType;
   
   public options: OrderCardsOptions;
 

@@ -1,12 +1,12 @@
-import { Prompt } from "./prompt";
-import { PlayerType, SlotType, CardTarget } from "../actions/play-card-action";
-import { PokemonCardList } from "../state/pokemon-card-list";
-import { State } from "../state/state";
-import { GameError } from "../../game-error";
-import { GameMessage } from "../../game-message";
-import { StateUtils } from "../state-utils";
+import { Prompt } from './prompt';
+import { PlayerType, SlotType, CardTarget } from '../actions/play-card-action';
+import { PokemonCardList } from '../state/pokemon-card-list';
+import { State } from '../state/state';
+import { GameError } from '../../game-error';
+import { GameMessage } from '../../game-message';
+import { StateUtils } from '../state-utils';
 
-export const ChoosePokemonPromptType = 'Choose pokemon';
+export const choosePokemonPromptType = 'Choose pokemon';
 
 export interface ChoosePokemonOptions {
   min: number;
@@ -17,7 +17,7 @@ export interface ChoosePokemonOptions {
 
 export class ChoosePokemonPrompt extends Prompt<PokemonCardList[]> {
 
-  readonly type: string = ChoosePokemonPromptType;
+  public readonly type: string = choosePokemonPromptType;
 
   public options: ChoosePokemonOptions;
 
