@@ -5,7 +5,7 @@ import { RateLimit } from '../common/rate-limit';
 import { config } from '../../config';
 
 
-export function generateToken(userId: number, expire?: number) {
+export function generateToken(userId: number, expire?: number): string {
   if (expire === undefined) {
     expire = Math.floor(Date.now() / 1000) + config.backend.tokenExpire;
   }
@@ -29,12 +29,12 @@ export function validateToken(token: string): number {
 }
 
 
-export function AuthToken() {
+export function AuthToken(): Function {
 
   const TOKEN_HEADER: string = 'Auth-Token';
   const rateLimit = RateLimit.getInstance();
 
-  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor): void {
     const handler = descriptor.value;
 
     if (handler === undefined) {
@@ -60,7 +60,7 @@ export function AuthToken() {
 
       Object.assign(req.body, {userId});
       return handler.apply(this, arguments);
-    }
-  }
+    };
+  };
 
 }

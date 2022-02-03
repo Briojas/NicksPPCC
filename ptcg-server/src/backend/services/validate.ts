@@ -9,11 +9,11 @@ const NUMBER_PATTERN = /^\d+$/;
 export type ValidationFn = (value: any) => boolean;
 
 export interface ValidationMap {
-  [key: string]: Validator
+  [key: string]: Validator;
 }
 
-export function Validate(validationMap: ValidationMap) {
-  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+export function Validate(validationMap: ValidationMap): Function {
+  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor): void {
     const handler = descriptor.value;
 
     if (handler === undefined) {
@@ -33,8 +33,8 @@ export function Validate(validationMap: ValidationMap) {
         }
       }
       return handler.apply(this, arguments);
-    }
-  }
+    };
+  };
 }
 
 export class Validator {
@@ -57,21 +57,21 @@ export class Validator {
 
   public isString(): Validator {
     this.validators.push((value: any) => {
-      return (typeof value === 'string')
+      return (typeof value === 'string');
     });
     return this;
   }
 
   public isBoolean(): Validator {
     this.validators.push((value: any) => {
-      return (typeof value === 'boolean')
+      return (typeof value === 'boolean');
     });
     return this;
   }
 
   public isNumber(): Validator {
     this.validators.push((value: any) => {
-      return (typeof value === 'number')
+      return (typeof value === 'number');
     });
     return this;
   }
