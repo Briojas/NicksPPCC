@@ -1,6 +1,6 @@
-import { Client } from "../client/client.interface";
-import { Core } from "./core";
-import { User, Message, Conversation } from "../../storage";
+import { Client } from '../client/client.interface';
+import { Core } from './core';
+import { User, Message, Conversation } from '../../storage';
 
 export class Messager {
 
@@ -38,7 +38,7 @@ export class Messager {
     // Mark all messages as deleted for given user
     await Message.update({
       conversation: { id: conversation.id },
-      sender: { id: conversationUser.id },
+      sender: { id: conversationUser.id }
     }, {
       isRead: true
     });

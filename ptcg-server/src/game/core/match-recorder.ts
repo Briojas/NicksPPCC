@@ -1,12 +1,12 @@
-import { Transaction, TransactionManager, EntityManager } from "typeorm";
+import { Transaction, TransactionManager, EntityManager } from 'typeorm';
 
-import { Client } from "../client/client.interface";
-import { Core } from "./core";
-import { State, GamePhase, GameWinner } from "../store/state/state";
-import { User, Match } from "../../storage";
-import { RankingCalculator } from "./ranking-calculator";
-import { Replay } from "./replay";
-import { ReplayPlayer } from "./replay.interface";
+import { Client } from '../client/client.interface';
+import { Core } from './core';
+import { State, GamePhase, GameWinner } from '../store/state/state';
+import { User, Match } from '../../storage';
+import { RankingCalculator } from './ranking-calculator';
+import { Replay } from './replay';
+import { ReplayPlayer } from './replay.interface';
 
 export class MatchRecorder {
 
@@ -21,7 +21,7 @@ export class MatchRecorder {
     this.replay = new Replay({ indexEnabled: false });
   }
 
-  public onStateChange(state: State) {
+  public onStateChange(state: State): void {
     if (this.finished) {
       return;
     }
@@ -43,7 +43,7 @@ export class MatchRecorder {
   }
 
   @Transaction()
-  private async saveMatch(state: State, @TransactionManager() manager?: EntityManager) {
+  private async saveMatch(state: State, @TransactionManager() manager?: EntityManager): Promise<void> {
     if (!this.client1 || !this.client2 || manager === undefined) {
       return;
     }
@@ -92,7 +92,7 @@ export class MatchRecorder {
     }
   }
 
-  private updateClients(state: State) {
+  private updateClients(state: State): void {
     const player1Id = state.players[0].id;
     const player2Id = state.players[1].id;
     if (this.client1 === undefined) {

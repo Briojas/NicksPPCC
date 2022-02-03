@@ -1,15 +1,15 @@
-import { Action } from "../store/actions/action";
-import { Arbiter } from "./arbiter";
-import { Client } from "../client/client.interface";
-import { Core } from "./core";
-import { GameSettings } from "./game-settings";
-import { MatchRecorder } from "./match-recorder";
-import { PlayerStats } from "./player-stats";
-import { ResolvePromptAction } from "../store/actions/resolve-prompt-action";
-import { State, GamePhase } from "../store/state/state";
-import { Store } from "../store/store";
-import { StoreHandler } from "../store/store-handler";
-import { AbortGameAction, AbortGameReason } from "../store/actions/abort-game-action";
+import { Action } from '../store/actions/action';
+import { Arbiter } from './arbiter';
+import { Client } from '../client/client.interface';
+import { Core } from './core';
+import { GameSettings } from './game-settings';
+import { MatchRecorder } from './match-recorder';
+import { PlayerStats } from './player-stats';
+import { ResolvePromptAction } from '../store/actions/resolve-prompt-action';
+import { State, GamePhase } from '../store/state/state';
+import { Store } from '../store/store';
+import { StoreHandler } from '../store/store-handler';
+import { AbortGameAction, AbortGameReason } from '../store/actions/abort-game-action';
 
 export class Game implements StoreHandler {
 
@@ -18,7 +18,7 @@ export class Game implements StoreHandler {
   public id: number;
   public clients: Client[] = [];
   public playerStats: PlayerStats[] = [];
-  private arbiter = new Arbiter();
+  private arbiter: Arbiter = new Arbiter();
   private store: Store;
   private matchRecorder: MatchRecorder;
   private timeoutRef: NodeJS.Timeout | undefined;
@@ -129,7 +129,7 @@ export class Game implements StoreHandler {
     return state;
   }
 
-  private updateIsTimeRunning(state: State) {
+  private updateIsTimeRunning(state: State): void {
     state.players.forEach(player => {
       const stats = this.playerStats.find(p => p.clientId === player.id);
       if (stats === undefined) {
@@ -176,7 +176,7 @@ export class Game implements StoreHandler {
     return result;
   }
 
-  private startTimer() {
+  private startTimer(): void {
     const intervalDelay = 1000; // 1 second
 
     // Game time is set to unlimited
@@ -198,7 +198,7 @@ export class Game implements StoreHandler {
     }, intervalDelay);
   }
 
-  private stopTimer() {
+  private stopTimer(): void {
     if (this.timeoutRef !== undefined) {
       clearInterval(this.timeoutRef);
       this.timeoutRef = undefined;

@@ -1,11 +1,11 @@
 import { gzip, ungzip } from '@progress/pako-esm';
 
-import { State, GameWinner } from "../store/state/state";
-import { ReplayPlayer, ReplayOptions } from "./replay.interface";
-import { GameError } from "../game-error";
-import { GameCoreError } from "../game-message";
-import { SerializedState } from "../serializer/serializer.interface";
-import { StateSerializer } from "../serializer/state-serializer";
+import { State, GameWinner } from '../store/state/state';
+import { ReplayPlayer, ReplayOptions } from './replay.interface';
+import { GameError } from '../game-error';
+import { GameCoreError } from '../game-message';
+import { SerializedState } from '../serializer/serializer.interface';
+import { StateSerializer } from '../serializer/state-serializer';
 
 export class Replay {
 
@@ -19,7 +19,7 @@ export class Replay {
   private diffs: SerializedState[] = [];
   private indexes: SerializedState[] = [];
   private prevState: SerializedState | undefined;
-  private serializer = new StateSerializer();
+  private serializer: StateSerializer = new StateSerializer();
   private options: ReplayOptions;
 
   constructor(options: Partial<ReplayOptions> = {}) {
@@ -131,7 +131,7 @@ export class Replay {
   }
 
   private swapQuotes(diffs: SerializedState[]): SerializedState[] {
-    return diffs.map(diff => diff.replace(/["']/g, c => c === '"' ? '\'' : '"'));
+    return diffs.map(diff => diff.replace(/['']/g, c => c === ''' ? '\'' : '''));
   }
 
   private compress(data: string): string {

@@ -1,11 +1,11 @@
-import { Rules } from "../store/state/rules";
+import { Rules } from '../store/state/rules';
 
 export class GameSettings {
 
-  rules: Rules = new Rules();
+  public rules: Rules = new Rules();
 
-  timeLimit: number = 1800;
+  public timeLimit: number = 1800;
 
-  recordingEnabled: boolean = true;
+  public recordingEnabled: boolean = true;
 
 }

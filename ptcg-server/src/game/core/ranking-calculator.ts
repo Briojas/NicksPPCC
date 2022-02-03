@@ -1,8 +1,8 @@
-import { User, Match } from "../../storage";
-import { MoreThan, LessThan } from "typeorm";
-import { GameWinner } from "../store/state/state";
-import { Rank } from "../../backend";
-import { config } from "../../config";
+import { User, Match } from '../../storage';
+import { MoreThan, LessThan } from 'typeorm';
+import { GameWinner } from '../store/state/state';
+import { Rank } from '../../backend';
+import { config } from '../../config';
 
 export class RankingCalculator {
 
@@ -74,15 +74,16 @@ export class RankingCalculator {
   }
 
   private getRankMultipier(rank: Rank): number {
-    switch (rank) {
+    switch (rank) {  
       case Rank.JUNIOR:
         return 2.0;
       case Rank.SENIOR:
         return 0.9;
       case Rank.MASTER:
         return 0.8;
+      default:
+        return 1;
     }
-    return 1;
   }
 
   public async decreaseRanking(): Promise<User[]> {
