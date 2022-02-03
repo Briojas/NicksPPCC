@@ -1,14 +1,14 @@
-import { SerializerContext, Serialized, Serializer } from "./serializer.interface";
-import { CardList } from "../store/state/card-list";
-import { Card } from "../store/card/card";
-import { GameError } from "../game-error";
-import { GameCoreError } from "../game-message";
-import { PokemonCardList } from "../store/state/pokemon-card-list";
+import { SerializerContext, Serialized, Serializer } from './serializer.interface';
+import { CardList } from '../store/state/card-list';
+import { Card } from '../store/card/card';
+import { GameError } from '../game-error';
+import { GameCoreError } from '../game-message';
+import { PokemonCardList } from '../store/state/pokemon-card-list';
 
 export class CardListSerializer implements Serializer<CardList> {
 
-  public readonly types = ['CardList', 'PokemonCardList'];
-  public readonly classes = [CardList, PokemonCardList];
+  public readonly types: Array<string> = ['CardList', 'PokemonCardList'];
+  public readonly classes: Array<any> = [CardList, PokemonCardList];
 
   constructor () { }
 

@@ -1,10 +1,10 @@
-import { SerializerContext, Serialized, Serializer } from "./serializer.interface";
-import { StateLog } from "../store/state/state-log";
+import { SerializerContext, Serialized, Serializer } from './serializer.interface';
+import { StateLog } from '../store/state/state-log';
 
 export class StateLogSerializer implements Serializer<StateLog> {
 
-  public readonly types = ['StateLog'];
-  public readonly classes = [StateLog];
+  public readonly types: Array<string> = ['StateLog'];
+  public readonly classes: Array<any> = [StateLog];
 
   constructor () { }
 

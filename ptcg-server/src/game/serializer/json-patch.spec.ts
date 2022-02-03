@@ -1,5 +1,5 @@
-import { JsonPatch } from "./json-patch";
-import {JsonDiff} from "./json-patch.interface";
+import { JsonPatch } from './json-patch';
+import {JsonDiff} from './json-patch.interface';
 
 describe('JsonPatch', () => {
   let jsonPatch: JsonPatch;
@@ -162,7 +162,7 @@ describe('JsonPatch', () => {
     // then
     expect(diff).toEqual([
       { op: 'add', path: '', val: [1, 2] },
-      { op: 'del', path: '', val: [3] },
+      { op: 'del', path: '', val: [3] }
     ]);
     expect(restored).toEqual(dest);
   });

@@ -1,9 +1,9 @@
 
 export class PathBuilder {
 
-  parents: { node: any, key: string }[] = [];
+  public parents: { node: any, key: string }[] = [];
 
-  public goTo(node: any, key: string) {
+  public goTo(node: any, key: string): void {
     const parentIndex = this.parents.findIndex(p => p.node === node);
     if (parentIndex !== -1) {
       this.parents.length = parentIndex;

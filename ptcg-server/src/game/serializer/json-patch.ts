@@ -1,5 +1,5 @@
-import { deepCompare } from "../../utils";
-import { JsonDiff, JsonPathDiff } from "./json-patch.interface";
+import { deepCompare } from '../../utils';
+import { JsonDiff, JsonPathDiff } from './json-patch.interface';
 
 export class JsonPatch {
 
@@ -12,7 +12,7 @@ export class JsonPatch {
     }));
   }
 
-  public apply(src: any, patch: JsonDiff[]) {
+  public apply(src: any, patch: JsonDiff[]): any {
     let result = src;
     for (const delta of patch) {
       if (delta.path === '') {
@@ -127,7 +127,7 @@ export class JsonPatch {
     return results;
   }
 
-  private isEqual(src: any, dest: any) {
+  private isEqual(src: any, dest: any): boolean {
     return deepCompare(src, dest);
   }
 
@@ -161,6 +161,9 @@ export class JsonPatch {
         const temp = arr[fromKey];
         arr[fromKey] = arr[toKey];
         arr[toKey] = temp;
+        break;
+      default:
+        //do nothing
         break;
     }
     return root;

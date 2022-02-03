@@ -1,20 +1,20 @@
-import { GameError } from "../game-error";
-import { GameCoreError } from "../game-message";
-import { Serializer, SerializerContext, SerializedState, Serialized } from "./serializer.interface";
-import { State } from "../store/state/state";
-import { Card } from "../store/card/card";
-import { GenericSerializer } from "./generic.serializer";
-import { Rules } from "../store/state/rules";
-import { Player } from "../store/state/player";
-import { CardSerializer } from "./card.serializer";
-import { CardListSerializer } from "./card-list.serializer";
-import { Marker } from "../store/state/card-marker";
-import { StateLogSerializer } from "./state-log.serializer";
-import { PromptSerializer } from "./prompt.serializer";
-import { PathBuilder } from "./path-builder";
-import { deepIterate, deepClone } from "../../utils";
-import { JsonPatch } from "./json-patch";
-import { JsonDiff } from "./json-patch.interface";
+import { GameError } from '../game-error';
+import { GameCoreError } from '../game-message';
+import { Serializer, SerializerContext, SerializedState, Serialized } from './serializer.interface';
+import { State } from '../store/state/state';
+import { Card } from '../store/card/card';
+import { GenericSerializer } from './generic.serializer';
+import { Rules } from '../store/state/rules';
+import { Player } from '../store/state/player';
+import { CardSerializer } from './card.serializer';
+import { CardListSerializer } from './card-list.serializer';
+import { Marker } from '../store/state/card-marker';
+import { StateLogSerializer } from './state-log.serializer';
+import { PromptSerializer } from './prompt.serializer';
+import { PathBuilder } from './path-builder';
+import { deepIterate, deepClone } from '../../utils';
+import { JsonPatch } from './json-patch';
+import { JsonDiff } from './json-patch.interface';
 
 export class StateSerializer {
 
@@ -39,7 +39,7 @@ export class StateSerializer {
     const refs: { node: Object, path: string }[] = [];
     const pathBuilder = new PathBuilder();
 
-    const replacer: any = function(this: any, key: string, value: any) {
+    const replacer: any = function(this: any, key: string, value: any): any {
       pathBuilder.goTo(this, key);
       const path = pathBuilder.getPath();
 
@@ -71,7 +71,7 @@ export class StateSerializer {
     const serializers = this.serializers;
     const context = this.restoreContext(serializedState);
 
-    const reviver: any = function (this: any, key: string, value: any) {
+    const reviver: any = function (this: any, key: string, value: any): any {
       if (value instanceof Array) {
         return value;
       }
@@ -152,7 +152,7 @@ export class StateSerializer {
     return JSON.stringify([ players, state ]);
   }
 
-  public static setKnownCards(cards: Card[]) {
+  public static setKnownCards(cards: Card[]): void {
     StateSerializer.knownCards = cards;
   }
 
