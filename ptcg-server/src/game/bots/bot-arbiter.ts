@@ -18,8 +18,8 @@ export enum BotShuffleMode {
 }
 
 export interface BotArbiterOptions {
-  flipMode: BotFlipMode,
-  shuffleMode: BotShuffleMode
+  flipMode: BotFlipMode;
+  shuffleMode: BotShuffleMode;
 }
 
 export class BotArbiter {

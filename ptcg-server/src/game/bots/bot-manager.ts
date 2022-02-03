@@ -1,7 +1,7 @@
 import { BotClient } from './bot-client';
 import { Core } from '../core/core';
 import { GameError } from '../game-error';
-import { GameMessage } from "../game-message";
+import { GameMessage } from '../game-message';
 import { User } from '../../storage';
 import { config } from '../../config';
 import { Md5 } from '../../utils/md5';
@@ -12,7 +12,7 @@ export class BotManager {
   private static instance: BotManager;
 
   private bots: BotClient[] = [];
-  private botGameArranger = new BotGamesTask(this.bots);
+  private botGameArranger: BotGamesTask = new BotGamesTask(this.bots);
 
   public static getInstance(): BotManager {
     if (!BotManager.instance) {
@@ -26,7 +26,7 @@ export class BotManager {
     this.bots.push(bot);
   }
 
-  public async initBots(core: Core) {
+  public async initBots(core: Core): Promise<void> {
     const registered = Date.now();
     for (let i = 0; i < this.bots.length; i++) {
       let bot = this.bots[i];

@@ -3,7 +3,7 @@ import { Client } from '../client/client.interface';
 import { DeckAnalyser } from '../cards/deck-analyser';
 import { Game } from '../core/game';
 import { GameError } from '../game-error';
-import { GameMessage } from "../game-message";
+import { GameMessage } from '../game-message';
 import { User, Message, Deck } from '../../storage';
 import { Core } from '../core/core';
 import { State } from '../store/state/state';
@@ -43,7 +43,7 @@ export abstract class BotClient implements Client {
 
   public abstract onMessageRead(user: User): void;
 
-  createGame(deck: string[], gameSettings?: GameSettings, invited?: Client): Game {
+  public createGame(deck: string[], gameSettings?: GameSettings, invited?: Client): Game {
     if (this.core === undefined) {
       throw new GameError(GameMessage.ERROR_BOT_NOT_INITIALIZED);
     }
