@@ -9,7 +9,7 @@ import { GameMessage } from '../../game/game-message';
 
 export class ReshiramEx extends PokemonCard {
 
-  public tags = [ CardTag.POKEMON_EX ];
+  public tags: string[] = [ CardTag.POKEMON_EX ];
 
   public stage: Stage = Stage.BASIC;
 
@@ -17,11 +17,11 @@ export class ReshiramEx extends PokemonCard {
 
   public hp: number = 180;
 
-  public weakness = [{ type: CardType.WATER }];
+  public weakness: any = [{ type: CardType.WATER }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Glinting Claw',
       cost: [ CardType.FIRE, CardType.COLORLESS, CardType.COLORLESS ],
@@ -32,7 +32,7 @@ export class ReshiramEx extends PokemonCard {
       cost: [ CardType.FIRE, CardType.FIRE, CardType.COLORLESS, CardType.COLORLESS ],
       damage: 150,
       text: 'Flip a coin. If tails, this Pokemon does 50 damage to itself.'
-    },
+    }
   ];
 
   public set: string = 'BW3';

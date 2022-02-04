@@ -8,7 +8,7 @@ import { CheckProvidedEnergyEffect, CheckAttackCostEffect } from '../../game/sto
 
 export class MewEx extends PokemonCard {
 
-  public tags = [ CardTag.POKEMON_EX ];
+  public tags: string[] = [ CardTag.POKEMON_EX ];
 
   public stage: Stage = Stage.BASIC;
 
@@ -16,11 +16,11 @@ export class MewEx extends PokemonCard {
 
   public hp: number = 120;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Versatile',
     useWhenInPlay: true,
     powerType: PowerType.ABILITY,
@@ -29,7 +29,7 @@ export class MewEx extends PokemonCard {
       'Energy to use each attack.)'
   }];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Replace',
       cost: [ CardType.PSYCHIC ],
@@ -122,10 +122,15 @@ export class MewEx extends PokemonCard {
     return { pokemonCards, blocked };
   }
 
-  private checkAttack(state: State, store: StoreLike, player: Player,
-    card: PokemonCard, energyMap: EnergyMap[], pokemonCards: PokemonCard[],
+  private checkAttack(
+    state: State, 
+    store: StoreLike, 
+    player: Player,
+    card: PokemonCard, 
+    energyMap: EnergyMap[], 
+    pokemonCards: PokemonCard[],
     blocked: { index: number, attack: string }[]
-  ) {
+  ): any {
     // No need to include Mew Ex to the list
     if (card instanceof MewEx) {
       return;

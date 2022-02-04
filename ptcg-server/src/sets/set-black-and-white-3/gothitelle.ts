@@ -15,24 +15,24 @@ export class Gothitelle extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_2;
 
-  public evolvesFrom = 'Gothorita';
+  public evolvesFrom: string = 'Gothorita';
 
   public cardType: CardType = CardType.PSYCHIC;
 
   public hp: number = 130;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Magic Room',
     powerType: PowerType.ABILITY,
     text: 'As long as this Pokemon is your Active Pokemon, your opponent ' +
       'can\'t play any Item cards from his or her hand.'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Madkinesis',
     cost: [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ],
     damage: 30,

@@ -17,13 +17,13 @@ export class Exeggcute extends PokemonCard {
 
   public hp: number = 30;
 
-  public weakness = [{ type: CardType.FIRE }];
+  public weakness: any = [{ type: CardType.FIRE }];
 
-  public resistance = [{ type: CardType.WATER, value: -20 }];
+  public resistance: any = [{ type: CardType.WATER, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Propagation',
     useFromDiscard: true,
     powerType: PowerType.ABILITY,
@@ -31,7 +31,7 @@ export class Exeggcute extends PokemonCard {
       + 'your discard pile, you may put this Pokemon into your hand.'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Seed Bomb',
     cost: [ CardType.GRASS, CardType.COLORLESS ],
     damage: 20,
@@ -44,7 +44,7 @@ export class Exeggcute extends PokemonCard {
 
   public fullName: string = 'Exeggcute PLF';
 
-  public readonly PROPAGATION_MAREKER = 'PROPAGATION_MAREKER';
+  public readonly PROPAGATION_MAREKER: string = 'PROPAGATION_MAREKER';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 

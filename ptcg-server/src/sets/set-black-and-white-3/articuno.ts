@@ -18,20 +18,20 @@ export class Articuno extends PokemonCard {
 
   public hp: number = 120;
 
-  public weakness = [{ type: CardType.METAL }];
+  public weakness: any = [{ type: CardType.METAL }];
 
-  public resistance = [{ type: CardType.FIGHTING, value: -20 }];
+  public resistance: any = [{ type: CardType.FIGHTING, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Delta Plus',
     powerType: PowerType.ANCIENT_TRAIT,
     text: 'If your opponent\'s Pokemon is Knocked Out by damage from an ' +
       'attack of this Pokemon, take 1 more Prize card.'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Chilling Sigh',
     cost: [ CardType.WATER ],
     damage: 0,

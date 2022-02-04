@@ -12,17 +12,17 @@ export class Blastoise extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_2;
 
-  public evolvesFrom = 'Wartortle';
+  public evolvesFrom: string = 'Wartortle';
 
   public cardType: CardType = CardType.WATER;
 
   public hp: number = 140;
 
-  public weakness = [{ type: CardType.GRASS }];
+  public weakness: any = [{ type: CardType.GRASS }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Deluge',
     useWhenInPlay: true,
     powerType: PowerType.ABILITY,
@@ -30,7 +30,7 @@ export class Blastoise extends PokemonCard {
       'you may attach a W Energy card from your hand to 1 of your Pokemon.'
   }];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Hydro Pump',
       cost: [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ],
@@ -56,7 +56,7 @@ export class Blastoise extends PokemonCard {
       let energyCount = 0;
       checkProvidedEnergyEffect.energyMap.forEach(em => {
         energyCount += em.provides.filter(cardType => {
-          return cardType === CardType.WATER || cardType === CardType.ANY
+          return cardType === CardType.WATER || cardType === CardType.ANY;
         }).length;
       });
       effect.damage += energyCount * 10;

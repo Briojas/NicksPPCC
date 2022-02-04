@@ -7,8 +7,12 @@ import { Effect } from '../../game/store/effects/effect';
 import { CheckProvidedEnergyEffect, CheckTableStateEffect } from '../../game/store/effects/check-effects';
 
 
-function* useEmeraldSlash(next: Function, store: StoreLike, state: State,
-  effect: AttackEffect): IterableIterator<State> {
+function* useEmeraldSlash(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  effect: AttackEffect
+): IterableIterator<State> {
 
   const player = effect.player;
 
@@ -58,7 +62,7 @@ function* useEmeraldSlash(next: Function, store: StoreLike, state: State,
 
 export class VirizionEx extends PokemonCard {
 
-  public tags = [ CardTag.POKEMON_EX ];
+  public tags: string[] = [ CardTag.POKEMON_EX ];
 
   public stage: Stage = Stage.BASIC;
 
@@ -66,13 +70,13 @@ export class VirizionEx extends PokemonCard {
 
   public hp: number = 170;
 
-  public weakness = [{ type: CardType.FIRE }];
+  public weakness: any = [{ type: CardType.FIRE }];
 
-  public resistance = [{ type: CardType.WATER, value: -20 }];
+  public resistance: any = [{ type: CardType.WATER, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Verdant Wind',
     powerType: PowerType.ABILITY,
     text: 'Each of your Pokemon that has any G Energy attached to it can\'t ' +
@@ -80,7 +84,7 @@ export class VirizionEx extends PokemonCard {
     'affecting those Pokemon.)'
   }];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Emerald Slash',
       cost: [ CardType.GRASS, CardType.COLORLESS ],

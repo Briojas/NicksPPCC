@@ -9,7 +9,7 @@ import { DiscardCardsEffect } from '../../game/store/effects/attack-effects';
 
 export class ZekromEx extends PokemonCard {
 
-  public tags = [ CardTag.POKEMON_EX ];
+  public tags: string[] = [ CardTag.POKEMON_EX ];
 
   public stage: Stage = Stage.BASIC;
 
@@ -17,11 +17,11 @@ export class ZekromEx extends PokemonCard {
 
   public hp: number = 180;
 
-  public weakness = [{ type: CardType.FIGHTING }];
+  public weakness: any = [{ type: CardType.FIGHTING }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Glinting Claw',
       cost: [ CardType.LIGHTNING, CardType.COLORLESS, CardType.COLORLESS ],
@@ -32,7 +32,7 @@ export class ZekromEx extends PokemonCard {
       cost: [ CardType.LIGHTNING, CardType.LIGHTNING, CardType.COLORLESS, CardType.COLORLESS ],
       damage: 150,
       text: 'Discard 2 Energy attached to this Pokemon.'
-    },
+    }
   ];
 
   public set: string = 'BW3';

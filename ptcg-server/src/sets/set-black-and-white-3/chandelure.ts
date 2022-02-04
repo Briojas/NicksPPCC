@@ -21,17 +21,17 @@ export class Chandelure extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_2;
 
-  public evolvesFrom = 'Lampent';
+  public evolvesFrom: string = 'Lampent';
 
   public cardType: CardType = CardType.PSYCHIC;
 
   public hp: number = 130;
 
-  public weakness = [{ type: CardType.DARK }];
+  public weakness: any = [{ type: CardType.DARK }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Cursed Shadow',
     useWhenInPlay: true,
     powerType: PowerType.ABILITY,
@@ -40,7 +40,7 @@ export class Chandelure extends PokemonCard {
       'Pokemon in any way you like.'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Eerie Glow',
     cost: [ CardType.PSYCHIC, CardType.PSYCHIC, CardType.COLORLESS ],
     damage: 50,
@@ -53,7 +53,7 @@ export class Chandelure extends PokemonCard {
 
   public fullName: string = 'Chandelure NV';
 
-  public readonly CURSED_SHADOW_MAREKER = 'CURSED_SHADOW_MAREKER';
+  public readonly CURSED_SHADOW_MAREKER: any = 'CURSED_SHADOW_MAREKER';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     if (effect instanceof PlayPokemonEffect && effect.pokemonCard === this) {

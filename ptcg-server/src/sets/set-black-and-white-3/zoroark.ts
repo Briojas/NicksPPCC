@@ -13,8 +13,12 @@ import { ChooseAttackPrompt } from '../../game/store/prompts/choose-attack-promp
 import { Attack } from '../../game/store/card/pokemon-types';
 import { DealDamageEffect } from '../../game/store/effects/attack-effects';
 
-function* useNastyPlot(next: Function, store: StoreLike, state: State,
-  effect: AttackEffect): IterableIterator<State> {
+function* useNastyPlot(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  effect: AttackEffect
+): IterableIterator<State> {
   const player = effect.player;
 
   if (player.deck.cards.length === 0) {
@@ -40,8 +44,12 @@ function* useNastyPlot(next: Function, store: StoreLike, state: State,
   });
 }
 
-function* useFoulPlay(next: Function, store: StoreLike, state: State,
-  effect: AttackEffect): IterableIterator<State> {
+function* useFoulPlay(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  effect: AttackEffect
+): IterableIterator<State> {
   const player = effect.player;
   const opponent = StateUtils.getOpponent(state, player);
   const pokemonCard = opponent.active.getPokemonCard();
@@ -99,13 +107,13 @@ export class Zoroark extends PokemonCard {
 
   public hp: number = 100;
 
-  public weakness = [{ type: CardType.FIGHTING }];
+  public weakness: any = [{ type: CardType.FIGHTING }];
 
-  public resistance = [{ type: CardType.PSYCHIC, value: -20 }];
+  public resistance: any = [{ type: CardType.PSYCHIC, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Nasty Plot',
     cost: [ CardType.DARK ],
     damage: 0,

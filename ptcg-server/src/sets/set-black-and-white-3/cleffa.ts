@@ -5,8 +5,12 @@ import { PowerEffect } from '../../game/store/effects/game-effects';
 import { Effect } from '../../game/store/effects/effect';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
 
-function* useExcitableDraw(next: Function, store: StoreLike, state: State,
-  effect: PowerEffect): IterableIterator<State> {
+function* useExcitableDraw(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  effect: PowerEffect
+): IterableIterator<State> {
   const player = effect.player;
 
   if (player.deck.cards.length + player.hand.cards.length === 0) {
@@ -43,9 +47,9 @@ export class Cleffa extends PokemonCard {
 
   public hp: number = 60;
 
-  public retreat = [ ];
+  public retreat: Array<any> = [ ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Excitable Draw',
     useWhenInPlay: true,
     powerType: PowerType.ABILITY,

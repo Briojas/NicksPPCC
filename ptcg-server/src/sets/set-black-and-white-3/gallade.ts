@@ -16,11 +16,11 @@ export class Gallade extends PokemonCard {
 
   public hp: number = 140;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Powerful Storm',
       cost: [ CardType.COLORLESS, CardType.COLORLESS ],
@@ -34,7 +34,7 @@ export class Gallade extends PokemonCard {
       damage: 80,
       text: 'Your opponent switches the Defending Pokemon with ' +
         '1 of his or her Benched Pokemon.'
-    },
+    }
   ];
 
   public set: string = 'BW3';
@@ -72,7 +72,7 @@ export class Gallade extends PokemonCard {
         GameMessage.CHOOSE_NEW_ACTIVE_POKEMON,
         PlayerType.BOTTOM_PLAYER,
         [ SlotType.BENCH ],
-        { allowCancel: false },
+        { allowCancel: false }
       ), selected => {
         if (!selected || selected.length === 0) {
           return state;

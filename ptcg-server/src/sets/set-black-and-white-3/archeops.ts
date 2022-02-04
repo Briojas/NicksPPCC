@@ -16,24 +16,24 @@ export class Archeops extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_1;
 
-  public evolvesFrom = 'Archen';
+  public evolvesFrom: string = 'Archen';
 
   public cardType: CardType = CardType.FIGHTING;
 
   public hp: number = 130;
 
-  public weakness = [{ type: CardType.GRASS }];
+  public weakness: any = [{ type: CardType.GRASS }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Ancient Power',
     powerType: PowerType.ABILITY,
     text: 'Each player can\'t play any Pokemon from his or her hand ' +
       'to evolve his or her Pokemon.'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Rock Slide',
     cost: [ CardType.FIGHTING, CardType.FIGHTING, CardType.COLORLESS ],
     damage: 60,

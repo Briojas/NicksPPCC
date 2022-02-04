@@ -15,11 +15,11 @@ export class Archen extends PokemonCard {
 
   public hp: number = 80;
 
-  public weakness = [{ type: CardType.GRASS }];
+  public weakness: any = [{ type: CardType.GRASS }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Rock Throw',
     cost: [ CardType.FIGHTING ],
     damage: 20,
@@ -43,7 +43,7 @@ export class Archen extends PokemonCard {
       const player = effect.player;
       return store.prompt(state, [
         new CoinFlipPrompt(player.id, GameMessage.COIN_FLIP),
-        new CoinFlipPrompt(player.id, GameMessage.COIN_FLIP),
+        new CoinFlipPrompt(player.id, GameMessage.COIN_FLIP)
       ], results => {
         let heads: number = 0;
         results.forEach(r => { heads += r ? 1 : 0; });

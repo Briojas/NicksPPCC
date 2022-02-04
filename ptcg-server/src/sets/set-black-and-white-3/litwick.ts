@@ -13,13 +13,13 @@ export class Litwick extends PokemonCard {
 
   public hp: number = 50;
 
-  public weakness = [{ type: CardType.DARK }];
+  public weakness: any = [{ type: CardType.DARK }];
 
-  public resistance = [{ type: CardType.FIGHTING, value: -20 }];
+  public resistance: any = [{ type: CardType.FIGHTING, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Trip Over',
       cost: [ CardType.PSYCHIC ],

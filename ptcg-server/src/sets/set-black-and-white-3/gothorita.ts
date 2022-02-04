@@ -16,11 +16,11 @@ export class Gothorita extends PokemonCard {
 
   public hp: number = 80;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Double Slap',
       cost: [ CardType.COLORLESS ],
@@ -32,7 +32,7 @@ export class Gothorita extends PokemonCard {
       cost: [ CardType.PSYCHIC, CardType.COLORLESS ],
       damage: 20,
       text: 'The Defending Pokemon is now Confused.'
-    },
+    }
   ];
 
   public set: string = 'BW3';

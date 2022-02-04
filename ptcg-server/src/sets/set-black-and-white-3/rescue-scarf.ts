@@ -22,7 +22,7 @@ export class RescueScarf extends TrainerCard {
     'an attack, put that Pokemon into your hand. (Discard all cards ' +
     'attached to that Pokemon.)';
 
-  public readonly RESCUE_SCARF_MAREKER = 'RESCUE_SCARF_MAREKER';
+  public readonly RESCUE_SCARF_MAREKER: string = 'RESCUE_SCARF_MAREKER';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     if (effect instanceof KnockOutEffect && effect.target.cards.includes(this)) {

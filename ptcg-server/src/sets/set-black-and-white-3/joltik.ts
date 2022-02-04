@@ -12,13 +12,13 @@ export class Joltik extends PokemonCard {
 
   public hp: number = 30;
 
-  public weakness = [{ type: CardType.FIGHTING }];
+  public weakness: any = [{ type: CardType.FIGHTING }];
 
-  public resistance = [{ type: CardType.METAL, value: -20 }];
+  public resistance: any = [{ type: CardType.METAL, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Gnaw',
       cost: [ CardType.LIGHTNING ],

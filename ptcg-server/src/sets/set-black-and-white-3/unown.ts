@@ -14,11 +14,11 @@ export class Unown extends PokemonCard {
 
   public hp: number = 60;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Farewell Letter',
     useWhenInPlay: true,
     powerType: PowerType.ABILITY,
@@ -27,7 +27,7 @@ export class Unown extends PokemonCard {
       'to it (this does not count as a Knock Out). If you do, draw a card.'
   }];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Hidden Power',
       cost: [ CardType.COLORLESS ],

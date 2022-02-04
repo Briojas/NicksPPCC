@@ -12,8 +12,13 @@ import { CardList } from '../../game/store/state/card-list';
 import { EnergyCard } from '../../game/store/card/energy-card';
 
 
-function* playCard(next: Function, store: StoreLike, state: State,
-  self: SuperiorEnergyRetrieval, effect: TrainerEffect): IterableIterator<State> {
+function* playCard(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  self: SuperiorEnergyRetrieval, 
+  effect: TrainerEffect
+): IterableIterator<State> {
   const player = effect.player;
   let cards: Card[] = [];
   

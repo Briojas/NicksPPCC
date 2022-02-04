@@ -7,8 +7,13 @@ import { Effect } from '../../game/store/effects/effect';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
 
 
-function* useRebirth(next: Function, store: StoreLike, state: State,
-  self: HoOhEx, effect: PowerEffect): IterableIterator<State> {
+function* useRebirth(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  self: HoOhEx, 
+  effect: PowerEffect
+): IterableIterator<State> {
   const player = effect.player;
 
   // Check if card is in the discard
@@ -73,7 +78,7 @@ function* useRebirth(next: Function, store: StoreLike, state: State,
 
 export class HoOhEx extends PokemonCard {
 
-  public tags = [ CardTag.POKEMON_EX ];
+  public tags: string[] = [ CardTag.POKEMON_EX ];
 
   public stage: Stage = Stage.BASIC;
 
@@ -81,13 +86,13 @@ export class HoOhEx extends PokemonCard {
 
   public hp: number = 160;
 
-  public weakness = [{ type: CardType.WATER }];
+  public weakness: any = [{ type: CardType.WATER }];
 
-  public resistance = [{ type: CardType.FIGHTING, value: -20 }];
+  public resistance: any = [{ type: CardType.FIGHTING, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Rebirth',
     useFromDiscard: true,
     powerType: PowerType.ABILITY,
@@ -97,7 +102,7 @@ export class HoOhEx extends PokemonCard {
       'from your discard pile to this Pokemon.'
   }];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Rainbow Burn',
       cost: [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ],
@@ -113,7 +118,7 @@ export class HoOhEx extends PokemonCard {
 
   public fullName: string = 'Ho-Oh EX DGE';
 
-  public readonly REBIRTH_MAREKER = 'REBIRTH_MAREKER';
+  public readonly REBIRTH_MAREKER: string = 'REBIRTH_MAREKER';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 

@@ -7,8 +7,13 @@ import { TrainerType } from '../../game/store/card/card-types';
 import { StateUtils } from '../../game/store/state-utils';
 import { ShuffleDeckPrompt } from '../../game/store/prompts/shuffle-prompt';
 
-function* playCard(next: Function, store: StoreLike, state: State,
-  self: LysandresTrumpCard, effect: TrainerEffect): IterableIterator<State> {
+function* playCard(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  self: LysandresTrumpCard, 
+  effect: TrainerEffect
+): IterableIterator<State> {
 
   const player = effect.player;
   const opponent = StateUtils.getOpponent(state, player);

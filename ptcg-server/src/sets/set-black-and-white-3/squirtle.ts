@@ -18,18 +18,18 @@ export class Squirtle extends PokemonCard {
 
   public hp: number = 60;
 
-  public weakness = [{ type: CardType.GRASS }];
+  public weakness: any = [{ type: CardType.GRASS }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Shell Shield',
     powerType: PowerType.ABILITY,
     text: 'As long as this Pokemon is on your Bench, prevent all damage ' +
       'done to this Pokemon by attacks (both yours and your opponent\'s).'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Water Splash',
     cost: [ CardType.WATER, CardType.COLORLESS ],
     damage: 10,

@@ -11,8 +11,13 @@ import { TrainerEffect } from '../../game/store/effects/play-card-effects';
 import { ChooseCardsPrompt } from '../../game/store/prompts/choose-cards-prompt';
 import { ShuffleDeckPrompt } from '../../game/store/prompts/shuffle-prompt';
 
-function* playCard(next: Function, store: StoreLike, state: State,
-  self: SacredAsh, effect: TrainerEffect): IterableIterator<State> {
+function* playCard(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  self: SacredAsh, 
+  effect: TrainerEffect
+): IterableIterator<State> {
   const player = effect.player;
 
   let pokemonsInDiscard: number = 0;

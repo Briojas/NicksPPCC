@@ -8,8 +8,13 @@ import { PowerType, StoreLike, State, GameMessage, ChooseCardsPrompt,
 import {AddSpecialConditionsEffect} from '../../game/store/effects/attack-effects';
 
 
-function* useStellarGuidance(next: Function, store: StoreLike, state: State,
-  self: JirachiEx, effect: PlayPokemonEffect): IterableIterator<State> {
+function* useStellarGuidance(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  self: JirachiEx, 
+  effect: PlayPokemonEffect
+): IterableIterator<State> {
   const player = effect.player;
 
   if (player.deck.cards.length === 0) {
@@ -43,7 +48,7 @@ function* useStellarGuidance(next: Function, store: StoreLike, state: State,
 
 export class JirachiEx extends PokemonCard {
 
-  public tags = [ CardTag.POKEMON_EX ];
+  public tags: string[] = [ CardTag.POKEMON_EX ];
 
   public stage: Stage = Stage.BASIC;
 
@@ -51,13 +56,13 @@ export class JirachiEx extends PokemonCard {
 
   public hp: number = 90;
 
-  public weakness = [{ type: CardType.FIRE }];
+  public weakness: any = [{ type: CardType.FIRE }];
 
-  public resistance = [{ type: CardType.PSYCHIC, value: -20 }];
+  public resistance: any = [{ type: CardType.PSYCHIC, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Stellar Guidance',
     powerType: PowerType.ABILITY,
     text: 'When you play this Pokemon from your hand onto your Bench, ' +
@@ -65,7 +70,7 @@ export class JirachiEx extends PokemonCard {
       'into your hand. Shuffle your deck afterward.'
   }];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Hypnostrike',
       cost: [ CardType.METAL, CardType.COLORLESS, CardType.COLORLESS ],

@@ -8,7 +8,7 @@ import { PowerType, StoreLike, State, ConfirmPrompt, GameMessage } from '../../g
 
 export class ShayminEx extends PokemonCard {
 
-  public tags = [ CardTag.POKEMON_EX ];
+  public tags: string[] = [ CardTag.POKEMON_EX ];
 
   public stage: Stage = Stage.BASIC;
 
@@ -16,20 +16,20 @@ export class ShayminEx extends PokemonCard {
 
   public hp: number = 110;
 
-  public weakness = [{ type: CardType.LIGHTNING }];
+  public weakness: any = [{ type: CardType.LIGHTNING }];
 
-  public resistance = [{ type: CardType.FIGHTING, value: -20 }];
+  public resistance: any = [{ type: CardType.FIGHTING, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Set Up',
     powerType: PowerType.ABILITY,
     text: 'When you put this Pokemon from your hand onto your Bench, ' +
       'you may draw cards until you have 6 cards in your hand.'
   }];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Sky Return',
       cost: [ CardType.COLORLESS, CardType.COLORLESS ],
@@ -64,7 +64,7 @@ export class ShayminEx extends PokemonCard {
 
       return store.prompt(state, new ConfirmPrompt(
         effect.player.id,
-        GameMessage.WANT_TO_USE_ABILITY,
+        GameMessage.WANT_TO_USE_ABILITY
       ), wantToUse => {
         if (wantToUse) {
           player.deck.moveTo(player.hand, cardsToDraw);

@@ -22,11 +22,11 @@ export class Wartortle extends PokemonCard {
 
   public hp: number = 80;
 
-  public weakness = [{ type: CardType.GRASS }];
+  public weakness: any = [{ type: CardType.GRASS }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Withdraw',
     cost: [ CardType.COLORLESS ],
     damage: 0,
@@ -46,9 +46,9 @@ export class Wartortle extends PokemonCard {
 
   public fullName: string = 'Wartortle BC';
 
-  public readonly CLEAR_WITHDRAW_MARKER = 'CLEAR_WITHDRAW_MARKER';
+  public readonly CLEAR_WITHDRAW_MARKER: string = 'CLEAR_WITHDRAW_MARKER';
 
-  public readonly WITHDRAW_MARKER = 'WITHDRAW_MARKER';
+  public readonly WITHDRAW_MARKER: string = 'WITHDRAW_MARKER';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 
