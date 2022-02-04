@@ -36,7 +36,7 @@ export class DeleteUserTask {
     return avatars;
   }
 
-  public async deleteUser(userId: number) {
+  public async deleteUser(userId: number): Promise<void> {
     const unlinkAsync = promisify(unlink);
 
     try {

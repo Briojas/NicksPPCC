@@ -16,12 +16,12 @@ export class CleanerTask {
     this.deleteUserTask = new DeleteUserTask();
   }
 
-  public startTasks() {
+  public startTasks(): void {
     this.startOldMatchDelete();
     this.startOldUsersDelete();
   }
 
-  private startOldMatchDelete() {
+  private startOldMatchDelete(): void {
     const scheduler = Scheduler.getInstance();
     scheduler.run(async () => {
       const keepMatchTime = config.core.keepMatchTime;
@@ -32,7 +32,7 @@ export class CleanerTask {
   }
 
   // Remove inactive users with ranking equals 0.
-  private startOldUsersDelete() {
+  private startOldUsersDelete(): void {
     const scheduler = Scheduler.getInstance();
     scheduler.run(async () => {
       const keepMatchTime = config.core.keepUserTime;
