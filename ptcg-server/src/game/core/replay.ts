@@ -1,5 +1,4 @@
 import { gzip, ungzip } from '@progress/pako-esm';
-
 import { State, GameWinner } from '../store/state/state';
 import { ReplayPlayer, ReplayOptions } from './replay.interface';
 import { GameError } from '../game-error';
@@ -131,7 +130,9 @@ export class Replay {
   }
 
   private swapQuotes(diffs: SerializedState[]): SerializedState[] {
-    return diffs.map(diff => diff.replace(/['']/g, c => c === ''' ? '\'' : '''));
+    return diffs.map(diff => diff.replace('"', '\''));
+    //TODO: fix this somehow
+    // return diffs.map(diff => diff.replace(/['']/g, c => c === ''' ? '\'' : '''));
   }
 
   private compress(data: string): string {
