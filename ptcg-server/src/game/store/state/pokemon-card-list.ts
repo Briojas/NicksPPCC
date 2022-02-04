@@ -1,8 +1,8 @@
-import { CardList } from "./card-list";
-import { Marker } from "./card-marker";
-import { SpecialCondition, Stage, SuperType } from "../card/card-types";
-import { PokemonCard } from "../card/pokemon-card";
-import { Card } from "../card/card";
+import { CardList } from './card-list';
+import { Marker } from './card-marker';
+import { SpecialCondition, Stage, SuperType } from '../card/card-types';
+import { PokemonCard } from '../card/pokemon-card';
+import { Card } from '../card/card';
 
 export class PokemonCardList extends CardList {
 
@@ -14,7 +14,7 @@ export class PokemonCardList extends CardList {
 
   public burnDamage: number = 20;
 
-  public marker = new Marker();
+  public marker: Marker = new Marker();
 
   public pokemonPlayedTurn: number = 0;
 
@@ -47,7 +47,7 @@ export class PokemonCardList extends CardList {
     return pokemons[0].stage === Stage.BASIC;
   }
 
-  clearEffects(): void {
+  public clearEffects(): void {
     this.marker.markers = [];
     this.specialConditions = [];
     this.poisonDamage = 10;
@@ -60,7 +60,7 @@ export class PokemonCardList extends CardList {
     }
   }
 
-  removeSpecialCondition(sp: SpecialCondition): void {
+  public removeSpecialCondition(sp: SpecialCondition): void {
     if (!this.specialConditions.includes(sp)) {
       return;
     }
@@ -68,7 +68,7 @@ export class PokemonCardList extends CardList {
       .filter(s => s !== sp);
   }
 
-  addSpecialCondition(sp: SpecialCondition): void {
+  public addSpecialCondition(sp: SpecialCondition): void {
     if (sp === SpecialCondition.POISONED) {
       this.poisonDamage = 10;
     }

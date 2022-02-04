@@ -1,7 +1,7 @@
-import { Card } from "../card/card";
-import { CardManager } from "../../cards/card-manager";
-import { GameError } from "../../game-error";
-import { GameMessage } from "../../game-message";
+import { Card } from '../card/card';
+import { CardManager } from '../../cards/card-manager';
+import { GameError } from '../../game-error';
+import { GameMessage } from '../../game-message';
 
 export class CardList {
 
@@ -24,7 +24,7 @@ export class CardList {
     return cardList;
   }
 
-  public applyOrder(order: number[]) {
+  public applyOrder(order: number[]): void {
     // Check if order is valid, same length
     if (this.cards.length !== order.length) {
       return;

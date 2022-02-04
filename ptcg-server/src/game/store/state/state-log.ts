@@ -1,4 +1,4 @@
-import { GameLog } from "../../game-message";
+import { GameLog } from '../../game-message';
 
 export type StateLogParam = { [key: string]: string | number };
 
@@ -11,7 +11,7 @@ export class StateLog {
   constructor(
     message: GameLog,
     params: StateLogParam = {},
-    client: number = 0,
+    client: number = 0
   ) {
     this.message = message;
     this.params = params;

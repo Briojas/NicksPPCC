@@ -1,7 +1,7 @@
-import { Player } from "./player";
-import { Prompt } from "../prompts/prompt";
-import { StateLog } from "./state-log";
-import { Rules } from "./rules";
+import { Player } from './player';
+import { Prompt } from '../prompts/prompt';
+import { StateLog } from './state-log';
+import { Rules } from './rules';
 
 export enum GamePhase {
   WAITING_FOR_PLAYERS,
@@ -31,7 +31,7 @@ export class State {
 
   public phase: GamePhase = GamePhase.WAITING_FOR_PLAYERS;
 
-  public turn = 0;
+  public turn: number = 0;
 
   public activePlayer: number = 0;
 
