@@ -1,13 +1,13 @@
-import { TrainerCard } from "../../game/store/card/trainer-card";
-import { TrainerType, SpecialCondition } from "../../game/store/card/card-types";
-import { StoreLike } from "../../game/store/store-like";
-import { State } from "../../game/store/state/state";
-import { Effect } from "../../game/store/effects/effect";
-import { TrainerEffect } from "../../game/store/effects/play-card-effects";
-import { StateUtils } from "../../game/store/state-utils";
-import { GameError } from "../../game/game-error";
-import { GameMessage } from "../../game/game-message";
-import { CoinFlipPrompt } from "../../game/store/prompts/coin-flip-prompt";
+import { TrainerCard } from '../../game/store/card/trainer-card';
+import { TrainerType, SpecialCondition } from '../../game/store/card/card-types';
+import { StoreLike } from '../../game/store/store-like';
+import { State } from '../../game/store/state/state';
+import { Effect } from '../../game/store/effects/effect';
+import { TrainerEffect } from '../../game/store/effects/play-card-effects';
+import { StateUtils } from '../../game/store/state-utils';
+import { GameError } from '../../game/game-error';
+import { GameMessage } from '../../game/game-message';
+import { CoinFlipPrompt } from '../../game/store/prompts/coin-flip-prompt';
 
 function* playCard(next: Function, store: StoreLike, state: State, effect: TrainerEffect): IterableIterator<State> {
   const player = effect.player;

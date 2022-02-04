@@ -1,10 +1,10 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType } from "../../game/store/card/card-types";
-import { StoreLike, State, StateUtils, DamageMap, PlayerType, PutDamagePrompt, GameMessage, SlotType } from "../../game";
-import { AttackEffect } from "../../game/store/effects/game-effects";
-import { Effect } from "../../game/store/effects/effect";
-import { CheckHpEffect } from "../../game/store/effects/check-effects";
-import { PutCountersEffect } from "../../game/store/effects/attack-effects";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType } from '../../game/store/card/card-types';
+import { StoreLike, State, StateUtils, DamageMap, PlayerType, PutDamagePrompt, GameMessage, SlotType } from '../../game';
+import { AttackEffect } from '../../game/store/effects/game-effects';
+import { Effect } from '../../game/store/effects/effect';
+import { CheckHpEffect } from '../../game/store/effects/check-effects';
+import { PutCountersEffect } from '../../game/store/effects/attack-effects';
 
 function* useCursedDrop(next: Function, store: StoreLike, state: State, effect: AttackEffect): IterableIterator<State> {
   const player = effect.player;

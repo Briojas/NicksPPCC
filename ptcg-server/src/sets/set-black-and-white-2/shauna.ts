@@ -1,10 +1,10 @@
-import { Effect } from "../../game/store/effects/effect";
-import { TrainerEffect } from "../../game/store/effects/play-card-effects";
-import { State } from "../../game/store/state/state";
-import { StoreLike } from "../../game/store/store-like";
-import { TrainerCard } from "../../game/store/card/trainer-card";
-import { TrainerType } from "../../game/store/card/card-types";
-import { ShuffleDeckPrompt } from "../../game/store/prompts/shuffle-prompt";
+import { Effect } from '../../game/store/effects/effect';
+import { TrainerEffect } from '../../game/store/effects/play-card-effects';
+import { State } from '../../game/store/state/state';
+import { StoreLike } from '../../game/store/store-like';
+import { TrainerCard } from '../../game/store/card/trainer-card';
+import { TrainerType } from '../../game/store/card/card-types';
+import { ShuffleDeckPrompt } from '../../game/store/prompts/shuffle-prompt';
 
 function* playCard(next: Function, store: StoreLike, state: State,
     self: Shauna, effect: TrainerEffect): IterableIterator<State> {

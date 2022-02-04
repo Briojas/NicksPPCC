@@ -1,10 +1,10 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType, SuperType } from "../../game/store/card/card-types";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType, SuperType } from '../../game/store/card/card-types';
 import { StoreLike, State, ChooseCardsPrompt, PokemonCardList, Card,
-  ShuffleDeckPrompt, StateUtils, GameMessage } from "../../game";
-import { AttackEffect } from "../../game/store/effects/game-effects";
-import { Effect } from "../../game/store/effects/effect";
-import { CheckProvidedEnergyEffect } from "../../game/store/effects/check-effects";
+  ShuffleDeckPrompt, StateUtils, GameMessage } from '../../game';
+import { AttackEffect } from '../../game/store/effects/game-effects';
+import { Effect } from '../../game/store/effects/effect';
+import { CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
 
 function* useEntrainment(next: Function, store: StoreLike, state: State,
   effect: AttackEffect): IterableIterator<State> {

@@ -1,10 +1,10 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType, CardTag, SuperType } from "../../game/store/card/card-types";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType, CardTag, SuperType } from '../../game/store/card/card-types';
 import { StoreLike, State, StateUtils, PowerType, ChoosePokemonPrompt,
-  PlayerType, SlotType, GameMessage, Card, ChooseCardsPrompt, ShuffleDeckPrompt } from "../../game";
-import { AttackEffect, PowerEffect } from "../../game/store/effects/game-effects";
-import { Effect } from "../../game/store/effects/effect";
-import { CheckProvidedEnergyEffect, CheckTableStateEffect } from "../../game/store/effects/check-effects";
+  PlayerType, SlotType, GameMessage, Card, ChooseCardsPrompt, ShuffleDeckPrompt } from '../../game';
+import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { Effect } from '../../game/store/effects/effect';
+import { CheckProvidedEnergyEffect, CheckTableStateEffect } from '../../game/store/effects/check-effects';
 
 
 function* useEmeraldSlash(next: Function, store: StoreLike, state: State,

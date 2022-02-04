@@ -1,11 +1,11 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType, CardTag, SuperType } from "../../game/store/card/card-types";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType, CardTag, SuperType } from '../../game/store/card/card-types';
 import { StoreLike, State, StateUtils, Card, EnergyCard, CoinFlipPrompt,
-  ChooseCardsPrompt } from "../../game";
-import { AttackEffect } from "../../game/store/effects/game-effects";
-import { DiscardCardsEffect } from "../../game/store/effects/attack-effects";
-import { Effect } from "../../game/store/effects/effect";
-import { GameMessage } from "../../game/game-message";
+  ChooseCardsPrompt } from '../../game';
+import { AttackEffect } from '../../game/store/effects/game-effects';
+import { DiscardCardsEffect } from '../../game/store/effects/attack-effects';
+import { Effect } from '../../game/store/effects/effect';
+import { GameMessage } from '../../game/game-message';
 
 function* usePowerBlast(next: Function, store: StoreLike, state: State,
   effect: AttackEffect): IterableIterator<State> {

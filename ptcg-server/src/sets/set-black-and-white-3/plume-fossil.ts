@@ -1,16 +1,16 @@
-import { Card } from "../../game/store/card/card";
-import { TrainerCard } from "../../game/store/card/trainer-card";
-import { TrainerType, SuperType, Stage } from "../../game/store/card/card-types";
-import { StoreLike } from "../../game/store/store-like";
-import { State } from "../../game/store/state/state";
-import { Effect } from "../../game/store/effects/effect";
-import { TrainerEffect } from "../../game/store/effects/play-card-effects";
-import { CardList } from "../../game/store/state/card-list";
-import { ChooseCardsPrompt } from "../../game/store/prompts/choose-cards-prompt";
-import { GameError } from "../../game/game-error";
-import { GameMessage } from "../../game/game-message";
-import { ShuffleDeckPrompt } from "../../game/store/prompts/shuffle-prompt";
-import { PokemonCardList } from "../../game/store/state/pokemon-card-list";
+import { Card } from '../../game/store/card/card';
+import { TrainerCard } from '../../game/store/card/trainer-card';
+import { TrainerType, SuperType, Stage } from '../../game/store/card/card-types';
+import { StoreLike } from '../../game/store/store-like';
+import { State } from '../../game/store/state/state';
+import { Effect } from '../../game/store/effects/effect';
+import { TrainerEffect } from '../../game/store/effects/play-card-effects';
+import { CardList } from '../../game/store/state/card-list';
+import { ChooseCardsPrompt } from '../../game/store/prompts/choose-cards-prompt';
+import { GameError } from '../../game/game-error';
+import { GameMessage } from '../../game/game-message';
+import { ShuffleDeckPrompt } from '../../game/store/prompts/shuffle-prompt';
+import { PokemonCardList } from '../../game/store/state/pokemon-card-list';
 
 function* playCard(next: Function, store: StoreLike, state: State, effect: TrainerEffect): IterableIterator<State> {
   const player = effect.player;

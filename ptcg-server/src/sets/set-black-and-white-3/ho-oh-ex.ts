@@ -1,10 +1,10 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType, CardTag, EnergyType, SuperType } from "../../game/store/card/card-types";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType, CardTag, EnergyType, SuperType } from '../../game/store/card/card-types';
 import { StoreLike, State, PowerType, EnergyCard, GameError, GameMessage,
-  CoinFlipPrompt, PokemonCardList, ChooseCardsPrompt } from "../../game";
-import { AttackEffect, PowerEffect } from "../../game/store/effects/game-effects";
-import { Effect } from "../../game/store/effects/effect";
-import { EndTurnEffect } from "../../game/store/effects/game-phase-effects";
+  CoinFlipPrompt, PokemonCardList, ChooseCardsPrompt } from '../../game';
+import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { Effect } from '../../game/store/effects/effect';
+import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
 
 
 function* useRebirth(next: Function, store: StoreLike, state: State,

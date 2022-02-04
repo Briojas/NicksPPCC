@@ -1,10 +1,10 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType, SuperType } from "../../game/store/card/card-types";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType, SuperType } from '../../game/store/card/card-types';
 import { StoreLike, State, ChooseCardsPrompt, PokemonCardList, Card,
-  ShuffleDeckPrompt } from "../../game";
-import { AttackEffect } from "../../game/store/effects/game-effects";
-import { Effect } from "../../game/store/effects/effect";
-import { GameMessage } from "../../game/game-message";
+  ShuffleDeckPrompt } from '../../game';
+import { AttackEffect } from '../../game/store/effects/game-effects';
+import { Effect } from '../../game/store/effects/effect';
+import { GameMessage } from '../../game/game-message';
 
 function* useFlock(next: Function, store: StoreLike, state: State,
   effect: AttackEffect): IterableIterator<State> {

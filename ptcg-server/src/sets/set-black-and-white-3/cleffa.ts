@@ -1,9 +1,9 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType } from "../../game/store/card/card-types";
-import { PowerType, StoreLike, State, ShuffleDeckPrompt, GameError, GameMessage, CoinFlipPrompt } from "../../game";
-import { PowerEffect } from "../../game/store/effects/game-effects";
-import { Effect } from "../../game/store/effects/effect";
-import { EndTurnEffect } from "../../game/store/effects/game-phase-effects";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType } from '../../game/store/card/card-types';
+import { PowerType, StoreLike, State, ShuffleDeckPrompt, GameError, GameMessage, CoinFlipPrompt } from '../../game';
+import { PowerEffect } from '../../game/store/effects/game-effects';
+import { Effect } from '../../game/store/effects/effect';
+import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
 
 function* useExcitableDraw(next: Function, store: StoreLike, state: State,
   effect: PowerEffect): IterableIterator<State> {

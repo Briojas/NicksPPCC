@@ -1,17 +1,17 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType } from "../../game/store/card/card-types";
-import { StoreLike } from "../../game/store/store-like";
-import { State } from "../../game/store/state/state";
-import { Effect } from "../../game/store/effects/effect";
-import { AttackEffect } from "../../game/store/effects/game-effects";
-import { GameMessage, GameLog } from "../../game/game-message";
-import { StateUtils } from "../../game/store/state-utils";
-import { ChooseCardsPrompt } from "../../game/store/prompts/choose-cards-prompt";
-import { ShuffleDeckPrompt } from "../../game/store/prompts/shuffle-prompt";
-import { Card } from "../../game/store/card/card";
-import { ChooseAttackPrompt } from "../../game/store/prompts/choose-attack-prompt";
-import { Attack } from "../../game/store/card/pokemon-types";
-import { DealDamageEffect } from "../../game/store/effects/attack-effects";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType } from '../../game/store/card/card-types';
+import { StoreLike } from '../../game/store/store-like';
+import { State } from '../../game/store/state/state';
+import { Effect } from '../../game/store/effects/effect';
+import { AttackEffect } from '../../game/store/effects/game-effects';
+import { GameMessage, GameLog } from '../../game/game-message';
+import { StateUtils } from '../../game/store/state-utils';
+import { ChooseCardsPrompt } from '../../game/store/prompts/choose-cards-prompt';
+import { ShuffleDeckPrompt } from '../../game/store/prompts/shuffle-prompt';
+import { Card } from '../../game/store/card/card';
+import { ChooseAttackPrompt } from '../../game/store/prompts/choose-attack-prompt';
+import { Attack } from '../../game/store/card/pokemon-types';
+import { DealDamageEffect } from '../../game/store/effects/attack-effects';
 
 function* useNastyPlot(next: Function, store: StoreLike, state: State,
   effect: AttackEffect): IterableIterator<State> {

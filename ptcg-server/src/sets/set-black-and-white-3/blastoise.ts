@@ -1,12 +1,12 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType, EnergyType, SuperType } from "../../game/store/card/card-types";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType, EnergyType, SuperType } from '../../game/store/card/card-types';
 import { PowerType, StoreLike, State, StateUtils,
-  GameError, GameMessage, EnergyCard, PlayerType, SlotType } from "../../game";
-import { Effect } from "../../game/store/effects/effect";
-import { PowerEffect, AttackEffect } from "../../game/store/effects/game-effects";
-import { AttachEnergyPrompt } from "../../game/store/prompts/attach-energy-prompt";
-import { AttachEnergyEffect } from "../../game/store/effects/play-card-effects";
-import {CheckProvidedEnergyEffect} from "../../game/store/effects/check-effects";
+  GameError, GameMessage, EnergyCard, PlayerType, SlotType } from '../../game';
+import { Effect } from '../../game/store/effects/effect';
+import { PowerEffect, AttackEffect } from '../../game/store/effects/game-effects';
+import { AttachEnergyPrompt } from '../../game/store/prompts/attach-energy-prompt';
+import { AttachEnergyEffect } from '../../game/store/effects/play-card-effects';
+import {CheckProvidedEnergyEffect} from '../../game/store/effects/check-effects';
 
 export class Blastoise extends PokemonCard {
 

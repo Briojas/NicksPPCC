@@ -1,16 +1,16 @@
-import { Card } from "../../game/store/card/card";
-import { GameMessage } from "../../game/game-message";
-import { Effect } from "../../game/store/effects/effect";
-import { TrainerCard } from "../../game/store/card/trainer-card";
-import { TrainerType, CardType } from "../../game/store/card/card-types";
-import { StoreLike } from "../../game/store/store-like";
-import { State } from "../../game/store/state/state";
-import { StateUtils } from "../../game/store/state-utils";
-import { TrainerEffect } from "../../game/store/effects/play-card-effects";
-import { ChooseCardsPrompt } from "../../game/store/prompts/choose-cards-prompt";
-import { ShowCardsPrompt } from "../../game/store/prompts/show-cards-prompt";
-import { ShuffleDeckPrompt } from "../../game/store/prompts/shuffle-prompt";
-import { PokemonCard } from "../../game/store/card/pokemon-card";
+import { Card } from '../../game/store/card/card';
+import { GameMessage } from '../../game/game-message';
+import { Effect } from '../../game/store/effects/effect';
+import { TrainerCard } from '../../game/store/card/trainer-card';
+import { TrainerType, CardType } from '../../game/store/card/card-types';
+import { StoreLike } from '../../game/store/store-like';
+import { State } from '../../game/store/state/state';
+import { StateUtils } from '../../game/store/state-utils';
+import { TrainerEffect } from '../../game/store/effects/play-card-effects';
+import { ChooseCardsPrompt } from '../../game/store/prompts/choose-cards-prompt';
+import { ShowCardsPrompt } from '../../game/store/prompts/show-cards-prompt';
+import { ShuffleDeckPrompt } from '../../game/store/prompts/shuffle-prompt';
+import { PokemonCard } from '../../game/store/card/pokemon-card';
 
 function* playCard(next: Function, store: StoreLike, state: State,
   self: Korrina, effect: TrainerEffect): IterableIterator<State> {

@@ -1,12 +1,12 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType, SuperType } from "../../game/store/card/card-types";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType, SuperType } from '../../game/store/card/card-types';
 import { StoreLike, State, Card, ChooseEnergyPrompt, PowerType, StateUtils,
-  CardTarget, PlayerType, MoveEnergyPrompt, SlotType} from "../../game";
-import { GameMessage } from "../../game/game-message";
-import { AttackEffect, PowerEffect } from "../../game/store/effects/game-effects";
-import { Effect } from "../../game/store/effects/effect";
-import { CheckProvidedEnergyEffect } from "../../game/store/effects/check-effects";
-import { DiscardCardsEffect } from "../../game/store/effects/attack-effects";
+  CardTarget, PlayerType, MoveEnergyPrompt, SlotType} from '../../game';
+import { GameMessage } from '../../game/game-message';
+import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { Effect } from '../../game/store/effects/effect';
+import { CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
+import { DiscardCardsEffect } from '../../game/store/effects/attack-effects';
 
 function* useDarkTrance(next: Function, store: StoreLike, state: State, effect: PowerEffect): IterableIterator<State> {
   const player = effect.player;

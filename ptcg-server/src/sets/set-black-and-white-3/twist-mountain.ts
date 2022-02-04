@@ -1,17 +1,17 @@
-import { Effect } from "../../game/store/effects/effect";
-import { GameError } from "../../game/game-error";
-import { GameMessage } from "../../game/game-message";
-import { State } from "../../game/store/state/state";
-import { StoreLike } from "../../game/store/store-like";
-import { TrainerCard } from "../../game/store/card/trainer-card";
-import { TrainerType, SuperType, Stage } from "../../game/store/card/card-types";
-import { StateUtils } from "../../game/store/state-utils";
-import { UseStadiumEffect } from "../../game/store/effects/game-effects";
-import { ChooseCardsPrompt } from "../../game/store/prompts/choose-cards-prompt";
-import { Card } from "../../game/store/card/card";
-import { PokemonCardList } from "../../game/store/state/pokemon-card-list";
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { CoinFlipPrompt } from "../../game/store/prompts/coin-flip-prompt";
+import { Effect } from '../../game/store/effects/effect';
+import { GameError } from '../../game/game-error';
+import { GameMessage } from '../../game/game-message';
+import { State } from '../../game/store/state/state';
+import { StoreLike } from '../../game/store/store-like';
+import { TrainerCard } from '../../game/store/card/trainer-card';
+import { TrainerType, SuperType, Stage } from '../../game/store/card/card-types';
+import { StateUtils } from '../../game/store/state-utils';
+import { UseStadiumEffect } from '../../game/store/effects/game-effects';
+import { ChooseCardsPrompt } from '../../game/store/prompts/choose-cards-prompt';
+import { Card } from '../../game/store/card/card';
+import { PokemonCardList } from '../../game/store/state/pokemon-card-list';
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { CoinFlipPrompt } from '../../game/store/prompts/coin-flip-prompt';
 
 function* useStadium(next: Function, store: StoreLike, state: State, effect: UseStadiumEffect): IterableIterator<State> {
   const player = effect.player;

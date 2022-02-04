@@ -1,15 +1,15 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType } from "../../game/store/card/card-types";
-import { StoreLike } from "../../game/store/store-like";
-import { State } from "../../game/store/state/state";
-import { Effect } from "../../game/store/effects/effect";
-import { AttackEffect, PowerEffect } from "../../game/store/effects/game-effects";
-import { StateUtils } from "../../game/store/state-utils";
-import { PowerType } from "../../game/store/card/pokemon-types";
-import { CheckHpEffect } from "../../game/store/effects/check-effects";
-import { PlayerType, SlotType } from "../../game/store/actions/play-card-action";
-import { MoveDamagePrompt, DamageMap } from "../../game/store/prompts/move-damage-prompt";
-import { GameMessage } from "../../game/game-message";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType } from '../../game/store/card/card-types';
+import { StoreLike } from '../../game/store/store-like';
+import { State } from '../../game/store/state/state';
+import { Effect } from '../../game/store/effects/effect';
+import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { StateUtils } from '../../game/store/state-utils';
+import { PowerType } from '../../game/store/card/pokemon-types';
+import { CheckHpEffect } from '../../game/store/effects/check-effects';
+import { PlayerType, SlotType } from '../../game/store/actions/play-card-action';
+import { MoveDamagePrompt, DamageMap } from '../../game/store/prompts/move-damage-prompt';
+import { GameMessage } from '../../game/game-message';
 
 
 function* useSinisterHand(next: Function, store: StoreLike, state: State, effect: PowerEffect): IterableIterator<State> {

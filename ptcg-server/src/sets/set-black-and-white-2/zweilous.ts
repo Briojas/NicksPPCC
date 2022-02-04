@@ -1,11 +1,11 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType, SuperType } from "../../game/store/card/card-types";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType, SuperType } from '../../game/store/card/card-types';
 import { StoreLike, State, StateUtils, CoinFlipPrompt, Card, ChooseCardsPrompt,
-  EnergyCard } from "../../game";
-import { AttackEffect } from "../../game/store/effects/game-effects";
-import { Effect } from "../../game/store/effects/effect";
-import { GameMessage } from "../../game/game-message";
-import { DiscardCardsEffect } from "../../game/store/effects/attack-effects";
+  EnergyCard } from '../../game';
+import { AttackEffect } from '../../game/store/effects/game-effects';
+import { Effect } from '../../game/store/effects/effect';
+import { GameMessage } from '../../game/game-message';
+import { DiscardCardsEffect } from '../../game/store/effects/attack-effects';
 
 function* useWhirlpool(next: Function, store: StoreLike, state: State,
   effect: AttackEffect): IterableIterator<State> {

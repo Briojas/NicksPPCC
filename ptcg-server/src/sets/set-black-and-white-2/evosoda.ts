@@ -1,18 +1,18 @@
-import { Card } from "../../game/store/card/card";
-import { CardTarget, PlayerType, SlotType } from "../../game/store/actions/play-card-action";
-import { GameError } from "../../game/game-error";
-import { GameMessage } from "../../game/game-message";
-import { TrainerCard } from "../../game/store/card/trainer-card";
-import { TrainerType, Stage, SuperType } from "../../game/store/card/card-types";
-import { StoreLike } from "../../game/store/store-like";
-import { State } from "../../game/store/state/state";
-import { Effect } from "../../game/store/effects/effect";
-import { TrainerEffect } from "../../game/store/effects/play-card-effects";
-import { ChoosePokemonPrompt } from "../../game/store/prompts/choose-pokemon-prompt";
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { CardManager } from "../../game/cards/card-manager";
-import { PokemonCardList} from "../../game/store/state/pokemon-card-list";
-import { ChooseCardsPrompt } from "../../game/store/prompts/choose-cards-prompt";
+import { Card } from '../../game/store/card/card';
+import { CardTarget, PlayerType, SlotType } from '../../game/store/actions/play-card-action';
+import { GameError } from '../../game/game-error';
+import { GameMessage } from '../../game/game-message';
+import { TrainerCard } from '../../game/store/card/trainer-card';
+import { TrainerType, Stage, SuperType } from '../../game/store/card/card-types';
+import { StoreLike } from '../../game/store/store-like';
+import { State } from '../../game/store/state/state';
+import { Effect } from '../../game/store/effects/effect';
+import { TrainerEffect } from '../../game/store/effects/play-card-effects';
+import { ChoosePokemonPrompt } from '../../game/store/prompts/choose-pokemon-prompt';
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { CardManager } from '../../game/cards/card-manager';
+import { PokemonCardList} from '../../game/store/state/pokemon-card-list';
+import { ChooseCardsPrompt } from '../../game/store/prompts/choose-cards-prompt';
 
 function* playCard(next: Function, store: StoreLike, state: State, effect: TrainerEffect): IterableIterator<State> {
   const player = effect.player;
