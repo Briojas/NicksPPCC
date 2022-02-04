@@ -15,20 +15,20 @@ export class Zubat extends PokemonCard {
 
   public hp: number = 40;
 
-  public weakness = [{ type: CardType.LIGHTNING }];
+  public weakness: any = [{ type: CardType.LIGHTNING }];
 
-  public resistance = [{ type: CardType.FIGHTING, value: -20 }];
+  public resistance: any = [{ type: CardType.FIGHTING, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Free Flight',
     powerType: PowerType.ABILITY,
     text: 'If this Pokemon has no Energy attached to it, this Pokemon has ' +
       'no Retreat Cost.'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Wing Attack',
     cost: [ CardType.PSYCHIC, CardType.COLORLESS ],
     damage: 20,

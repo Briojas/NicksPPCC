@@ -12,8 +12,13 @@ import { ShowCardsPrompt } from '../../game/store/prompts/show-cards-prompt';
 import { ShuffleDeckPrompt } from '../../game/store/prompts/shuffle-prompt';
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 
-function* playCard(next: Function, store: StoreLike, state: State,
-  self: Korrina, effect: TrainerEffect): IterableIterator<State> {
+function* playCard(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  self: Korrina, 
+  effect: TrainerEffect
+): IterableIterator<State> {
   const player = effect.player;
   const opponent = StateUtils.getOpponent(state, player);
   let cards: Card[] = [];

@@ -14,17 +14,17 @@ export class MysteryEnergy extends EnergyCard {
 
   public provides: CardType[] = [ ];
 
-  public energyType = EnergyType.SPECIAL;
+  public energyType: number = EnergyType.SPECIAL;
 
   public set: string = 'BW4';
 
-  public name = 'Mystery Energy';
+  public name: string = 'Mystery Energy';
 
-  public fullName = 'Mystery Energy PFO';
+  public fullName: string = 'Mystery Energy PFO';
 
-  public readonly STRONG_ENERGY_MAREKER = 'STRONG_ENERGY_MAREKER';
+  public readonly STRONG_ENERGY_MAREKER: string = 'STRONG_ENERGY_MAREKER';
 
-  public text =
+  public text: string =
     'This card can only be attached to P Pokemon. This card provides P ' +
     'Energy, but only while this card is attached to a P Pokemon. ' +
     'The Retreat Cost of the Pokemon this card is attached to is 2 less. ' +

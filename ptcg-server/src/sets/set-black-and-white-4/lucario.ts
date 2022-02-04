@@ -9,19 +9,19 @@ export class Lucario extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_1;
 
-  public evolvesFrom = 'Riolu';
+  public evolvesFrom: string = 'Riolu';
 
   public cardType: CardType = CardType.METAL;
 
   public hp: number = 110;
 
-  public weakness = [{ type: CardType.FIRE }];
+  public weakness: any = [{ type: CardType.FIRE }];
 
-  public resistance = [{ type: CardType.PSYCHIC, value: -20 }];
+  public resistance: any = [{ type: CardType.PSYCHIC, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Vacuum Wave',
       cost: [ CardType.METAL ],
@@ -33,7 +33,7 @@ export class Lucario extends PokemonCard {
       damage: 30,
       text: 'If you have fewer Pokemon in play than your opponent, this ' +
         'attack does 60 more damage for each Pokemon fewer you have in play.'
-    },
+    }
   ];
 
   public set: string = 'BW4';
@@ -45,7 +45,7 @@ export class Lucario extends PokemonCard {
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 
     if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
-      effect.ignoreWeakness = true
+      effect.ignoreWeakness = true;
       effect.ignoreResistance = true;
       return state;
     }

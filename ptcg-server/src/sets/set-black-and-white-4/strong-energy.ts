@@ -16,17 +16,17 @@ export class StrongEnergy extends EnergyCard {
 
   public provides: CardType[] = [ ];
 
-  public energyType = EnergyType.SPECIAL;
+  public energyType: number = EnergyType.SPECIAL;
 
   public set: string = 'BW4';
 
-  public name = 'Strong Energy';
+  public name: string = 'Strong Energy';
 
-  public fullName = 'Strong Energy FFI';
+  public fullName: string = 'Strong Energy FFI';
 
-  public readonly STRONG_ENERGY_MAREKER = 'STRONG_ENERGY_MAREKER';
+  public readonly STRONG_ENERGY_MAREKER: string = 'STRONG_ENERGY_MAREKER';
 
-  public text =
+  public text: string =
     'This card can only be attached to F Pokemon. This card provides F ' +
     'Energy only while this card is attached to a F Pokemon. The attacks of ' +
     'the F Pokemon this card is attached to do 20 more damage to your ' +

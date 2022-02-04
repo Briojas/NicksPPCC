@@ -13,7 +13,7 @@ export class ScoopUpCyclone extends TrainerCard {
 
   public trainerType: TrainerType = TrainerType.ITEM;
 
-  public tags = [ CardTag.ACE_SPEC ];
+  public tags: string[] = [ CardTag.ACE_SPEC ];
 
   public set: string = 'BW4';
 

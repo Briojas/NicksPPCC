@@ -9,13 +9,13 @@ export class Phanpy extends PokemonCard {
 
   public hp: number = 80;
 
-  public weakness = [{ type: CardType.WATER }];
+  public weakness: any = [{ type: CardType.WATER }];
 
-  public resistance = [{ type: CardType.LIGHTNING, value: -20 }];
+  public resistance: any = [{ type: CardType.LIGHTNING, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Tackle',
     cost: [ CardType.FIGHTING ],
     damage: 10,

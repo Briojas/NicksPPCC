@@ -8,7 +8,7 @@ import { GameMessage } from '../../game/game-message';
 
 export class LucarioEx extends PokemonCard {
 
-  public tags = [ CardTag.POKEMON_EX ];
+  public tags: string[] = [ CardTag.POKEMON_EX ];
 
   public stage: Stage = Stage.BASIC;
 
@@ -16,11 +16,11 @@ export class LucarioEx extends PokemonCard {
 
   public hp: number = 180;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Missile Jab',
       cost: [ CardType.FIGHTING ],

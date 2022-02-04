@@ -13,26 +13,26 @@ export class Crobat extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_2;
 
-  public evolvesFrom = 'Golbat';
+  public evolvesFrom: string = 'Golbat';
 
   public cardType: CardType = CardType.PSYCHIC;
 
   public hp: number = 130;
 
-  public weakness = [{ type: CardType.LIGHTNING }];
+  public weakness: any[] = [{ type: CardType.LIGHTNING }];
 
-  public resistance = [{ type: CardType.FIGHTING, value: -20 }];
+  public resistance: any[] = [{ type: CardType.FIGHTING, value: -20 }];
 
-  public retreat = [ ];
+  public retreat: any[] = [ ];
 
-  public powers = [{
+  public powers: any[] = [{
     name: 'Surprise Bite',
     powerType: PowerType.ABILITY,
     text: 'When you play this Pokemon from your hand to evolve 1 of your ' +
       'Pokemon, you may put 3 damage counters on 1 of your opponent\'s Pokemon.'
   }];
 
-  public attacks = [
+  public attacks: any[] = [
     {
       name: 'Skill Dive',
       cost: [ CardType.COLORLESS ],
@@ -66,7 +66,7 @@ export class Crobat extends PokemonCard {
         GameMessage.CHOOSE_POKEMON_TO_DAMAGE,
         PlayerType.TOP_PLAYER,
         [ SlotType.ACTIVE, SlotType.BENCH ],
-        { allowCancel: true },
+        { allowCancel: true }
       ), selected => {
         const targets = selected || [];
         targets.forEach(target => {
@@ -84,7 +84,7 @@ export class Crobat extends PokemonCard {
         GameMessage.CHOOSE_POKEMON_TO_DAMAGE,
         PlayerType.TOP_PLAYER,
         [ SlotType.ACTIVE, SlotType.BENCH ],
-        { allowCancel: false },
+        { allowCancel: false }
       ), selected => {
         const targets = selected || [];
         if (targets.includes(opponent.active)) {

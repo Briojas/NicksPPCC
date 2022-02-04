@@ -15,11 +15,11 @@ export class Riolu2 extends PokemonCard {
 
   public hp: number = 70;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Punch',
     cost: [ CardType.COLORLESS ],
     damage: 10,

@@ -15,20 +15,20 @@ export class Hawlucha extends PokemonCard {
 
   public hp: number = 70;
 
-  public weakness = [{ type: CardType.LIGHTNING }];
+  public weakness: any[] = [{ type: CardType.LIGHTNING }];
 
-  public resistance = [{ type: CardType.FIGHTING, value: -20 }];
+  public resistance: any[] = [{ type: CardType.FIGHTING, value: -20 }];
 
-  public retreat = [ ];
+  public retreat: Array<any> = [ ];
 
-  public powers = [{
+  public powers: any[] = [{
     name: 'Shining Spirit',
     powerType: PowerType.ABILITY,
     text: 'Damage from this Pokemon\'s attacks isn\'t affected by ' +
       'Weakness or Resistance.'
   }];
 
-  public attacks = [{
+  public attacks: any[] = [{
     name: 'Flying Press',
     cost: [ CardType.FIGHTING ],
     damage: 60,

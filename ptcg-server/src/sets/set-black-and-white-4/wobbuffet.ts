@@ -19,11 +19,11 @@ export class Wobbuffet extends PokemonCard {
 
   public hp: number = 110;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Bide Barricade',
     powerType: PowerType.ABILITY,
     text: 'As long as this Pokemon is your Active Pokemon, each Pokemon in ' +
@@ -31,7 +31,7 @@ export class Wobbuffet extends PokemonCard {
       'no Abilities (except for P Pokemon).'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Psychic Assault',
     cost: [ CardType.PSYCHIC, CardType.COLORLESS ],
     damage: 10,

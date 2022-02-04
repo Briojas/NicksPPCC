@@ -13,26 +13,26 @@ export class Golbat extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_1;
 
-  public evolvesFrom = 'Zubat';
+  public evolvesFrom: string = 'Zubat';
 
   public cardType: CardType = CardType.PSYCHIC;
 
   public hp: number = 70;
 
-  public weakness = [{ type: CardType.LIGHTNING }];
+  public weakness: any[] = [{ type: CardType.LIGHTNING }];
 
-  public resistance = [{ type: CardType.FIGHTING, value: -20 }];
+  public resistance: any[] = [{ type: CardType.FIGHTING, value: -20 }];
 
-  public retreat = [ ];
+  public retreat: any[] = [ ];
 
-  public powers = [{
+  public powers: any[] = [{
     name: 'Sneaky Bite',
     powerType: PowerType.ABILITY,
     text: 'When you play this Pokemon from your hand to evolve 1 of your ' +
       'Pokemon, you may put 2 damage counters on 1 of your opponent\'s Pokemon.'
   }];
 
-  public attacks = [
+  public attacks: any[] = [
     {
       name: 'Swoop Across',
       cost: [ CardType.COLORLESS ],
@@ -66,7 +66,7 @@ export class Golbat extends PokemonCard {
         GameMessage.CHOOSE_POKEMON_TO_DAMAGE,
         PlayerType.TOP_PLAYER,
         [ SlotType.ACTIVE, SlotType.BENCH ],
-        { allowCancel: true },
+        { allowCancel: true }
       ), selected => {
         const targets = selected || [];
         targets.forEach(target => {
