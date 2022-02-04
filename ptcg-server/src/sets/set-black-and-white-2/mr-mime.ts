@@ -19,17 +19,17 @@ export class MrMime extends PokemonCard {
 
   public hp: number = 70;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Bench Barrier',
     powerType: PowerType.ABILITY,
     text: 'Prevent all damage done to your Benched Pokemon by attacks.'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Psy Bolt',
     cost: [ CardType.PSYCHIC, CardType.COLORLESS ],
     damage: 20,

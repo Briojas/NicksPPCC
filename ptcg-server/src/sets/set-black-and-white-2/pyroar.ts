@@ -16,24 +16,24 @@ export class Pyroar extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_1;
 
-  public evolvesFrom = 'Litleo';
+  public evolvesFrom: string = 'Litleo';
 
   public cardType: CardType = CardType.FIRE;
 
   public hp: number = 110;
 
-  public weakness = [{ type: CardType.WATER }];
+  public weakness: any = [{ type: CardType.WATER }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Intimidating Mane',
     powerType: PowerType.ABILITY,
     text: 'Prevent all damage done to this Pokemon by attacks from your ' +
       'opponent\'s Basic Pokemon.'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Scorching Fang',
     cost: [ CardType.FIRE, CardType.COLORLESS, CardType.COLORLESS ],
     damage: 60,

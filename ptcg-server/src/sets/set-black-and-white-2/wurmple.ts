@@ -6,8 +6,12 @@ import { AttackEffect } from '../../game/store/effects/game-effects';
 import { Effect } from '../../game/store/effects/effect';
 import { GameMessage } from '../../game/game-message';
 
-function* useFlock(next: Function, store: StoreLike, state: State,
-  effect: AttackEffect): IterableIterator<State> {
+function* useFlock(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  effect: AttackEffect
+): IterableIterator<State> {
   const player = effect.player;
   const slots: PokemonCardList[] = player.bench.filter(b => b.cards.length === 0);
   const max = Math.min(slots.length, 1);
@@ -46,11 +50,11 @@ export class Wurmple extends PokemonCard {
 
   public hp: number = 60;
 
-  public weakness = [{ type: CardType.FIRE }];
+  public weakness: any = [{ type: CardType.FIRE }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Flock',
       cost: [ CardType.GRASS ],

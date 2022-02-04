@@ -9,13 +9,13 @@ export class Bronzor extends PokemonCard {
 
   public hp: number = 50;
 
-  public weakness = [{ type: CardType.FIRE }];
+  public weakness: any = [{ type: CardType.FIRE }];
 
-  public resistance = [{ type: CardType.PSYCHIC, value: -20 }];
+  public resistance: any = [{ type: CardType.PSYCHIC, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Tackle',
     cost: [ CardType.METAL ],
     damage: 10,

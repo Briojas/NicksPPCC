@@ -16,11 +16,11 @@ export class Vanillite extends PokemonCard {
 
   public hp: number = 50;
 
-  public weakness = [{ type: CardType.METAL }];
+  public weakness: any = [{ type: CardType.METAL }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Icicle Barb',
     cost: [ CardType.WATER ],
     damage: 10,

@@ -18,19 +18,19 @@ export class Bronzong extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_1;
 
-  public evolvesFrom = 'Bronzor';
+  public evolvesFrom: string = 'Bronzor';
 
   public cardType: CardType = CardType.METAL;
 
   public hp: number = 90;
 
-  public weakness = [{ type: CardType.FIRE }];
+  public weakness: any = [{ type: CardType.FIRE }];
 
-  public resistance = [{ type: CardType.PSYCHIC, value: -20 }];
+  public resistance: any = [{ type: CardType.PSYCHIC, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Metal Links',
     useWhenInPlay: true,
     powerType: PowerType.ABILITY,
@@ -38,7 +38,7 @@ export class Bronzong extends PokemonCard {
     'a M Energy card from your discard pile to 1 of your Benched Pokemon.'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Hammer In',
     cost: [ CardType.METAL, CardType.METAL, CardType.COLORLESS ],
     damage: 60,
@@ -51,7 +51,7 @@ export class Bronzong extends PokemonCard {
 
   public fullName: string = 'Bronzong PFO';
 
-  public readonly METAL_LINKS_MAREKER = 'METAL_LINKS_MAREKER';
+  public readonly METAL_LINKS_MAREKER: string = 'METAL_LINKS_MAREKER';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 

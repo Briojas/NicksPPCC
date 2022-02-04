@@ -15,13 +15,13 @@ export class Roselia extends PokemonCard {
 
   public hp: number = 70;
 
-  public weakness = [{ type: CardType.FIRE }];
+  public weakness: any = [{ type: CardType.FIRE }];
 
-  public resistance = [{ type: CardType.WATER, value: -20 }];
+  public resistance: any = [{ type: CardType.WATER, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Double Whip',
       cost: [ CardType.COLORLESS ],

@@ -11,7 +11,7 @@ import { GameMessage } from '../../game/game-message';
 
 export class RaikouEx extends PokemonCard {
 
-  public tags = [ CardTag.POKEMON_EX ];
+  public tags: string[] = [ CardTag.POKEMON_EX ];
 
   public stage: Stage = Stage.BASIC;
 
@@ -19,11 +19,11 @@ export class RaikouEx extends PokemonCard {
 
   public hp: number = 170;
 
-  public weakness = [{ type: CardType.FIGHTING }];
+  public weakness: any = [{ type: CardType.FIGHTING }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Thunder Fang',
       cost: [ CardType.LIGHTNING, CardType.COLORLESS ],
@@ -36,7 +36,7 @@ export class RaikouEx extends PokemonCard {
       text: 'Discard all L Energy attached to this Pokemon. This attack ' +
         'does 100 damage to 1 of your opponent\'s Pokemon. ' +
         '(Don\'t apply Weakness and Resistance for Benched Pokemon.)'
-    },
+    }
   ];
 
   public set: string = 'BW2';

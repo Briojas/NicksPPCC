@@ -11,7 +11,7 @@ import { PlayItemEffect } from '../../game/store/effects/play-card-effects';
 
 export class SeismitoadEx extends PokemonCard {
 
-  public tags = [ CardTag.POKEMON_EX ];
+  public tags: string[] = [ CardTag.POKEMON_EX ];
 
   public stage: Stage = Stage.BASIC;
 
@@ -19,11 +19,11 @@ export class SeismitoadEx extends PokemonCard {
 
   public hp: number = 180;
 
-  public weakness = [{ type: CardType.GRASS }];
+  public weakness: any = [{ type: CardType.GRASS }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Quaking Punch',
       cost: [ CardType.COLORLESS, CardType.COLORLESS ],
@@ -36,7 +36,7 @@ export class SeismitoadEx extends PokemonCard {
       damage: 130,
       text: 'This attack does 30 damage to 2 of your Benched Pokemon. ' +
         '(Don\'t apply Weakness and Resistance for Benched Pokemon.)'
-    },
+    }
   ];
 
   public set: string = 'BW2';
@@ -45,7 +45,7 @@ export class SeismitoadEx extends PokemonCard {
 
   public fullName: string = 'Seismitoad EX FFI';
 
-  public readonly QUAKING_PUNCH_MAREKER = 'QUAKING_PUNCH_MAREKER';
+  public readonly QUAKING_PUNCH_MAREKER: string = 'QUAKING_PUNCH_MAREKER';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 

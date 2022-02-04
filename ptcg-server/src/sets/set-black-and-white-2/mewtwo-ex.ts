@@ -10,7 +10,7 @@ import { GameMessage } from '../../game/game-message';
 
 export class MewtwoEx extends PokemonCard {
 
-  public tags = [ CardTag.POKEMON_EX ];
+  public tags: string[] = [ CardTag.POKEMON_EX ];
 
   public stage: Stage = Stage.BASIC;
 
@@ -18,11 +18,11 @@ export class MewtwoEx extends PokemonCard {
 
   public hp: number = 170;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'X Ball',
       cost: [ CardType.COLORLESS, CardType.COLORLESS ],
@@ -34,7 +34,7 @@ export class MewtwoEx extends PokemonCard {
       cost: [ CardType.PSYCHIC, CardType.PSYCHIC, CardType.COLORLESS ],
       damage: 120,
       text: 'Discard an Energy attached to this Pokemon.'
-    },
+    }
   ];
 
   public set: string = 'BW2';

@@ -14,17 +14,17 @@ export class Garbodor extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_1;
 
-  public evolvesFrom = 'Trubbish';
+  public evolvesFro: string = 'Trubbish';
 
   public cardType: CardType = CardType.PSYCHIC;
 
   public hp: number = 100;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Garbotoxin',
     powerType: PowerType.ABILITY,
     text: 'If this Pokemon has a Pokemon Tool card attached to it, ' +
@@ -32,7 +32,7 @@ export class Garbodor extends PokemonCard {
       'player\'s discard pile has no Abilities (except for Garbotoxin).'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Sludge Toss',
     cost: [ CardType.PSYCHIC, CardType.PSYCHIC, CardType.COLORLESS ],
     damage: 60,

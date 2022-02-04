@@ -6,8 +6,13 @@ import { TrainerCard } from '../../game/store/card/trainer-card';
 import { TrainerType } from '../../game/store/card/card-types';
 import { ShuffleDeckPrompt } from '../../game/store/prompts/shuffle-prompt';
 
-function* playCard(next: Function, store: StoreLike, state: State,
-    self: Shauna, effect: TrainerEffect): IterableIterator<State> {
+function* playCard(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  self: Shauna, 
+  effect: TrainerEffect
+): IterableIterator<State> {
 
   const player = effect.player;
   const cards = player.hand.cards.filter(c => c !== self);

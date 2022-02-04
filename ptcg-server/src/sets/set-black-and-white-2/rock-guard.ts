@@ -8,7 +8,7 @@ import { StateUtils } from '../../game/store/state-utils';
 
 export class RockGuard extends TrainerCard {
 
-  public tags = [ CardTag.ACE_SPEC ];
+  public tags: string[] = [ CardTag.ACE_SPEC ];
 
   public trainerType: TrainerType = TrainerType.TOOL;
 

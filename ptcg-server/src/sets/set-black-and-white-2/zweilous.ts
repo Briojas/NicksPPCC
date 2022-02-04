@@ -7,8 +7,12 @@ import { Effect } from '../../game/store/effects/effect';
 import { GameMessage } from '../../game/game-message';
 import { DiscardCardsEffect } from '../../game/store/effects/attack-effects';
 
-function* useWhirlpool(next: Function, store: StoreLike, state: State,
-  effect: AttackEffect): IterableIterator<State> {
+function* useWhirlpool(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  effect: AttackEffect
+): IterableIterator<State> {
 
   const player = effect.player;
   const opponent = StateUtils.getOpponent(state, player);
@@ -51,17 +55,17 @@ export class Zweilous extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_1;
 
-  public evolvesFrom = 'Deino';
+  public evolvesFrom: string = 'Deino';
 
   public cardType: CardType = CardType.DRAGON;
 
   public hp: number = 80;
 
-  public weakness = [{ type: CardType.DRAGON }];
+  public weakness: any = [{ type: CardType.DRAGON }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: Array<number> = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Crunch',
       cost: [ CardType.COLORLESS, CardType.COLORLESS ],

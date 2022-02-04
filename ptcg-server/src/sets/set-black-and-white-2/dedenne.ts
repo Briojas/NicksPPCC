@@ -6,8 +6,12 @@ import { AttackEffect } from '../../game/store/effects/game-effects';
 import { Effect } from '../../game/store/effects/effect';
 import { CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
 
-function* useEntrainment(next: Function, store: StoreLike, state: State,
-  effect: AttackEffect): IterableIterator<State> {
+function* useEntrainment(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  effect: AttackEffect
+): IterableIterator<State> {
   const player = effect.player;
   const slots: PokemonCardList[] = player.bench.filter(b => b.cards.length === 0);
   const max = Math.min(slots.length, 2);
@@ -46,13 +50,13 @@ export class Dedenne extends PokemonCard {
 
   public hp: number = 70;
 
-  public weakness = [{ type: CardType.FIGHTING }];
+  public weakness: any = [{ type: CardType.FIGHTING }];
 
-  public resistance = [{ type: CardType.METAL, value: -20 }];
+  public resistance: any = [{ type: CardType.METAL, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Entrainment',
       cost: [ CardType.COLORLESS ],

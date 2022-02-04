@@ -13,17 +13,17 @@ export class Silcoon extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_1;
 
-  public evolvesFrom = 'Wurmple';
+  public evolvesFrom: string = 'Wurmple';
 
   public cardType: CardType = CardType.GRASS;
 
   public hp: number = 80;
 
-  public weakness = [{ type: CardType.FIRE }];
+  public weakness: any = [{ type: CardType.FIRE }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'String Shot',
     cost: [ CardType.GRASS ],
     damage: 10,

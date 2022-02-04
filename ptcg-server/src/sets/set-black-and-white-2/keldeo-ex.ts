@@ -10,7 +10,7 @@ import {EndTurnEffect} from '../../game/store/effects/game-phase-effects';
 
 export class KeldeoEx extends PokemonCard {
 
-  public tags = [ CardTag.POKEMON_EX ];
+  public tags: string[] = [ CardTag.POKEMON_EX ];
 
   public stage: Stage = Stage.BASIC;
 
@@ -18,11 +18,11 @@ export class KeldeoEx extends PokemonCard {
 
   public hp: number = 170;
 
-  public weakness = [{ type: CardType.GRASS }];
+  public weakness: any = [{ type: CardType.GRASS }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Rush In',
     useWhenInPlay: true,
     powerType: PowerType.ABILITY,
@@ -30,7 +30,7 @@ export class KeldeoEx extends PokemonCard {
       'on your Bench, you may switch this Pokemon with your Active Pokemon.'
   }];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Secret Sword',
       cost: [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ],
@@ -45,7 +45,7 @@ export class KeldeoEx extends PokemonCard {
 
   public fullName: string = 'Keldeo EX BC';
 
-  public readonly RUSH_IN_MARKER = 'RUSH_IN_MARKER';
+  public readonly RUSH_IN_MARKER: string = 'RUSH_IN_MARKER';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 
@@ -86,7 +86,7 @@ export class KeldeoEx extends PokemonCard {
       let energyCount = 0;
       checkProvidedEnergyEffect.energyMap.forEach(em => {
         energyCount += em.provides.filter(cardType => {
-          return cardType === CardType.WATER || cardType === CardType.ANY
+          return cardType === CardType.WATER || cardType === CardType.ANY;
         }).length;
       });
       effect.damage += energyCount * 20;

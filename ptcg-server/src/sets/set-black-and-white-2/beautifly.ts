@@ -39,7 +39,7 @@ function* useWhirlwind(next: Function, store: StoreLike, state: State, effect: A
     GameMessage.CHOOSE_NEW_ACTIVE_POKEMON,
     PlayerType.TOP_PLAYER,
     [ SlotType.BENCH ],
-    { allowCancel: false },
+    { allowCancel: false }
   ), selected => {
     if (!selected || selected.length === 0) {
       return state;
@@ -57,24 +57,24 @@ export class Beautifly extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_2;
 
-  public evolvesFrom = 'Silcoon';
+  public evolvesFrom: string = 'Silcoon';
 
   public cardType: CardType = CardType.GRASS;
 
   public hp: number = 130;
 
-  public weakness = [{ type: CardType.FIRE }];
+  public weakness: any = [{ type: CardType.FIRE }];
 
-  public retreat = [ ];
+  public retreat: any = [ ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Miraculous Scales',
     powerType: PowerType.ABILITY,
     text: 'Prevent all damage done to this Pokemon by attacks from your ' +
       'opponent\'s Pokemon-EX.'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Whirlwind',
     cost: [ CardType.GRASS, CardType.COLORLESS, CardType.COLORLESS ],
     damage: 80,

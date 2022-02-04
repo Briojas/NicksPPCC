@@ -18,17 +18,17 @@ export class Musharna extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_1;
 
-  public evolvesFrom = 'Munna';
+  public evolvesFrom: string = 'Munna';
 
   public cardType: CardType = CardType.PSYCHIC;
 
   public hp: number = 100;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Forewarn',
     useWhenInPlay: true,
     powerType: PowerType.ABILITY,
@@ -37,7 +37,7 @@ export class Musharna extends PokemonCard {
       'your hand. Put the other card back on top of your deck.'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Fluffy Dream',
     cost: [ CardType.PSYCHIC, CardType.PSYCHIC ],
     damage: 40,
@@ -50,7 +50,7 @@ export class Musharna extends PokemonCard {
 
   public fullName: string = 'Musharna NXD';
 
-  public readonly FOREWARN_MARKER = 'FOREWARN_MARKER';
+  public readonly FOREWARN_MARKER: string = 'FOREWARN_MARKER';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 

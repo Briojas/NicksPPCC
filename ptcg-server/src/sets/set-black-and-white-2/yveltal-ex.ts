@@ -8,7 +8,7 @@ import { GameMessage } from '../../game/game-message';
 
 export class YveltalEx extends PokemonCard {
 
-  public tags = [ CardTag.POKEMON_EX ];
+  public tags: string[] = [ CardTag.POKEMON_EX ];
 
   public stage: Stage = Stage.BASIC;
 
@@ -16,13 +16,13 @@ export class YveltalEx extends PokemonCard {
 
   public hp: number = 170;
 
-  public weakness = [{ type: CardType.LIGHTNING }];
+  public weakness: any = [{ type: CardType.LIGHTNING }];
 
-  public resistance = [{ type: CardType.FIGHTING, value: -20 }];
+  public resistance: any = [{ type: CardType.FIGHTING, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Evil Ball',
       cost: [ CardType.DARK, CardType.COLORLESS ],
@@ -34,7 +34,7 @@ export class YveltalEx extends PokemonCard {
       cost: [ CardType.DARK, CardType.COLORLESS, CardType.COLORLESS ],
       damage: 90,
       text: 'Move an Energy from this Pokemon to 1 of your Benched Pokemon.'
-    },
+    }
   ];
 
   public set: string = 'BW2';

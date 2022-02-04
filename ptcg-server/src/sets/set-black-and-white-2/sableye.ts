@@ -14,11 +14,11 @@ export class Sableye extends PokemonCard {
 
   public hp: number = 70;
 
-  public weakness = [ ];
+  public weakness: any = [ ];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Confuse Ray',
       cost: [ CardType.COLORLESS ],

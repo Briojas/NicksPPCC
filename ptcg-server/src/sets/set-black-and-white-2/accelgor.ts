@@ -12,17 +12,17 @@ export class Accelgor extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_1;
 
-  public evolvesFrom = 'Shelmet';
+  public evolvesFrom: string = 'Shelmet';
 
   public cardType: CardType = CardType.GRASS;
 
   public hp: number = 90;
 
-  public weakness = [{ type: CardType.FIRE }];
+  public weaknes: any = [{ type: CardType.FIRE }];
 
-  public retreat = [ ];
+  public retreat: any = [ ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Hammer In',
     cost: [ CardType.GRASS ],
     damage: 20,

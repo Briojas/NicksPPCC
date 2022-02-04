@@ -16,18 +16,18 @@ export class Bouffalant extends PokemonCard {
 
   public hp: number = 100;
 
-  public weakness = [{ type: CardType.FIGHTING }];
+  public weakness: any = [{ type: CardType.FIGHTING }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Bouffer',
     powerType: PowerType.ABILITY,
     text: 'Any damage done to this Pokemon by attacks is reduced by 20 ' +
       '(after applying Weakness and Resistance).'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Gold Breaker',
     cost: [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ],
     damage: 60,

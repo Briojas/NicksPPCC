@@ -38,7 +38,7 @@ function* playCard(next: Function, store: StoreLike, state: State, effect: Train
   ], () => next());
 
   if (supporter !== undefined) {
-    player.deck.moveCardTo(supporter, player.hand)
+    player.deck.moveCardTo(supporter, player.hand);
   }
 
   return store.prompt(state, new ShuffleDeckPrompt(player.id), order => {

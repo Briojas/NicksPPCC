@@ -12,8 +12,12 @@ import { ShuffleDeckPrompt } from '../../game/store/prompts/shuffle-prompt';
 import { GameMessage } from '../../game/game-message';
 
 
-function* useFindAFriend(next: Function, store: StoreLike, state: State,
-  effect: AttackEffect): IterableIterator<State> {
+function* useFindAFriend(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  effect: AttackEffect
+): IterableIterator<State> {
   const player = effect.player;
   const opponent = StateUtils.getOpponent(state, player);
 
@@ -52,11 +56,11 @@ export class Oddish extends PokemonCard {
 
   public hp: number = 40;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Ram',
     cost: [ CardType.COLORLESS ],
     damage: 10,

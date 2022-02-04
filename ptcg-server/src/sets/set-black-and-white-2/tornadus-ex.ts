@@ -7,8 +7,12 @@ import { DiscardCardsEffect } from '../../game/store/effects/attack-effects';
 import { Effect } from '../../game/store/effects/effect';
 import { GameMessage } from '../../game/game-message';
 
-function* usePowerBlast(next: Function, store: StoreLike, state: State,
-  effect: AttackEffect): IterableIterator<State> {
+function* usePowerBlast(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  effect: AttackEffect
+): IterableIterator<State> {
   const player = effect.player;
 
   // Active Pokemon has no energy cards attached
@@ -48,7 +52,7 @@ function* usePowerBlast(next: Function, store: StoreLike, state: State,
 
 export class TornadusEx extends PokemonCard {
 
-  public tags = [ CardTag.POKEMON_EX ];
+  public tags: string[] = [ CardTag.POKEMON_EX ];
 
   public stage: Stage = Stage.BASIC;
 
@@ -56,13 +60,13 @@ export class TornadusEx extends PokemonCard {
 
   public hp: number = 170;
 
-  public weakness = [{ type: CardType.LIGHTNING }];
+  public weakness: any = [{ type: CardType.LIGHTNING }];
 
-  public resistance = [{ type: CardType.FIGHTING, value: -20 }];
+  public resistance: any = [{ type: CardType.FIGHTING, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Blow Through',
       cost: [ CardType.COLORLESS, CardType.COLORLESS ],
@@ -74,7 +78,7 @@ export class TornadusEx extends PokemonCard {
       cost: [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ],
       damage: 100,
       text: 'Flip a coin. If tails, discard an Energy attached to this Pokemon.'
-    },
+    }
   ];
 
   public set: string = 'BW2';

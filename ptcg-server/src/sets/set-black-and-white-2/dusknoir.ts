@@ -50,17 +50,17 @@ export class Dusknoir extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_2;
 
-  public evolvesFrom = 'Dusclops';
+  public evolvesFrom: string = 'Dusclops';
 
   public cardType: CardType = CardType.PSYCHIC;
 
   public hp: number = 130;
 
-  public weakness = [{ type: CardType.DARK }];
+  public weakness: any = [{ type: CardType.DARK }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Sinister Hand',
     useWhenInPlay: true,
     powerType: PowerType.ABILITY,
@@ -69,7 +69,7 @@ export class Dusknoir extends PokemonCard {
       'to another of your opponent\'s Pokemon.'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Shadow Punch',
     cost: [ CardType.PSYCHIC, CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ],
     damage: 60,

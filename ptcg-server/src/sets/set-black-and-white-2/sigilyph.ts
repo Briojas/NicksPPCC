@@ -18,18 +18,18 @@ export class Sigilyph extends PokemonCard {
 
   public hp: number = 90;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Safeguard',
     powerType: PowerType.ABILITY,
     text: 'Prevent all effects of attacks, including damage, done to ' +
       'this Pokemon by Pokemon-EX.'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Psychic',
     cost: [ CardType.PSYCHIC, CardType.COLORLESS, CardType.COLORLESS ],
     damage: 50,

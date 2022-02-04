@@ -10,7 +10,7 @@ import { GameMessage } from '../../game/game-message';
 
 export class LandorusEx extends PokemonCard {
 
-  public tags = [ CardTag.POKEMON_EX ];
+  public tags: string[] = [ CardTag.POKEMON_EX ];
 
   public stage: Stage = Stage.BASIC;
 
@@ -18,13 +18,13 @@ export class LandorusEx extends PokemonCard {
 
   public hp: number = 180;
 
-  public weakness = [{ type: CardType.WATER }];
+  public weakness: any = [{ type: CardType.WATER }];
 
-  public resistance = [{ type: CardType.LIGHTNING, value: -20 }];
+  public resistance: any = [{ type: CardType.LIGHTNING, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Hammerhead',
       cost: [ CardType.FIGHTING ],
@@ -37,7 +37,7 @@ export class LandorusEx extends PokemonCard {
       damage: 80,
       text: 'You may discard all F Energy attach to this Pokemon. ' +
         'If you do, this attack does 70 more damage.'
-    },
+    }
   ];
 
   public set: string = 'BW2';

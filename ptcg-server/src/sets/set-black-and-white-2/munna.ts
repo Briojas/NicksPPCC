@@ -20,11 +20,11 @@ export class Munna extends PokemonCard {
 
   public hp: number = 60;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Long-Distance Hypnosis',
     useWhenInPlay: true,
     powerType: PowerType.ABILITY,
@@ -33,7 +33,7 @@ export class Munna extends PokemonCard {
       'If tails, your Active Pokemon is now Asleep.'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Psyshot',
     cost: [ CardType.PSYCHIC, CardType.COLORLESS ],
     damage: 20,
@@ -46,7 +46,7 @@ export class Munna extends PokemonCard {
 
   public fullName: string = 'Munna BC';
 
-  public readonly LONG_DISTANCE_HYPNOSIS_MARKER = 'LONG_DISTANCE_HYPNOSIS_MARKER';
+  public readonly LONG_DISTANCE_HYPNOSIS_MARKER: string = 'LONG_DISTANCE_HYPNOSIS_MARKER';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 

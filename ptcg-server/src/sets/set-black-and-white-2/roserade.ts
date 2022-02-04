@@ -7,8 +7,13 @@ import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects
 import { AddSpecialConditionsEffect } from '../../game/store/effects/attack-effects';
 import { GameMessage } from '../../game/game-message';
 
-function* useLeParfum(next: Function, store: StoreLike, state: State,
-  self: Roserade, effect: PlayPokemonEffect): IterableIterator<State> {
+function* useLeParfum(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  self: Roserade, 
+  effect: PlayPokemonEffect
+): IterableIterator<State> {
   const player = effect.player;
 
   if (player.deck.cards.length === 0) {
@@ -45,19 +50,19 @@ export class Roserade extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_1;
 
-  evolvesFrom = 'Roselia';
+  public evolvesFrom: string = 'Roselia';
 
   public cardType: CardType = CardType.GRASS;
 
   public hp: number = 90;
 
-  public weakness = [{ type: CardType.FIRE }];
+  public weakness: any = [{ type: CardType.FIRE }];
 
-  public resistance = [{ type: CardType.WATER, value: -20 }];
+  public resistance: any = [{ type: CardType.WATER, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Le Parfum',
     powerType: PowerType.ABILITY,
     text: 'When you play this Pokemon from your hand to evolve 1 of your ' +
@@ -65,7 +70,7 @@ export class Roserade extends PokemonCard {
       'hand. Shuffle your deck afterward.'
   }];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Squeeze',
       cost: [ CardType.GRASS, CardType.COLORLESS ],

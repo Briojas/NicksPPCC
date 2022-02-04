@@ -9,19 +9,19 @@ export class Raichu extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_1;
 
-  public evolvesFrom = 'Pikachu';
+  public evolvesFrom: string = 'Pikachu';
 
   public cardType: CardType = CardType.LIGHTNING;
 
   public hp: number = 90;
 
-  public weakness = [{ type: CardType.FIGHTING }];
+  public weakness: any = [{ type: CardType.FIGHTING }];
 
-  public resistance = [{ type: CardType.METAL, value: -20 }];
+  public resistance: any = [{ type: CardType.METAL, value: -20 }];
 
-  public retreat = [ ];
+  public retreat: any = [ ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Circle Circuit',
       cost: [ CardType.COLORLESS, CardType.COLORLESS ],

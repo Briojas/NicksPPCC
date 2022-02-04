@@ -18,13 +18,13 @@ export class Cobalion extends PokemonCard {
 
   public hp: number = 120;
 
-  public weakness = [{ type: CardType.FIRE }];
+  public weakness: any = [{ type: CardType.FIRE }];
 
-  public resistance = [{ type: CardType.PSYCHIC, value: -20 }];
+  public resistance: any = [{ type: CardType.PSYCHIC, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Energy Press',
     cost: [ CardType.METAL, CardType.COLORLESS ],
     damage: 20,
@@ -44,7 +44,7 @@ export class Cobalion extends PokemonCard {
 
   public fullName: string = 'Cobalion LT';
 
-  public readonly METAL_LINKS_MAREKER = 'IRON_BREAKER_MAREKER';
+  public readonly METAL_LINKS_MAREKER: string = 'IRON_BREAKER_MAREKER';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 

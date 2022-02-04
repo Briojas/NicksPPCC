@@ -14,11 +14,11 @@ export class Kyurem extends PokemonCard {
 
   public hp: number = 130;
 
-  public weakness = [{ type: CardType.METAL }];
+  public weakness: any = [{ type: CardType.METAL }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Outrage',
       cost: [ CardType.COLORLESS, CardType.COLORLESS ],

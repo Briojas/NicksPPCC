@@ -17,11 +17,11 @@ export class Shelmet extends PokemonCard {
 
   public hp: number = 60;
 
-  public weakness = [{ type: CardType.FIRE }];
+  public weakness: any = [{ type: CardType.FIRE }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Body Slam',
     cost: [ CardType.GRASS, CardType.GRASS ],
     damage: 20,

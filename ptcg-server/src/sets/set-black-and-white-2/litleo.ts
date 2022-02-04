@@ -9,11 +9,11 @@ export class Litleo extends PokemonCard {
 
   public hp: number = 70;
 
-  public weakness = [{ type: CardType.WATER }];
+  public weakness: any = [{ type: CardType.WATER }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Combustion',
     cost: [ CardType.FIRE, CardType.FIRE, CardType.COLORLESS ],
     damage: 60,

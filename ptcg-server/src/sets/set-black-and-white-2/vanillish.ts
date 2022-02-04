@@ -10,17 +10,17 @@ export class Vanillish extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_1;
 
-  public evolvesFrom = 'Vanillite';
+  public evolvesFrom: string = 'Vanillite';
 
   public cardType: CardType = CardType.WATER;
 
   public hp: number = 80;
 
-  public weakness = [{ type: CardType.METAL }];
+  public weakness: any = [{ type: CardType.METAL }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Ice Beam',
       cost: [ CardType.WATER, CardType.COLORLESS ],

@@ -8,7 +8,7 @@ import { AddSpecialConditionsEffect } from '../../game/store/effects/attack-effe
 
 export class ToxicroakEx extends PokemonCard {
 
-  public tags = [ CardTag.POKEMON_EX ];
+  public tags: string[] = [ CardTag.POKEMON_EX ];
 
   public stage: Stage = Stage.BASIC;
 
@@ -16,11 +16,11 @@ export class ToxicroakEx extends PokemonCard {
 
   public hp: number = 170;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Triple Poison',
       cost: [ CardType.COLORLESS, CardType.COLORLESS ],
@@ -32,7 +32,7 @@ export class ToxicroakEx extends PokemonCard {
       cost: [ CardType.PSYCHIC, CardType.PSYCHIC, CardType.COLORLESS ],
       damage: 80,
       text: 'This attack\'s damage isn\'t affected by Resistance.'
-    },
+    }
   ];
 
   public set: string = 'BW2';

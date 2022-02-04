@@ -9,8 +9,12 @@ import { CoinFlipPrompt } from '../../game/store/prompts/coin-flip-prompt';
 import { SelectPrompt } from '../../game/store/prompts/select-prompt';
 import { AddSpecialConditionsEffect } from '../../game/store/effects/attack-effects';
 
-function* useMiraclePowder(next: Function, store: StoreLike, state: State,
-  effect: AttackEffect): IterableIterator<State> {
+function* useMiraclePowder(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  effect: AttackEffect
+): IterableIterator<State> {
   const player = effect.player;
 
   let flip = false;
@@ -52,17 +56,17 @@ export class Gloom extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_1;
 
-  public evolvesFrom = 'Oddish';
+  public evolvesFrom: string = 'Oddish';
 
   public cardType: CardType = CardType.GRASS;
 
   public hp: number = 80;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Miracle Powder',
     cost: [ CardType.GRASS, CardType.COLORLESS ],
     damage: 30,

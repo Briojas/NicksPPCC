@@ -12,8 +12,12 @@ import { ShuffleDeckPrompt } from '../../game/store/prompts/shuffle-prompt';
 import { GameMessage } from '../../game/game-message';
 
 
-function* useAstonish(next: Function, store: StoreLike, state: State,
-  effect: AttackEffect): IterableIterator<State> {
+function* useAstonish(
+  next: Function, 
+  store: StoreLike, 
+  state: State,
+  effect: AttackEffect
+): IterableIterator<State> {
 
   const player = effect.player;
   const opponent = StateUtils.getOpponent(state, player);
@@ -54,17 +58,17 @@ export class Dusclops extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_1;
 
-  public evolvesFrom = 'Duskull';
+  public evolvesFrom: any = 'Duskull';
 
   public cardType: CardType = CardType.PSYCHIC;
 
   public hp: number = 80;
 
-  public weakness = [{ type: CardType.DARK }];
+  public weakness: any = [{ type: CardType.DARK }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Astonish',
     cost: [ CardType.PSYCHIC ],
     damage: 0,

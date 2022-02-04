@@ -15,11 +15,11 @@ export class Regigigas extends PokemonCard {
 
   public hp: number = 130;
 
-  public weakness = [{ type: CardType.FIGHTING }];
+  public weakness: any = [{ type: CardType.FIGHTING }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Daunt',
     cost: [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ],
     damage: 80,
@@ -39,7 +39,7 @@ export class Regigigas extends PokemonCard {
 
   public fullName: string = 'Regigigas PFO';
 
-  public readonly DAUNT_MARKER = 'DAUNT_MARKER';
+  public readonly DAUNT_MARKER: string = 'DAUNT_MARKER';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 

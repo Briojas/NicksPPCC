@@ -17,11 +17,11 @@ export class Skrelp extends PokemonCard {
 
   public hp: number = 50;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Spit Poison',
     cost: [ CardType.PSYCHIC ],
     damage: 0,

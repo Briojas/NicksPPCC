@@ -61,17 +61,17 @@ export class Hydreigon extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_2;
 
-  public evolvesFrom = 'Zweilous';
+  public evolvesFrom: string = 'Zweilous';
 
   public cardType: CardType = CardType.DRAGON;
 
   public hp: number = 150;
 
-  public weakness = [{ type: CardType.DRAGON }];
+  public weakness: any = [{ type: CardType.DRAGON }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Dark Trance',
     useWhenInPlay: true,
     powerType: PowerType.ABILITY,
@@ -80,7 +80,7 @@ export class Hydreigon extends PokemonCard {
       'of your Pokemon.'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
       name: 'Dragonblast',
       cost: [ CardType.PSYCHIC, CardType.DARK, CardType.DARK, CardType.COLORLESS ],
       damage: 140,

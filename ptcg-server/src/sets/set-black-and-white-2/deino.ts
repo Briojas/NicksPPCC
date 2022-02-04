@@ -14,11 +14,11 @@ export class Deino extends PokemonCard {
 
   public hp: number = 60;
 
-  public weakness = [{ type: CardType.DRAGON }];
+  public weakness: any = [{ type: CardType.DRAGON }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Deep Growl',
       cost: [ CardType.DARK ],

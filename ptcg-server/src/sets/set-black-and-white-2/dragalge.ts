@@ -16,23 +16,23 @@ export class Dragalge extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_1;
 
-  public evolvesFrom = 'Skrelp';
+  public evolvesFrom: string = 'Skrelp';
 
   public cardType: CardType = CardType.DRAGON;
 
   public hp: number = 100;
 
-  public weakness = [{ type: CardType.FAIRY }];
+  public weakness: any = [{ type: CardType.FAIRY }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Poison Barrier',
     powerType: PowerType.ABILITY,
     text: 'Your opponent\'s Poisoned Pokemon can\'t retreat.'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Poison Breath',
     cost: [ CardType.WATER, CardType.PSYCHIC, CardType.COLORLESS ],
     damage: 60,

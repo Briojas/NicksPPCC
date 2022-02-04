@@ -14,13 +14,13 @@ export class Tornadus extends PokemonCard {
 
   public hp: number = 110;
 
-  public weakness = [{ type: CardType.LIGHTNING }];
+  public weakness: any = [{ type: CardType.LIGHTNING }];
 
-  public resistance = [{ type: CardType.FIGHTING, value: -20 }];
+  public resistance: any = [{ type: CardType.FIGHTING, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Energy Wheel',
       cost: [ CardType.COLORLESS ],
@@ -32,7 +32,7 @@ export class Tornadus extends PokemonCard {
       damage: 80,
       text: 'Move a basic Energy from this Pokemon to 1 of your ' +
         'Benched Pokemon.'
-    },
+    }
   ];
 
   public set: string = 'BW2';
@@ -85,7 +85,7 @@ export class Tornadus extends PokemonCard {
       const player = effect.player;
       const hasBench = player.bench.some(b => b.cards.length > 0);
       const hasBasicEnergy = player.active.cards.some(c => {
-        return c instanceof EnergyCard && c.energyType === EnergyType.BASIC
+        return c instanceof EnergyCard && c.energyType === EnergyType.BASIC;
       });
 
       if (hasBench === false || hasBasicEnergy === false) {

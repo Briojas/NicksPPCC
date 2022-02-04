@@ -14,11 +14,11 @@ export class Miltank extends PokemonCard {
 
   public hp: number = 100;
 
-  public weakness = [{ type: CardType.FIGHTING }];
+  public weakness: any = [{ type: CardType.FIGHTING }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Powerful Friends',
       cost: [ CardType.COLORLESS ],
@@ -31,7 +31,7 @@ export class Miltank extends PokemonCard {
       cost: [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ],
       damage: 60,
       text: ''
-    },
+    }
   ];
 
   public set: string = 'BW2';

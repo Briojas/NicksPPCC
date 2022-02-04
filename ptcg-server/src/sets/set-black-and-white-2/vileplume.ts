@@ -17,23 +17,23 @@ export class Vileplume extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_2;
 
-  public evolvesFrom = 'Gloom';
+  public evolvesFrom: string = 'Gloom';
 
   public cardType: CardType = CardType.GRASS;
 
   public hp: number = 120;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Allergy Flower',
     powerType: PowerType.POKEBODY,
     text: 'Each player can\'t play any Trainer cards from his or her hand.'
   }];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Dazzling Pollen',
     cost: [ CardType.GRASS, CardType.GRASS, CardType.COLORLESS ],
     damage: 50,

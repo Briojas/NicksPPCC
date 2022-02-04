@@ -62,7 +62,7 @@ function* playCard(next: Function, store: StoreLike, state: State, effect: Train
 
 export class ScrambleSwitch extends TrainerCard {
 
-  public tags = [ CardTag.ACE_SPEC ];
+  public tags: string[] = [ CardTag.ACE_SPEC ];
 
   public trainerType: TrainerType = TrainerType.ITEM;
 

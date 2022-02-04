@@ -13,17 +13,17 @@ export class Vanilluxe extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_2;
 
-  public evolvesFrom = 'Vanillish';
+  public evolvesFrom: string = 'Vanillish';
 
   public cardType: CardType = CardType.WATER;
 
   public hp: number = 130;
 
-  public weakness = [{ type: CardType.METAL }];
+  public weakness: any = [{ type: CardType.METAL }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: any = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Double Freeze',
     cost: [ CardType.WATER, CardType.COLORLESS ],
     damage: 40,

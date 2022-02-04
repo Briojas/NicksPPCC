@@ -5,12 +5,12 @@ export class DoubleColorlessEnergy extends EnergyCard {
 
   public provides: CardType[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public energyType = EnergyType.SPECIAL;
+  public energyType: number = EnergyType.SPECIAL;
 
   public set: string = 'BW2';
 
-  public name = 'Double Colorless Energy';
+  public name: string = 'Double Colorless Energy';
 
-  public fullName = 'Double Colorless Energy XY';
+  public fullName: string = 'Double Colorless Energy XY';
 
 }

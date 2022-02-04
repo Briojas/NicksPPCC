@@ -10,7 +10,7 @@ import { CheckRetreatCostEffect, CheckProvidedEnergyEffect } from '../../game/st
 
 export class DarkraiEx extends PokemonCard {
 
-  public tags = [ CardTag.POKEMON_EX ];
+  public tags: string[] = [ CardTag.POKEMON_EX ];
 
   public stage: Stage = Stage.BASIC;
 
@@ -18,20 +18,20 @@ export class DarkraiEx extends PokemonCard {
 
   public hp: number = 180;
 
-  public weakness = [{ type: CardType.FIGHTING }];
+  public weakness: any = [{ type: CardType.FIGHTING }];
 
-  public resistance = [{ type: CardType.PSYCHIC, value: -20 }];
+  public resistance: any = [{ type: CardType.PSYCHIC, value: -20 }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Dark Cloak',
     powerType: PowerType.ABILITY,
     text: 'Each of your Pokemon that has any D Energy attached to it ' +
       'has no Retreat Cost.'
   }];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Night Spear',
       cost: [ CardType.DARK, CardType.DARK, CardType.COLORLESS ],

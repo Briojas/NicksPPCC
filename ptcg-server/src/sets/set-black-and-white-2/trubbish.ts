@@ -15,11 +15,11 @@ export class Trubbish extends PokemonCard {
 
   public hp: number = 70;
 
-  public weakness = [{ type: CardType.PSYCHIC }];
+  public weakness: any = [{ type: CardType.PSYCHIC }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: number[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Pound',
     cost: [ CardType.COLORLESS, CardType.COLORLESS ],
     damage: 20,
