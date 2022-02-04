@@ -1,27 +1,27 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType } from "../../game/store/card/card-types";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType } from '../../game/store/card/card-types';
 import { PowerType, StoreLike, State, StateUtils, GameError, GameMessage,
-  PlayerType, ChooseCardsPrompt } from "../../game";
-import { Effect } from "../../game/store/effects/effect";
-import { PowerEffect, AttackEffect } from "../../game/store/effects/game-effects";
-import { EndTurnEffect } from "../../game/store/effects/game-phase-effects";
-import { PlayPokemonEffect } from "../../game/store/effects/play-card-effects";
+  PlayerType, ChooseCardsPrompt } from '../../game';
+import { Effect } from '../../game/store/effects/effect';
+import { PowerEffect, AttackEffect } from '../../game/store/effects/game-effects';
+import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
+import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
 
 export class Empoleon extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_2;
 
-  public evolvesFrom = 'Prinplup';
+  public evolvesFrom: string = 'Prinplup';
 
   public cardType: CardType = CardType.WATER;
 
   public hp: number = 140;
 
-  public weakness = [{ type: CardType.LIGHTNING }];
+  public weakness: any = [{ type: CardType.LIGHTNING }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: Array<number> = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Diving Draw',
     useWhenInPlay: true,
     powerType: PowerType.ABILITY,
@@ -29,7 +29,7 @@ export class Empoleon extends PokemonCard {
       'a card from your hand. If you do, draw 2 cards.'
   }];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Attack Command',
       cost: [ CardType.WATER ],
@@ -45,7 +45,7 @@ export class Empoleon extends PokemonCard {
 
   public fullName: string = 'Empoleon DEX';
 
-  public readonly DIVING_DRAW_MAREKER = 'DIVING_DRAW_MAREKER';
+  public readonly DIVING_DRAW_MAREKER: string = 'DIVING_DRAW_MAREKER';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     if (effect instanceof PlayPokemonEffect && effect.pokemonCard === this) {

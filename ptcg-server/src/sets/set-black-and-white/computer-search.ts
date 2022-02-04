@@ -1,18 +1,17 @@
-import { TrainerCard } from "../../game/store/card/trainer-card";
-import { TrainerType, CardTag } from "../../game/store/card/card-types";
-import { StoreLike } from "../../game/store/store-like";
-import { State } from "../../game/store/state/state";
-import { Effect } from "../../game/store/effects/effect";
-import { TrainerEffect } from "../../game/store/effects/play-card-effects";
-import { GameError } from "../../game/game-error";
-import { GameMessage } from "../../game/game-message";
-import { Card} from "../../game/store/card/card";
-import { ChooseCardsPrompt } from "../../game/store/prompts/choose-cards-prompt";
-import { CardList } from "../../game/store/state/card-list";
+import { TrainerCard } from '../../game/store/card/trainer-card';
+import { TrainerType, CardTag } from '../../game/store/card/card-types';
+import { StoreLike } from '../../game/store/store-like';
+import { State } from '../../game/store/state/state';
+import { Effect } from '../../game/store/effects/effect';
+import { TrainerEffect } from '../../game/store/effects/play-card-effects';
+import { GameError } from '../../game/game-error';
+import { GameMessage } from '../../game/game-message';
+import { Card} from '../../game/store/card/card';
+import { ChooseCardsPrompt } from '../../game/store/prompts/choose-cards-prompt';
+import { CardList } from '../../game/store/state/card-list';
 
 
-function* playCard(next: Function, store: StoreLike, state: State,
-  self: ComputerSearch, effect: TrainerEffect): IterableIterator<State> {
+function* playCard(next: Function, store: StoreLike, state: State, self: ComputerSearch, effect: TrainerEffect): IterableIterator<State> {
   const player = effect.player;
   let cards: Card[] = [];
   
@@ -70,7 +69,7 @@ export class ComputerSearch extends TrainerCard {
 
   public trainerType: TrainerType = TrainerType.ITEM;
 
-  public tags = [ CardTag.ACE_SPEC ];
+  public tags: Array<string> = [ CardTag.ACE_SPEC ];
 
   public set: string = 'BW';
 

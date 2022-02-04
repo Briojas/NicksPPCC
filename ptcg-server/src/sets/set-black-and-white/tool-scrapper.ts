@@ -1,12 +1,12 @@
-import { TrainerCard } from "../../game/store/card/trainer-card";
-import { TrainerType } from "../../game/store/card/card-types";
-import { StoreLike } from "../../game/store/store-like";
-import { State } from "../../game/store/state/state";
-import { Effect } from "../../game/store/effects/effect";
-import { ChoosePokemonPrompt } from "../../game/store/prompts/choose-pokemon-prompt";
-import { TrainerEffect } from "../../game/store/effects/play-card-effects";
+import { TrainerCard } from '../../game/store/card/trainer-card';
+import { TrainerType } from '../../game/store/card/card-types';
+import { StoreLike } from '../../game/store/store-like';
+import { State } from '../../game/store/state/state';
+import { Effect } from '../../game/store/effects/effect';
+import { ChoosePokemonPrompt } from '../../game/store/prompts/choose-pokemon-prompt';
+import { TrainerEffect } from '../../game/store/effects/play-card-effects';
 import { PlayerType, SlotType, StateUtils, CardTarget, GameError, GameMessage,
-  PokemonCardList } from "../../game";
+  PokemonCardList } from '../../game';
 
 function* playCard(next: Function, store: StoreLike, state: State, effect: TrainerEffect): IterableIterator<State> {
   const player = effect.player;

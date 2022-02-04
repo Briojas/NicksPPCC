@@ -1,25 +1,25 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType, SuperType, EnergyType } from "../../game/store/card/card-types";
-import { StoreLike, State, StateUtils, ChooseCardsPrompt } from "../../game";
-import { AttackEffect } from "../../game/store/effects/game-effects";
-import { Effect } from "../../game/store/effects/effect";
-import { GameMessage } from "../../game/game-message";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType, SuperType, EnergyType } from '../../game/store/card/card-types';
+import { StoreLike, State, StateUtils, ChooseCardsPrompt } from '../../game';
+import { AttackEffect } from '../../game/store/effects/game-effects';
+import { Effect } from '../../game/store/effects/effect';
+import { GameMessage } from '../../game/game-message';
 
 export class Pignite extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_1;
 
-  public evolvesFrom = 'Tepig';
+  public evolvesFrom: string = 'Tepig';
 
   public cardType: CardType = CardType.FIRE;
 
   public hp: number = 100;
 
-  public weakness = [{ type: CardType.WATER }];
+  public weakness: any = [{ type: CardType.WATER }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: Array<number> = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Flame Charge',
       cost: [ CardType.COLORLESS ],

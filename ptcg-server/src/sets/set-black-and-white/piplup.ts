@@ -1,9 +1,9 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType } from "../../game/store/card/card-types";
-import { StoreLike, State, CoinFlipPrompt } from "../../game";
-import { Effect } from "../../game/store/effects/effect";
-import { AttackEffect } from "../../game/store/effects/game-effects";
-import { GameMessage } from "../../game/game-message";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType } from '../../game/store/card/card-types';
+import { StoreLike, State, CoinFlipPrompt } from '../../game';
+import { Effect } from '../../game/store/effects/effect';
+import { AttackEffect } from '../../game/store/effects/game-effects';
+import { GameMessage } from '../../game/game-message';
 
 export class Piplup extends PokemonCard {
 
@@ -13,11 +13,11 @@ export class Piplup extends PokemonCard {
 
   public hp: number = 60;
 
-  public weakness = [{ type: CardType.LIGHTNING }];
+  public weakness: any = [{ type: CardType.LIGHTNING }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: Array<number> = [ CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Fury Attack',
       cost: [ CardType.WATER ],

@@ -1,11 +1,11 @@
-import { Effect } from "../../game/store/effects/effect";
-import { TrainerCard } from "../../game/store/card/trainer-card";
-import { TrainerType } from "../../game/store/card/card-types";
-import { StoreLike } from "../../game/store/store-like";
-import { State } from "../../game/store/state/state";
-import { TrainerEffect } from "../../game/store/effects/play-card-effects";
-import { DealDamageEffect } from "../../game/store/effects/attack-effects";
-import { EndTurnEffect } from "../../game/store/effects/game-phase-effects";
+import { Effect } from '../../game/store/effects/effect';
+import { TrainerCard } from '../../game/store/card/trainer-card';
+import { TrainerType } from '../../game/store/card/card-types';
+import { StoreLike } from '../../game/store/store-like';
+import { State } from '../../game/store/state/state';
+import { TrainerEffect } from '../../game/store/effects/play-card-effects';
+import { DealDamageEffect } from '../../game/store/effects/attack-effects';
+import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
 
 export class PlusPower extends TrainerCard {
 
@@ -21,7 +21,7 @@ export class PlusPower extends TrainerCard {
     'During this turn, your Pokemon\'s attacks do 10 more damage to the ' +
     'Active Pokemon (before applying Weakness and Resistance).';
 
-  private readonly PLUS_POWER_MARKER = 'PLUS_POWER_MARKER';
+  private readonly PLUS_POWER_MARKER: string = 'PLUS_POWER_MARKER';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     if (effect instanceof TrainerEffect && effect.trainerCard === this) {

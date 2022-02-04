@@ -1,27 +1,27 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType, EnergyType, SuperType } from "../../game/store/card/card-types";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType, EnergyType, SuperType } from '../../game/store/card/card-types';
 import { PowerType, StoreLike, State, StateUtils,
-  GameError, GameMessage, EnergyCard, PlayerType, SlotType } from "../../game";
-import { Effect } from "../../game/store/effects/effect";
-import { PowerEffect } from "../../game/store/effects/game-effects";
-import { AttachEnergyPrompt } from "../../game/store/prompts/attach-energy-prompt";
-import { AttachEnergyEffect } from "../../game/store/effects/play-card-effects";
+  GameError, GameMessage, EnergyCard, PlayerType, SlotType } from '../../game';
+import { Effect } from '../../game/store/effects/effect';
+import { PowerEffect } from '../../game/store/effects/game-effects';
+import { AttachEnergyPrompt } from '../../game/store/prompts/attach-energy-prompt';
+import { AttachEnergyEffect } from '../../game/store/effects/play-card-effects';
 
 export class Emboar extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_2;
 
-  public evolvesFrom = 'Pignite';
+  public evolvesFrom: string = 'Pignite';
 
   public cardType: CardType = CardType.FIRE;
 
   public hp: number = 150;
 
-  public weakness = [{ type: CardType.WATER }];
+  public weakness: any = [{ type: CardType.WATER }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: Array<number> = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Inferno Fandango',
     useWhenInPlay: true,
     powerType: PowerType.ABILITY,
@@ -29,7 +29,7 @@ export class Emboar extends PokemonCard {
       'you may attach a R Energy card from your hand to 1 of your Pokemon.'
   }];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Heat Crash',
       cost: [ CardType.FIRE, CardType.FIRE, CardType.COLORLESS, CardType.COLORLESS ],

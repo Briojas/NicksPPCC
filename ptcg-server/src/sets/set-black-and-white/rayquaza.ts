@@ -1,9 +1,9 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType } from "../../game/store/card/card-types";
-import { StoreLike, State, StateUtils} from "../../game";
-import { AttackEffect } from "../../game/store/effects/game-effects";
-import { Effect } from "../../game/store/effects/effect";
-import { ApplyWeaknessEffect, AfterDamageEffect } from "../../game/store/effects/attack-effects";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType } from '../../game/store/card/card-types';
+import { StoreLike, State, StateUtils} from '../../game';
+import { AttackEffect } from '../../game/store/effects/game-effects';
+import { Effect } from '../../game/store/effects/effect';
+import { ApplyWeaknessEffect, AfterDamageEffect } from '../../game/store/effects/attack-effects';
 
 
 export class Rayquaza extends PokemonCard {
@@ -14,11 +14,11 @@ export class Rayquaza extends PokemonCard {
 
   public hp: number = 120;
 
-  public weakness = [{ type: CardType.DRAGON }];
+  public weakness: any = [{ type: CardType.DRAGON }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: Array<number> = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Dragon Pulse',
       cost: [ CardType.LIGHTNING ],

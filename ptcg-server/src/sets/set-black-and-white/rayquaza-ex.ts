@@ -1,17 +1,17 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType, CardTag } from "../../game/store/card/card-types";
-import { StoreLike, State, CardList, EnergyCard, Card } from "../../game";
-import { AttackEffect } from "../../game/store/effects/game-effects";
-import { Effect } from "../../game/store/effects/effect";
-import { GameMessage } from "../../game/game-message";
-import { CheckProvidedEnergyEffect } from "../../game/store/effects/check-effects";
-import { SelectPrompt } from "../../game/store/prompts/select-prompt";
-import { DiscardCardsEffect } from "../../game/store/effects/attack-effects";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType, CardTag } from '../../game/store/card/card-types';
+import { StoreLike, State, CardList, EnergyCard, Card } from '../../game';
+import { AttackEffect } from '../../game/store/effects/game-effects';
+import { Effect } from '../../game/store/effects/effect';
+import { GameMessage } from '../../game/game-message';
+import { CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
+import { SelectPrompt } from '../../game/store/prompts/select-prompt';
+import { DiscardCardsEffect } from '../../game/store/effects/attack-effects';
 
 
 export class RayquazaEx extends PokemonCard {
 
-  public tags = [ CardTag.POKEMON_EX ];
+  public tags: Array<string> = [ CardTag.POKEMON_EX ];
 
   public stage: Stage = Stage.BASIC;
 
@@ -19,11 +19,11 @@ export class RayquazaEx extends PokemonCard {
 
   public hp: number = 170;
 
-  public weakness = [{ type: CardType.DRAGON }];
+  public weakness: any = [{ type: CardType.DRAGON }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: Array<number> = [ CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Celestial Roar',
       cost: [ CardType.COLORLESS ],

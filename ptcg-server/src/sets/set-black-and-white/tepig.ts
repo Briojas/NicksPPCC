@@ -1,5 +1,5 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType } from "../../game/store/card/card-types";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType } from '../../game/store/card/card-types';
 
 export class Tepig extends PokemonCard {
 
@@ -9,13 +9,13 @@ export class Tepig extends PokemonCard {
 
   public hp: number = 60;
 
-  public weakness = [{
+  public weakness: any = [{
     type: CardType.WATER
   }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: Array<number> = [ CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     { name: 'Tackle', cost: [ CardType.FIRE ], damage: 10, text: '' },
     { name: 'Rollout', cost: [ CardType.FIRE, CardType.COLORLESS ], damage: 20, text: '' }
   ];

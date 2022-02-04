@@ -1,11 +1,11 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType } from "../../game/store/card/card-types";
-import { StoreLike, State, Card, ChooseEnergyPrompt} from "../../game";
-import { AttackEffect } from "../../game/store/effects/game-effects";
-import { Effect } from "../../game/store/effects/effect";
-import { GameMessage } from "../../game/game-message";
-import { CheckProvidedEnergyEffect } from "../../game/store/effects/check-effects";
-import { DiscardCardsEffect } from "../../game/store/effects/attack-effects";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType } from '../../game/store/card/card-types';
+import { StoreLike, State, Card, ChooseEnergyPrompt} from '../../game';
+import { AttackEffect } from '../../game/store/effects/game-effects';
+import { Effect } from '../../game/store/effects/effect';
+import { GameMessage } from '../../game/game-message';
+import { CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
+import { DiscardCardsEffect } from '../../game/store/effects/attack-effects';
 
 
 export class Reshiram extends PokemonCard {
@@ -16,11 +16,11 @@ export class Reshiram extends PokemonCard {
 
   public hp: number = 130;
 
-  public weakness = [{ type: CardType.WATER }];
+  public weakness: any = [{ type: CardType.WATER }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: Array<number> = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Outrage',
       cost: [ CardType.COLORLESS, CardType.COLORLESS ],

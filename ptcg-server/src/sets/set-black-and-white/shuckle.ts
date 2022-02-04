@@ -1,12 +1,12 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType } from "../../game/store/card/card-types";
-import { PowerType, StoreLike, State, StateUtils, PlayerType, CoinFlipPrompt } from "../../game";
-import { Effect } from "../../game/store/effects/effect";
-import { AttackEffect, PowerEffect } from "../../game/store/effects/game-effects";
-import { GameMessage } from "../../game/game-message";
-import { AttachEnergyEffect } from "../../game/store/effects/play-card-effects";
-import { EndTurnEffect } from "../../game/store/effects/game-phase-effects";
-import { PutDamageEffect } from "../../game/store/effects/attack-effects";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType } from '../../game/store/card/card-types';
+import { PowerType, StoreLike, State, StateUtils, PlayerType, CoinFlipPrompt } from '../../game';
+import { Effect } from '../../game/store/effects/effect';
+import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { GameMessage } from '../../game/game-message';
+import { AttachEnergyEffect } from '../../game/store/effects/play-card-effects';
+import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
+import { PutDamageEffect } from '../../game/store/effects/attack-effects';
 
 export class Shuckle extends PokemonCard {
 
@@ -16,18 +16,18 @@ export class Shuckle extends PokemonCard {
 
   public hp: number = 60;
 
-  public weakness = [{ type: CardType.WATER }];
+  public weakness: any = [{ type: CardType.WATER }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat: Array<number> = [ CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Fermenting Liquid',
     powerType: PowerType.POKEBODY,
     text: 'Whenever you attach an Energy card from your hand to Shuckle, ' +
       'draw a card.'
   }];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Shell Stunner',
       cost: [ CardType.GRASS, CardType.COLORLESS ],
@@ -43,9 +43,9 @@ export class Shuckle extends PokemonCard {
 
   public fullName: string = 'Shuckle PR';
 
-  public readonly SHELL_STUNNER_MAREKER = 'SHELL_STUNNER_MAREKER';
+  public readonly SHELL_STUNNER_MAREKER: string = 'SHELL_STUNNER_MAREKER';
 
-  public readonly CLEAR_SHELL_STUNNER_MAREKER = 'CLEAR_SHELL_STUNNER_MAREKER';
+  public readonly CLEAR_SHELL_STUNNER_MAREKER: string = 'CLEAR_SHELL_STUNNER_MAREKER';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 

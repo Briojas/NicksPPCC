@@ -1,28 +1,28 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType, EnergyType, SuperType } from "../../game/store/card/card-types";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType, EnergyType, SuperType } from '../../game/store/card/card-types';
 import { PowerType, StoreLike, State, StateUtils,
-  GameError, GameMessage, EnergyCard, PlayerType, SlotType } from "../../game";
-import { Effect } from "../../game/store/effects/effect";
-import { PowerEffect } from "../../game/store/effects/game-effects";
-import { PlayPokemonEffect } from "../../game/store/effects/play-card-effects";
-import { EndTurnEffect } from "../../game/store/effects/game-phase-effects";
-import {AttachEnergyPrompt} from "../../game/store/prompts/attach-energy-prompt";
+  GameError, GameMessage, EnergyCard, PlayerType, SlotType } from '../../game';
+import { Effect } from '../../game/store/effects/effect';
+import { PowerEffect } from '../../game/store/effects/game-effects';
+import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
+import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
+import {AttachEnergyPrompt} from '../../game/store/prompts/attach-energy-prompt';
 
 export class Eelektrik extends PokemonCard {
 
   public stage: Stage = Stage.STAGE_1;
 
-  public evolvesFrom = 'Tynamo';
+  public evolvesFrom: string = 'Tynamo';
 
   public cardType: CardType = CardType.LIGHTNING;
 
   public hp: number = 90;
 
-  public weakness = [{ type: CardType.FIGHTING }];
+  public weakness: any = [{ type: CardType.FIGHTING }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: Array<number> = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public powers = [{
+  public powers: any = [{
     name: 'Dynamotor',
     powerType: PowerType.ABILITY,
     useWhenInPlay: true,
@@ -30,7 +30,7 @@ export class Eelektrik extends PokemonCard {
       'Energy card from your discard pile to 1 of your Benched Pokemon.'
   }];
 
-  public attacks = [
+  public attacks: any = [
     {
       name: 'Electric Ball',
       cost: [ CardType.LIGHTNING, CardType.LIGHTNING, CardType.COLORLESS ],
@@ -45,7 +45,7 @@ export class Eelektrik extends PokemonCard {
 
   public fullName: string = 'Eelektrik NV';
 
-  public readonly DYNAMOTOR_MAREKER = 'DYNAMOTOR_MAREKER';
+  public readonly DYNAMOTOR_MAREKER: string = 'DYNAMOTOR_MAREKER';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     if (effect instanceof PlayPokemonEffect && effect.pokemonCard === this) {

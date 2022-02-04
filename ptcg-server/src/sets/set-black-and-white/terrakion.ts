@@ -1,11 +1,11 @@
-import { PokemonCard } from "../../game/store/card/pokemon-card";
-import { Stage, CardType } from "../../game/store/card/card-types";
-import { StoreLike } from "../../game/store/store-like";
-import { State, GamePhase } from "../../game/store/state/state";
-import { Effect } from "../../game/store/effects/effect";
-import { EndTurnEffect } from "../../game/store/effects/game-phase-effects";
-import { AttackEffect, KnockOutEffect } from "../../game/store/effects/game-effects";
-import { StateUtils } from "../../game/store/state-utils";
+import { PokemonCard } from '../../game/store/card/pokemon-card';
+import { Stage, CardType } from '../../game/store/card/card-types';
+import { StoreLike } from '../../game/store/store-like';
+import { State, GamePhase } from '../../game/store/state/state';
+import { Effect } from '../../game/store/effects/effect';
+import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
+import { AttackEffect, KnockOutEffect } from '../../game/store/effects/game-effects';
+import { StateUtils } from '../../game/store/state-utils';
 
 export class Terrakion extends PokemonCard {
 
@@ -15,13 +15,13 @@ export class Terrakion extends PokemonCard {
 
   public hp: number = 130;
 
-  public weakness = [{
+  public weakness: any = [{
     type: CardType.GRASS
   }];
 
-  public retreat = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
+  public retreat: Array<number> = [ CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS ];
 
-  public attacks = [{
+  public attacks: any = [{
     name: 'Retaliate',
     cost: [ CardType.FIGHTING, CardType.COLORLESS ],
     damage: 30,
@@ -41,7 +41,7 @@ export class Terrakion extends PokemonCard {
 
   public fullName: string = 'Terrakion NV';
 
-  public readonly RETALIATE_MARKER = 'RETALIATE_MARKER';
+  public readonly RETALIATE_MARKER: string = 'RETALIATE_MARKER';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {

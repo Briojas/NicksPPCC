@@ -1,21 +1,20 @@
-import { TrainerCard } from "../../game/store/card/trainer-card";
-import { TrainerType, SuperType } from "../../game/store/card/card-types";
-import { StoreLike } from "../../game/store/store-like";
-import { State } from "../../game/store/state/state";
-import { Effect } from "../../game/store/effects/effect";
-import { TrainerEffect } from "../../game/store/effects/play-card-effects";
-import { GameError } from "../../game/game-error";
-import { GameMessage } from "../../game/game-message";
-import { Card} from "../../game/store/card/card";
-import { ChooseCardsPrompt } from "../../game/store/prompts/choose-cards-prompt";
-import { CardList } from "../../game/store/state/card-list";
-import { ShowCardsPrompt } from "../../game/store/prompts/show-cards-prompt";
-import { StateUtils } from "../../game/store/state-utils";
-import { ShuffleDeckPrompt } from "../../game/store/prompts/shuffle-prompt";
+import { TrainerCard } from '../../game/store/card/trainer-card';
+import { TrainerType, SuperType } from '../../game/store/card/card-types';
+import { StoreLike } from '../../game/store/store-like';
+import { State } from '../../game/store/state/state';
+import { Effect } from '../../game/store/effects/effect';
+import { TrainerEffect } from '../../game/store/effects/play-card-effects';
+import { GameError } from '../../game/game-error';
+import { GameMessage } from '../../game/game-message';
+import { Card} from '../../game/store/card/card';
+import { ChooseCardsPrompt } from '../../game/store/prompts/choose-cards-prompt';
+import { CardList } from '../../game/store/state/card-list';
+import { ShowCardsPrompt } from '../../game/store/prompts/show-cards-prompt';
+import { StateUtils } from '../../game/store/state-utils';
+import { ShuffleDeckPrompt } from '../../game/store/prompts/shuffle-prompt';
 
 
-function* playCard(next: Function, store: StoreLike, state: State,
-  self: UltraBall, effect: TrainerEffect): IterableIterator<State> {
+function* playCard(next: Function, store: StoreLike, state: State, self: UltraBall, effect: TrainerEffect): IterableIterator<State> {
   const player = effect.player;
   const opponent = StateUtils.getOpponent(state, player);
   let cards: Card[] = [];
