@@ -1,26 +1,26 @@
-import { Action } from "../actions/action";
-import { AddPlayerAction } from "../actions/add-player-action";
-import { AlertPrompt } from "../prompts/alert-prompt";
-import { Card } from "../card/card";
-import { CardList } from "../state/card-list";
-import { CoinFlipPrompt } from "../prompts/coin-flip-prompt";
-import { ChooseCardsPrompt } from "../prompts/choose-cards-prompt";
-import { DeckAnalyser } from "../../cards/deck-analyser";
-import { InvitePlayerAction } from "../actions/invite-player-action";
-import { InvitePlayerPrompt } from "../prompts/invite-player-prompt";
-import { Player } from "../state/player";
-import { ShowCardsPrompt } from "../prompts/show-cards-prompt";
-import { ShuffleDeckPrompt } from "../prompts/shuffle-prompt";
-import { State, GamePhase, GameWinner } from "../state/state";
-import { GameError } from "../../game-error";
-import { GameMessage, GameLog } from "../../game-message";
-import { PlayerType } from "../actions/play-card-action";
-import { PokemonCardList } from "../state/pokemon-card-list";
-import { StoreLike } from "../store-like";
-import { SuperType, Stage } from "../card/card-types";
-import { WhoBeginsEffect } from "../effects/game-phase-effects";
-import { endGame } from "../effect-reducers/check-effect";
-import { initNextTurn } from "../effect-reducers/game-phase-effect";
+import { Action } from '../actions/action';
+import { AddPlayerAction } from '../actions/add-player-action';
+import { AlertPrompt } from '../prompts/alert-prompt';
+import { Card } from '../card/card';
+import { CardList } from '../state/card-list';
+import { CoinFlipPrompt } from '../prompts/coin-flip-prompt';
+import { ChooseCardsPrompt } from '../prompts/choose-cards-prompt';
+import { DeckAnalyser } from '../../cards/deck-analyser';
+import { InvitePlayerAction } from '../actions/invite-player-action';
+import { InvitePlayerPrompt } from '../prompts/invite-player-prompt';
+import { Player } from '../state/player';
+import { ShowCardsPrompt } from '../prompts/show-cards-prompt';
+import { ShuffleDeckPrompt } from '../prompts/shuffle-prompt';
+import { State, GamePhase, GameWinner } from '../state/state';
+import { GameError } from '../../game-error';
+import { GameMessage, GameLog } from '../../game-message';
+import { PlayerType } from '../actions/play-card-action';
+import { PokemonCardList } from '../state/pokemon-card-list';
+import { StoreLike } from '../store-like';
+import { SuperType, Stage } from '../card/card-types';
+import { WhoBeginsEffect } from '../effects/game-phase-effects';
+import { endGame } from '../effect-reducers/check-effect';
+import { initNextTurn } from '../effect-reducers/game-phase-effect';
 
 
 function putStartingPokemonsAndPrizes(player: Player, cards: Card[]): void {
@@ -163,7 +163,7 @@ export function setupPhaseReducer(store: StoreLike, state: State, action: Action
         throw new GameError(GameMessage.MAX_PLAYERS_REACHED);
       }
 
-      if (state.players.length == 1 && state.players[0].id === action.clientId) {
+      if (state.players.length === 1 && state.players[0].id === action.clientId) {
         throw new GameError(GameMessage.ALREADY_PLAYING);
       }
 
@@ -197,7 +197,7 @@ export function setupPhaseReducer(store: StoreLike, state: State, action: Action
         throw new GameError(GameMessage.MAX_PLAYERS_REACHED);
       }
 
-      if (state.players.length == 1 && state.players[0].id === action.clientId) {
+      if (state.players.length === 1 && state.players[0].id === action.clientId) {
         throw new GameError(GameMessage.ALREADY_PLAYING);
       }
 

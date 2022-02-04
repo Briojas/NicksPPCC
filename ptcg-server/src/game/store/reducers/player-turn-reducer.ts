@@ -1,14 +1,14 @@
-import { Action } from "../actions/action";
-import { PassTurnAction, RetreatAction, AttackAction, UseAbilityAction, UseStadiumAction } from "../actions/game-actions";
-import { State, GamePhase } from "../state/state";
-import { StoreLike } from "../store-like";
-import { GameError } from "../../game-error";
-import { GameMessage } from "../../game-message";
-import { RetreatEffect, UseAttackEffect, UsePowerEffect, UseStadiumEffect } from "../effects/game-effects";
-import { EndTurnEffect } from "../effects/game-phase-effects";
-import { StateUtils } from "../state-utils";
-import {SlotType} from "../actions/play-card-action";
-import {PokemonCard} from "../card/pokemon-card";
+import { Action } from '../actions/action';
+import { PassTurnAction, RetreatAction, AttackAction, UseAbilityAction, UseStadiumAction } from '../actions/game-actions';
+import { State, GamePhase } from '../state/state';
+import { StoreLike } from '../store-like';
+import { GameError } from '../../game-error';
+import { GameMessage } from '../../game-message';
+import { RetreatEffect, UseAttackEffect, UsePowerEffect, UseStadiumEffect } from '../effects/game-effects';
+import { EndTurnEffect } from '../effects/game-phase-effects';
+import { StateUtils } from '../state-utils';
+import {SlotType} from '../actions/play-card-action';
+import {PokemonCard} from '../card/pokemon-card';
 
 export function playerTurnReducer(store: StoreLike, state: State, action: Action): State {
 
@@ -87,6 +87,9 @@ export function playerTurnReducer(store: StoreLike, state: State, action: Action
           if (handCard instanceof PokemonCard) {
             pokemonCard = handCard;
           }
+          break;
+        default:
+          //TODO: error catching
           break;
       }
 
