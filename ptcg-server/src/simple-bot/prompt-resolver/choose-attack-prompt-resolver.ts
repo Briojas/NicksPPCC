@@ -26,7 +26,7 @@ export class ChooseAttackPromptResolver extends PromptResolver {
           return b.index === index && b.attack === attack.name;
         });
         if (!isBlocked && !banned.includes(attack.name)) {
-          attacks.push(attack)
+          attacks.push(attack);
         }
       });
     });

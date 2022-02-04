@@ -9,10 +9,10 @@ import {
 } from '../simple-bot-definitions';
 
 class TestPokemon extends PokemonCard {
-  name = 'pokemon';
-  fullName = 'pokemon';
-  set = 'test';
-  hp = 100;
+  public name: string = 'pokemon';
+  public fullName: string = 'pokemon';
+  public set: string = 'test';
+  public hp: number = 100;
 }
 
 describe('PutDamagePromptResolver', () => {

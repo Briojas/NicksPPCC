@@ -10,9 +10,9 @@ import {
 } from '../simple-bot-definitions';
 
 class TestEnergy extends EnergyCard {
-  name = 'energy';
-  fullName = 'energy';
-  set = 'test';
+  public name: string = 'energy';
+  public fullName: string = 'energy';
+  public set: string = 'test';
   constructor(name: string, provides: CardType[]) {
     super();
     this.name = name;
@@ -21,9 +21,9 @@ class TestEnergy extends EnergyCard {
 }
 
 class TestPokemon extends PokemonCard {
-  name = 'pokemon';
-  fullName = 'pokemon';
-  set = 'test';
+  public name: string = 'pokemon';
+  public fullName: string = 'pokemon';
+  public set: string = 'test';
 }
 
 describe('MoveEnergyPromptResolver', () => {

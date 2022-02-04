@@ -9,9 +9,9 @@ import {
 } from '../simple-bot-definitions';
 
 class TestCard extends PokemonCard {
-  name = 'energy';
-  fullName = 'energy';
-  set = 'test';
+  public name: string = 'energy';
+  public fullName: string = 'energy';
+  public set: string = 'test';
   constructor (name: string) {
     super();
     this.name = name;
