@@ -10,14 +10,10 @@ const sets = require('./output/sets');
 const process = require('process');
 
 const cardManager = CardManager.getInstance();
-cardManager.defineSet(sets.setDiamondAndPearl);
-cardManager.defineSet(sets.setOp9);
-cardManager.defineSet(sets.setHgss);
 cardManager.defineSet(sets.setBlackAndWhite);
 cardManager.defineSet(sets.setBlackAndWhite2);
 cardManager.defineSet(sets.setBlackAndWhite3);
 cardManager.defineSet(sets.setBlackAndWhite4);
-cardManager.defineSet(sets.setSwordAndShield);
 
 StateSerializer.setKnownCards(cardManager.getAllCards());
 
