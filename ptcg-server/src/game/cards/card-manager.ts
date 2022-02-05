@@ -16,9 +16,7 @@ export class CardManager {
   }
 
   public defineSet(cards: Card[]): void {
-    if (this.cards.length > 0){
-      this.cards.push(...cards);
-    }
+    this.cards.push(...cards);
   }
 
   public defineCard(card: Card): void {
