@@ -1,26 +1,10 @@
-# RyuuPlay
-
-[![Strider](https://strider.kuro.ryuu.eu/keeshii/ryuu-play/badge?branch=master)](https://strider.kuro.ryuu.eu/keeshii/ryuu-play/badge?branch=master)
+# Nick's Playable Pokemon Card Collection
 
 RyuuPlay is a simulator for the Pokémon Trading Card Game written in TypeScript. The source code is entirely open source and published under MIT licence.
 
 The project is created for the educational purpose only. There is no plans to port all possible cards or provide new features.
 Think of it as a platform for testing various approaches for AI bots implementaion. RyuuPlay is triggering random bot vs bot
 matches at regular basis and updates ranking. Of course it is also possible to just play with the bot and have some fun.
-
-### Demo
-
-An example server instance with some AI bots included. To create an account you need to provide the password `letsplaypokemontcg`.
-
-Web page:
-https://ptcg.ryuu.eu/
-
-Android application:
-[RyuuPlay-latest.apk](https://ptcg.ryuu.eu/RyuuPlay-latest.apk)
-
-Screenshots:
-[00.png](https://github.com/keeshii/ryuu-play/raw/master/fastlane/metadata/android/en-US/images/phoneScreenshots/00.png)
-[01.png](https://github.com/keeshii/ryuu-play/raw/master/fastlane/metadata/android/en-US/images/phoneScreenshots/01.png)
 
 ### Project overview
 
