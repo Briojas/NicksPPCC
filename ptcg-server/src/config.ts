@@ -73,7 +73,7 @@ export const config = {
       path: '/usr/sbin/sendmail'
     },
     sender: 'example@example.com',
-    appName: 'RyuuPlay',
+    appName: 'NicksPPCC',
     publicAddress: 'http://localhost' // Address inside the e-mail messages
   }
 };

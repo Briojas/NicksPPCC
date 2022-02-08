@@ -1,5 +1,5 @@
-import { CardType } from "../../game/store/card/card-types";
-import { EnergyCard } from "../../game/store/card/energy-card";
+import { CardType } from '../../game/store/card/card-types';
+import { EnergyCard } from '../../game/store/card/energy-card';
 
 export class FightingEnergy extends EnergyCard {
 
@@ -7,8 +7,8 @@ export class FightingEnergy extends EnergyCard {
 
   public set: string = 'ENERGY';
 
-  public name = 'Fighting Energy';
+  public name: string = 'Fighting Energy';
 
-  public fullName = 'Fighting Energy EVO';
+  public fullName: string = 'Fighting Energy EVO';
 
 }

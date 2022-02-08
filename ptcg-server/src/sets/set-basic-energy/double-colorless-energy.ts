@@ -1,16 +1,16 @@
-import { CardType, EnergyType } from "../../game/store/card/card-types";
-import { EnergyCard } from "../../game/store/card/energy-card";
+import { CardType, EnergyType } from '../../game/store/card/card-types';
+import { EnergyCard } from '../../game/store/card/energy-card';
 
 export class DoubleColorlessEnergy extends EnergyCard {
 
   public provides: CardType[] = [ CardType.COLORLESS, CardType.COLORLESS ];
 
-  public energyType = EnergyType.SPECIAL;
+  public energyType: number = EnergyType.SPECIAL;
 
   public set: string = 'ENERGY';
 
-  public name = 'Double Colorless Energy';
+  public name: string = 'Double Colorless Energy';
 
-  public fullName = 'Double Colorless Energy EVO';
+  public fullName: string = 'Double Colorless Energy EVO';
 
 }

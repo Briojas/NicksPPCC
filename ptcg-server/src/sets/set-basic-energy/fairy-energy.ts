@@ -1,5 +1,5 @@
-import { CardType } from "../../game/store/card/card-types";
-import { EnergyCard } from "../../game/store/card/energy-card";
+import { CardType } from '../../game/store/card/card-types';
+import { EnergyCard } from '../../game/store/card/energy-card';
 
 export class FairyEnergy extends EnergyCard {
 
@@ -7,8 +7,8 @@ export class FairyEnergy extends EnergyCard {
 
   public set: string = 'ENERGY';
 
-  public name = 'Fairy Energy';
+  public name: string = 'Fairy Energy';
 
-  public fullName = 'Fairy Energy EVO';
+  public fullName: string = 'Fairy Energy EVO';
 
 }

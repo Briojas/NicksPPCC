@@ -10,6 +10,7 @@ const sets = require('./output/sets');
 const process = require('process');
 
 const cardManager = CardManager.getInstance();
+cardManager.defineSet(sets.setBasicEnergy);
 cardManager.defineSet(sets.setBlackAndWhite);
 cardManager.defineSet(sets.setBlackAndWhite2);
 cardManager.defineSet(sets.setBlackAndWhite3);

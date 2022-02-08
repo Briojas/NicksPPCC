@@ -1,14 +1,14 @@
-import { CardType } from "../../game/store/card/card-types";
-import { EnergyCard } from "../../game/store/card/energy-card";
+import { CardType } from '../../game/store/card/card-types';
+import { EnergyCard } from '../../game/store/card/energy-card';
 
 export class PsychicEnergy extends EnergyCard {
 
   public provides: CardType[] = [ CardType.PSYCHIC ];
 
-  public set: string = 'DP';
+  public set: string = 'ENERGY';
 
-  public name = 'Psychic Energy';
+  public name: string = 'Psychic Energy';
 
-  public fullName = 'Psychic Energy EVO';
+  public fullName: string = 'Psychic Energy EVO';
 
 }

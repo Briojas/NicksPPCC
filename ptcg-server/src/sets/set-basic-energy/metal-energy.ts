@@ -1,14 +1,14 @@
-import { CardType } from "../../game/store/card/card-types";
-import { EnergyCard } from "../../game/store/card/energy-card";
+import { CardType } from '../../game/store/card/card-types';
+import { EnergyCard } from '../../game/store/card/energy-card';
 
 export class MetalEnergy extends EnergyCard {
 
   public provides: CardType[] = [ CardType.METAL ];
 
-  public set: string = 'DP';
+  public set: string = 'ENERGY';
 
-  public name = 'Metal Energy';
+  public name: string = 'Metal Energy';
 
-  public fullName = 'Metal Energy EVO';
+  public fullName: string = 'Metal Energy EVO';
 
 }

@@ -1,5 +1,5 @@
 import { TrainerCard } from '../../game/store/card/trainer-card';
-import { TrainerType, CardTag } from '../../game/store/card/card-types';
+import { TrainerType} from '../../game/store/card/card-types';
 import { StoreLike } from '../../game/store/store-like';
 import { State } from '../../game/store/state/state';
 import { Effect } from '../../game/store/effects/effect';
@@ -67,7 +67,9 @@ function* playCard(next: Function, store: StoreLike, state: State, self: Compute
 
 export class ComputerSearch extends TrainerCard {
 
-  public trainerType: TrainerType = TrainerType.ITEM; //All base set trainers will be "Item" TrainerType. "Supporter" TrainerType did not exist yet. 
+    //All base set trainers will be 'Item' TrainerType. 
+    //'Supporter' TrainerType did not exist yet. 
+  public trainerType: TrainerType = TrainerType.ITEM; 
 
   // public tags: Array<string> = [ CardTag.ACE_SPEC ]; //Not needed for Base Sets
 

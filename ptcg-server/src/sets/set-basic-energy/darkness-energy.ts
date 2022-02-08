@@ -1,5 +1,5 @@
-import { CardType } from "../../game/store/card/card-types";
-import { EnergyCard } from "../../game/store/card/energy-card";
+import { CardType } from '../../game/store/card/card-types';
+import { EnergyCard } from '../../game/store/card/energy-card';
 
 export class DarknessEnergy extends EnergyCard {
 
@@ -7,8 +7,8 @@ export class DarknessEnergy extends EnergyCard {
 
   public set: string = 'ENERGY';
 
-  public name = 'Darkness Energy';
+  public name: string = 'Darkness Energy';
 
-  public fullName = 'Darkness Energy EVO';
+  public fullName: string = 'Darkness Energy EVO';
 
 }

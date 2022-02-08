@@ -1,5 +1,5 @@
-import { CardType } from "../../game/store/card/card-types";
-import { EnergyCard } from "../../game/store/card/energy-card";
+import { CardType } from '../../game/store/card/card-types';
+import { EnergyCard } from '../../game/store/card/energy-card';
 
 export class WaterEnergy extends EnergyCard {
 
@@ -7,8 +7,8 @@ export class WaterEnergy extends EnergyCard {
 
   public set: string = 'DP';
 
-  public name = 'Water Energy';
+  public name: string = 'Water Energy';
 
-  public fullName = 'Water Energy EVO';
+  public fullName: string = 'Water Energy EVO';
 
 }
