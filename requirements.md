@@ -22,6 +22,13 @@
     - [ ] Pokemon Power abilities defined
 
 ### Quality of Life
+- Views
+    - [ ] Update Games view to show drop-down summary for each match
+    - [ ] Fix Games view replays playing
+    - Remove views:
+        - [ ] Ranking
+        - [ ] Replays
+        - [ ] Messages
 - Deck Building
     - [ ] Replace Decks 'Actions' drop down with buttons:
         - [ ] 'edit' gear-shaped button
@@ -36,6 +43,93 @@
         - [ ] full scan of card
         - [ ] entry field to add/remove multiple copies
     - [ ] Hover over card show +/- popover button for adding removing
+- Pre-Game Prompt
+    - [ ] Add more details on deck choosing
+        - Deck typing
+        - Tiny images of key cards (can be exploaded on selection)
+    - [ ] Replace time limit with three 'Prizes' check boxes
+        - one box for 2, 4 (default), and 6 
+        - time defaults are now 10 minutes for 2 prizes, 20 for 4, 30 for 6
+    - [ ] Remove 'Ranking' check boxes
+    - [ ] Remove 'Game rules' check boxes 
+- In-Game
+    - Rules:
+        - [ ] Modify old rule to make first player not draw a card
+    - Main view:
+        - [ ] Remove Stadium and Supporter card spots from field
+        - [ ] Add magnifying glass upon hover that, when clicked, shows the card's scan
+            - See 'Choose Pokemon' prompt for magnifying glass
+        - [ ] improve visibility of energy attached 
+        - [ ] Change 'End your turn' to 'End Turn'
+    - Prompts:
+        - [ ] Allow prompts to be minimized
+        - [ ] When showing bench, add overlays for current damage
+        - [ ] Add single click to choose cards from prompts
+    - Bots:
+        - [ ] reduce action speed 
+    - Animations:
+        - [ ] card movements
+            - [ ] drawing 
+            - [ ] shuffling
+            - [ ] pokemon swapping
+            - [ ] playing card from hand
+        - [ ] coin flips
+        - [ ] statuses (poison, paralysis, sleep, )
+        - [ ] pokemon attacks
+        - [ ] pokemon damage and markers
+        - [ ] pokemon powers
+        - [ ] trainer card effects
+        - [ ] game starting
+        - [ ] game ending/summary of battle
+    - Messages:
+        - [ ] Change 'Messages' to 'Game Log'
+        - [ ] Move 'Game Log' above 'Leave' and 'End Turn' buttons
+        - [ ] Replace option to write a message with emote responses
+            - limit emotes to one per turn
+        - [ ] Add options to mute logs and emotes
 
 ### Potential Features
-- [ ] 
+- Card Ownership
+    - [ ] Add 'Collection' tab to side menu
+        - [ ] Use GraphQL service to populate users' collections
+    - [ ] Pokemon stored on IPFS with:
+        - JPG scan of the card
+            - the scan for every base card will already be in ipfs
+            - newly minted cards with unique scans may be minted
+        - JSON details of the card's:
+            - name and nickname
+            - type
+            - resistence/weakness
+            - retreat cost
+            - health
+            - moves specifics
+            - level
+            - IVs and EVs
+    - [ ] ERC 1155 Smart Contract for storing ownership of IPFS hashes
+- Card Minting
+    - [ ] Opening new packs of cards 
+- Technical Machines and Hidden Machines
+    - [ ] 
+- Pokemon card training
+    - Leveling
+        - [ ] Add levels to pokemon Card classes
+            - see bottom of base set card for starting level
+        - [ ] Determine experience required per level
+        - [ ] Add experience tracker to GUI
+            - show experience earned per takedown in-match
+            - show summary of experienced gain upon match completion
+        - [ ] specifc pokemon cards gain exp when defeating active pokemon
+    - IVs
+        - [ ] Determine which IVs should exist and what they should affect
+            - HP - HP
+            - Atk - damage
+            - Spec. Atk - energy costs
+            - Def - resistences
+            - Spec. Def - weaknesses
+            - Speed - retreat costs
+        - [ ] Determine IV thresholds for affecting card stats
+        - [ ] Add card scan overlays to indicate IV affects 
+    - EVs 
+- Items
+    - Experience share
+    - evolution stones
