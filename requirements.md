@@ -129,6 +129,7 @@
             - Speed - retreat costs
         - [ ] Determine IV thresholds for affecting card stats
         - [ ] Add card scan overlays to indicate IV affects 
+        - [ ] Update JSON minting tool to modify IVs
     - EVs 
 - Items
     - Experience share
