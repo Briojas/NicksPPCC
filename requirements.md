@@ -108,16 +108,16 @@
     - Mint new cards using:
         - [ ] jpg scan of base card (should already be on IPFS)
         - [ ] json metadata with the following:
-```
-{
-    'name': 'pokemonString',
-    'nickname': 'userDefinedString',
-    'moves': ['move1', 'move2'],
-    'level': 0,
-    'IVs': [6,15,3,15,0],
-    'EVs': [0,0,0,0,0]
-}
-```
+    ```
+    {
+        'name': 'pokemonString',
+        'nickname': 'userDefinedString',
+        'moves': ['move1', 'move2'],
+        'level': 0,
+        'IVs': [6,15,3,15,0],
+        'EVs': [0,0,0,0,0]
+    }
+    ```
     - Opening new packs of cards 
     - Cards evolving through level or stones
 - Card Burning
