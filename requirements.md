@@ -106,7 +106,7 @@
             - level
             - IVs and EVs
     - [ ] ERC 1155 Smart Contract for storing ownership of IPFS hashes
-- Card Minting
+- Card Minting and Burning
     - [ ] Opening new packs of cards 
 - Technical Machines and Hidden Machines
     - [ ] 
@@ -130,6 +130,7 @@
         - [ ] Determine IV thresholds for affecting card stats
         - [ ] Add card scan overlays to indicate IV affects 
     - EVs 
+        - [ ] Determine IV thresholds for affecting card stats
 - Items
     - Experience share
     - evolution stones
