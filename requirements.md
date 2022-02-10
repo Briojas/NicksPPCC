@@ -93,23 +93,37 @@
     - [ ] Add 'Collection' tab to side menu
         - [ ] Use GraphQL service to populate users' collections
     - [ ] Pokemon stored on IPFS with:
-        - JPG scan of the card
+        - JPG scan of the base card
             - the scan for every base card will already be in ipfs
-            - newly minted cards with unique scans may be minted
+            - just need to reference its particular hash
         - JSON details of the card's:
             - name and nickname
-            - type
-            - resistence/weakness
-            - retreat cost
-            - health
-            - moves specifics
-            - level
+            - moves 
+            - current level
+                - will be at base level if newly minted
+                - no need to track experience, cards are only minted if new level obtained
             - IVs and EVs
     - [ ] ERC 1155 Smart Contract for storing ownership of IPFS hashes
-- Card Minting and Burning
-    - [ ] Opening new packs of cards 
+- Card Minting
+    - Mint new cards using:
+        - [ ] jpg scan of base card (should already be on IPFS)
+        - [ ] json metadata with the following:
+```
+{
+    'name': 'pokemonString',
+    'nickname': 'userDefinedString',
+    'moves': ['move1', 'move2'],
+    'level': 0,
+    'IVs': [6,15,3,15,0],
+    'EVs': [0,0,0,0,0]
+}
+```
+    - Opening new packs of cards 
+    - Cards evolving through level or stones
+- Card Burning
+    - combining card to raise IVs
 - Technical Machines and Hidden Machines
-    - [ ] 
+    - ToDo
 - Pokemon card training
     - Leveling
         - [ ] Add levels to pokemon Card classes
@@ -119,16 +133,17 @@
             - show experience earned per takedown in-match
             - show summary of experienced gain upon match completion
         - [ ] specifc pokemon cards gain exp when defeating active pokemon
+        - [ ] store experience in centralized repositiory
+            - upon each level-up, user's card will be re-minted and stored decentrally 
     - IVs
         - [ ] Determine which IVs should exist and what they should affect
             - HP - HP
             - Atk - damage
-            - Spec. Atk - energy costs
-            - Def - resistences
-            - Spec. Def - weaknesses
+            - Def - resistences/weaknesses
             - Speed - retreat costs
+            - Special - energy costs
         - [ ] Determine IV thresholds for affecting card stats
-        - [ ] Add card scan overlays to indicate IV affects 
+        - [ ] Create card scan overlays to indicate IV affects 
         - [ ] Update JSON minting tool to modify IVs
     - EVs 
         - [ ] Determine IV thresholds for affecting card stats
