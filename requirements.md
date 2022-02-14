@@ -53,6 +53,8 @@
         - time defaults are now 10 minutes for 2 prizes, 20 for 4, 30 for 6
     - [ ] Remove 'Ranking' check boxes
     - [ ] Remove 'Game rules' check boxes 
+    - [ ] Add a 'Turn Time' entry box for adjusting how fast players must make decisions
+        - default should be 60 seconds
 - In-Game
     - Rules:
         - [ ] Modify old rule to make first player not draw a card
@@ -126,7 +128,10 @@
 - Technical Machines and Hidden Machines
     - ToDo
     - Some TMs/HMs may need to be pokemon powers instead of moves
+    - Some TMs/HMs may need to be used for balancing vs some for rare/valuable rewards
     - interesting features to consider incorporating:
+        - incorporate 'Opportunity Cost' considerations
+            - discarding specific cards (trainers, energy, specific pokemon evolution stages, etc.) for specific effects/bonuses
         - power/move allowing player to swar card in hand for prize card 
         - more ways to mill cards
         - incorporate STAB bonuses for typed moves
@@ -163,17 +168,39 @@
             - HP - HP
             - Atk - damage
             - Def - resistences/weaknesses
-            - Speed - retreat costs
-            - Special - energy costs
+            - Spd - retreat costs
+            - Spec. - energy costs
         - [ ] Determine IV thresholds for affecting card stats
-            -   HP, damage, and resistence adjustments should allow increments of 5
+            -   HP, damage, and resistence adjustments should allow increments of 2 or 5
+                - ex: HP of 76, or resistence of -14
                 - ex: HP of 95, or move damage of 15
         - [ ] Create card scan overlays to indicate IV affects 
         - [ ] Update JSON minting tool to modify IVs
     - EVs 
         - [ ] Determine IV thresholds for affecting card stats
-- Items
-    - Experience share
-        - make this a valuable 'end-of-season' reward
+- Items/rewards 
+    - Experience share 'EXP. ALL'
+        - valuable 'end-of-season' reward
     - evolution stones
-        - make reward also
+        - fire, water, thunder, leaf, moon
+    - various TMs and HMs
+    - rare candies 
+    - vitamins for EV manipulation
+        - HP - HP Up
+        - Atk - Protein
+        - Def - Iron
+        - Spd - Carbos
+        - Spec. - Calcium
+- Game Modes
+    - 'Safari Zone'
+        - players are grouped into a session (2, 4, 8, 16, tourney numbers)
+        - each player chooses from the same draft pool of pokemon
+        - each player starts with balls used for 'catching' (drafting) the pokemon cards they want
+            - pokeballs, great balls, ultra balls, and master balls
+        - cards appear in groups, and each card can be viewed for what stats it has
+        - trainers and energy are maybe not drafted. everyone has access to the entire collection of these.
+        - players are randomly matched up after so many culls of card selection, and battle tournament style with their drafted decks
+    - Gym Leader Challenge
+        - complete with unlimited deck mods
+        - complete with only 3 set decks
+    - Elite Four
