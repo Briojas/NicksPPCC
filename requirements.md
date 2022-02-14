@@ -1,4 +1,5 @@
 # Requirements for Nick's PPCC
+    Not super organized. Reread all through once to get understanding of references. 
 
 ### Needed
 - Base set defined
@@ -154,6 +155,9 @@
         - [ ] specifc pokemon cards gain exp when defeating active pokemon
         - [ ] store experience in centralized repositiory
             - upon each level-up, user's card will be re-minted and stored decentrally 
+            - this will also update the card's EV updates
+            - user will have option to skip re-baselining level and EV-updates
+        - card stat increases not realized until 
     - IVs
         - [ ] Determine which IVs should exist and what they should affect
             - HP - HP
@@ -170,4 +174,6 @@
         - [ ] Determine IV thresholds for affecting card stats
 - Items
     - Experience share
+        - make this a valuable 'end-of-season' reward
     - evolution stones
+        - make reward also
