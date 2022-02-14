@@ -124,6 +124,25 @@
     - combining card to raise IVs
 - Technical Machines and Hidden Machines
     - ToDo
+    - Some TMs/HMs may need to be pokemon powers instead of moves
+    - interesting features to consider incorporating:
+        - power/move allowing player to swar card in hand for prize card 
+        - more ways to mill cards
+        - incorporate STAB bonuses for typed moves
+            - more damage vs reduced energy costs
+        - incorporate evolution staging dependency for damage and energy costs
+            - higher evolutions should do more damage for less
+            - cards with no evolution should maybe be considered as a partial evolution (0.5 or 1.5 )
+        - reduce damage for moves naturally learned by some cards vs has to be taught to be learned
+        - energy manipulation moves/powers
+            - to counter/balance energy removals
+        - powers that interact with trainer cards
+            - or specific trainers to boost under-powered ones
+            - 'the next (or first?) trainer you play is not discarded (or is played twice)'
+    - determine which TMs are already existing moves, and create baselines from those
+    - allow attack damage to be divisible by 5 instead of only 10
+        - since all old HP values are all divisible by 10
+    - incorporate
 - Pokemon card training
     - Leveling
         - [ ] Add levels to pokemon Card classes
@@ -143,6 +162,8 @@
             - Speed - retreat costs
             - Special - energy costs
         - [ ] Determine IV thresholds for affecting card stats
+            -   HP, damage, and resistence adjustments should allow increments of 5
+                - ex: HP of 95, or move damage of 15
         - [ ] Create card scan overlays to indicate IV affects 
         - [ ] Update JSON minting tool to modify IVs
     - EVs 
