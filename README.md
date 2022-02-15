@@ -69,7 +69,7 @@ npm install
 3. Start the aplication.
 
 ```
-npm start
+ng serve --host 0.0.0.0
 ```
 
 The command above will start the application in the debug mode at http://localhost:4200.
