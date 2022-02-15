@@ -200,7 +200,9 @@
         - cards appear in groups, and each card can be viewed for what stats it has
         - trainers and energy are maybe not drafted. everyone has access to the entire collection of these.
         - players are randomly matched up after so many culls of card selection, and battle tournament style with their drafted decks
-    - Gym Leader Challenge
+    - Gym Leader Challenge and Elite Four
+        - classic version (based on original games)
+        - new version (based on powerful deck archetypes)
         - complete with unlimited deck mods
-        - complete with only 3 set decks
-    - Elite Four
+        - complete with only 3 set decks, no mods
+        - complete wiht only 1 deck, no mods
